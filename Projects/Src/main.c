@@ -85,6 +85,7 @@ int main(void)
 
   /* USER CODE BEGIN 1 */
 	char buffer[7];
+	char temp_buff;
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -125,13 +126,20 @@ int main(void)
           k=0;
           TM_HD44780_Clear();
           strcpy(buffer,"      ");
-      if(Get_Key_To_Buffer()){
-          buffer[k]=Get_Key_To_Buffer();
-          k++;
+      }
+      for(i=0; i<16; i++){
+          if(sw[i] && sw_flag[i] == 0 ){
+              sw_flag[i]=1;
+              buffer[k]=Keypad4x4_GetChar(i);
+              k++;
+           //   TM_HD44780_Clear(); ?
+          }
+          else if (sw[i] == 0){
+              sw_flag[i]=0;
+          }
       }
 
-      }
-    //  HAL_Delay(100);
+      //  HAL_Delay(100);
       TM_HD44780_Puts(0,0,buffer);
 
   }
@@ -257,7 +265,7 @@ static void MX_GPIO_Init(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 Keypad4x4_ReadKeypad(&sw,&keyPad_struct);
 }
-char Get_Key_To_Buffer(void){
+/*char Get_Key_To_Buffer(void){
     u_int8_t i;
     char output;
     for(i=0; i<16; i++){
@@ -272,7 +280,7 @@ char Get_Key_To_Buffer(void){
         }
     }
     return output;
-}
+}*/
 /* USER CODE END 4 */
 
 /**
