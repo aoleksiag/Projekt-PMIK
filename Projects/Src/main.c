@@ -84,8 +84,9 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-	char buffer[7];
+
 	char temp_buff;
+	u_int8_t buf_len;
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -112,6 +113,7 @@ int main(void)
   HAL_TIM_Base_Start_IT(&htim6);
   KeyPad_4x4_Init(&keyPad_struct);
   TM_HD44780_Init(16, 2);
+  strcpy(buffer,"      ");
 
   /* USER CODE END 2 */
 
@@ -122,25 +124,16 @@ int main(void)
   /* USER CODE END WHILE */
 
 /* USER CODE BEGIN 3 */
-      if(k>code_lenght){
-          k=0;
-          TM_HD44780_Clear();
-          strcpy(buffer,"      ");
-      }
-      for(i=0; i<16; i++){
-          if(sw[i] && sw_flag[i] == 0 ){
-              sw_flag[i]=1;
-              buffer[k]=Keypad4x4_GetChar(i);
-              k++;
-           //   TM_HD44780_Clear(); ?
-          }
-          else if (sw[i] == 0){
-              sw_flag[i]=0;
-          }
-      }
 
-      //  HAL_Delay(100);
+      update_buffer_by_keypad();
       TM_HD44780_Puts(0,0,buffer);
+
+      if(strcmp(buffer,"123456") == 0 && k==code_length){
+          TM_HD44780_Puts(0,1,"dobra");
+      }
+      else if(strcmp(buffer,"123456") == 1  && k==code_length)
+          TM_HD44780_Puts(0,1,"chujowa");
+
 
   }
   /* USER CODE END 3 */
@@ -265,22 +258,34 @@ static void MX_GPIO_Init(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 Keypad4x4_ReadKeypad(&sw,&keyPad_struct);
 }
-/*char Get_Key_To_Buffer(void){
-    u_int8_t i;
-    char output;
+
+void update_buffer_by_keypad(void){
+    u_int8_t i=0;
+
     for(i=0; i<16; i++){
-        if(sw[i] && sw_flag[i] == 0 ){
-            sw_flag[i]=1;
-            output=Keypad4x4_GetChar(i);
-         //   TM_HD44780_Clear(); ?
-        }
-        else if (sw[i] == 0){
-            sw_flag[i]=0;
-            output=0;
-        }
-    }
-    return output;
-}*/
+             if(sw[i] && sw_flag[i] == 0 ){
+                 sw_flag[i]=1;
+                 buffer[k]=Keypad4x4_GetChar(i);
+                 k++;
+             }
+             else if (sw[i] == 0){
+                 sw_flag[i]=0;
+             }
+         }
+
+           HAL_Delay(200);
+           if(k>code_lenght){
+               temp_buff0=buffer[code_lenght];
+              // memset(buffer,0,sizeof(buffer));
+
+
+             //  TM_HD44780_Clear();
+               strcpy(buffer,"       ");
+               buffer[0]=temp_buff0;
+               k=1;
+           }
+
+}
 /* USER CODE END 4 */
 
 /**
