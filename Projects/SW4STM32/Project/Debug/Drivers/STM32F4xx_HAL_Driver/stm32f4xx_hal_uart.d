@@ -1,5 +1,5 @@
-Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash.o: \
- C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c \
+Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_uart.o: \
+ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Inc/stm32f4xx_hal_conf.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Inc/main.h \

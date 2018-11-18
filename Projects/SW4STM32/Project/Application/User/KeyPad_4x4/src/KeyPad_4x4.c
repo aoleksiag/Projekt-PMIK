@@ -35,15 +35,15 @@ static char *Keypad_keys[16] =
 };
 
 void KeyPad_4x4_Init(Keypad_WiresTypeDef *keyPad_struct){
-	  keyPad_struct->IN0_Port= GPIOC;
-	  keyPad_struct->IN1_Port= GPIOC;
-	  keyPad_struct->IN2_Port= GPIOC;
-	  keyPad_struct->IN3_Port= GPIOC;
+	  keyPad_struct->IN0_Port= PI0_GPIO_Port;
+	  keyPad_struct->IN1_Port= PI1_GPIO_Port;
+	  keyPad_struct->IN2_Port= PI2_GPIO_Port;
+	  keyPad_struct->IN3_Port= PI3_GPIO_Port;
 
-	  keyPad_struct->OUT0_Port= GPIOC;
-	  keyPad_struct->OUT1_Port= GPIOC;
-	  keyPad_struct->OUT2_Port= GPIOC;
-	  keyPad_struct->OUT3_Port= GPIOC;
+	  keyPad_struct->OUT0_Port= PO0_GPIO_Port;
+	  keyPad_struct->OUT1_Port= PO1_GPIO_Port;
+	  keyPad_struct->OUT2_Port= PO2_GPIO_Port;
+	  keyPad_struct->OUT3_Port= PO3_GPIO_Port;
 
 	  keyPad_struct->IN0pin = PI0_Pin;
 	  keyPad_struct->IN1pin = PI1_Pin;

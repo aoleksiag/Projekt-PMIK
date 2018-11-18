@@ -26,7 +26,8 @@ Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.o: \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
- C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 
@@ -81,3 +82,5 @@ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
+
+C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:

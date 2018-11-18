@@ -46,22 +46,22 @@
 
 /* Private define ------------------------------------------------------------*/
 
-#define PI0_Pin GPIO_PIN_0
-#define PI0_GPIO_Port GPIOC
-#define PI1_Pin GPIO_PIN_1
-#define PI1_GPIO_Port GPIOC
-#define PI2_Pin GPIO_PIN_2
-#define PI2_GPIO_Port GPIOC
-#define PI3_Pin GPIO_PIN_3
-#define PI3_GPIO_Port GPIOC
-#define PO0_Pin GPIO_PIN_5
-#define PO0_GPIO_Port GPIOC
-#define PO1_Pin GPIO_PIN_6
-#define PO1_GPIO_Port GPIOC
-#define PO2_Pin GPIO_PIN_8
-#define PO2_GPIO_Port GPIOC
-#define PO3_Pin GPIO_PIN_9
+#define PO3_Pin GPIO_PIN_4
 #define PO3_GPIO_Port GPIOC
+#define PI1_Pin GPIO_PIN_10
+#define PI1_GPIO_Port GPIOB
+#define PO2_Pin GPIO_PIN_13
+#define PO2_GPIO_Port GPIOB
+#define PI0_Pin GPIO_PIN_8
+#define PI0_GPIO_Port GPIOA
+#define PO1_Pin GPIO_PIN_10
+#define PO1_GPIO_Port GPIOA
+#define PO0_Pin GPIO_PIN_3
+#define PO0_GPIO_Port GPIOB
+#define PI2_Pin GPIO_PIN_4
+#define PI2_GPIO_Port GPIOB
+#define PI3_Pin GPIO_PIN_5
+#define PI3_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
