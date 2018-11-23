@@ -26,6 +26,8 @@ Application/User/main.o: \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+ C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+ C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/SW4STM32/lcd_test_f4/Application/User/tm_stm32_delay.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/SW4STM32/lcd_test_f4/Application/User/defines.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/SW4STM32/lcd_test_f4/Application/User/tm_stm32_hd44780.h \
@@ -83,6 +85,10 @@ C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4x
 C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
+
+C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
+
+C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/SW4STM32/lcd_test_f4/Application/User/tm_stm32_delay.h:
 

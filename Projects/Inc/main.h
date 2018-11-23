@@ -46,6 +46,8 @@
 
 /* Private define ------------------------------------------------------------*/
 
+#define LED_Pin GPIO_PIN_5
+#define LED_GPIO_Port GPIOA
 #define PO3_Pin GPIO_PIN_4
 #define PO3_GPIO_Port GPIOC
 #define PI1_Pin GPIO_PIN_10

@@ -45,35 +45,51 @@
 #include "tm_stm32_hd44780.h"
 #include <string.h>
 #include "KeyPad_4x4.h"
+#include "circular_buffer.h"
+#include "define.h"
+#include"timeout.h"
+#include"uart.h"
 
-#define code_lenght 6
-#define buffer_length 6
+
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
 TIM_HandleTypeDef htim6;
+TIM_HandleTypeDef htim11;
 
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
+
+
 Keypad_WiresTypeDef keyPad_struct;
-bool sw[16];
-bool sw_flag[16];
+
+
+volatile char uart_rxBuff[UART_RX_BUF_SIZE];
+volatile circ_buffer_t uart_rx_circBuff = { uart_rxBuff, 0, 0 };
+
+volatile u_int8_t buffer_count=0;
+
+volatile bool sw[16];
+volatile bool sw_flag[16];
+
 u_int8_t k=0;
-u_int8_t code_length=6;
-u_int8_t buffer_count=0;
-u_int8_t uart_buffer_count=0;
+
 char buffer[code_lenght];
+char buffer_do_lcd[code_lenght];
 char buffer2[16];
+
 char code[code_lenght];
-char uart_buffer_r[6];
-char temp_buff0;
-char Key_char;
+
+volatile char Data_recived_temp;
+volatile char Key_char;
+
 bool flag_char;
-bool check_code;
+bool timeout_char_flag;
 bool uart_data_flag;
-char Data_recived_temp;
+bool number_char;
+
 
 /* USER CODE END PV */
 
@@ -82,12 +98,12 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM6_Init(void);
 static void MX_USART1_UART_Init(void);
+static void MX_TIM11_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
-void bufor_update(void);
-void check_buffer(char *buffer);
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
+
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
@@ -121,14 +137,15 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM6_Init();
   MX_USART1_UART_Init();
+  MX_TIM11_Init();
 
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start_IT(&htim6);
   KeyPad_4x4_Init(&keyPad_struct);
   TM_HD44780_Init(16, 2);
+  HAL_TIM_Base_Start_IT(&htim6);
+
   strcpy(code,"123456");
   HAL_UART_Receive_IT(&huart1, &Data_recived_temp, 1); // Ponowne w³¹czenie nas³uchiwania
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -139,24 +156,69 @@ int main(void)
 
   /* USER CODE BEGIN 3 */
 
-
-      if(flag_char){
-          flag_char=0;
-          bufor_update();
-      }
       if(uart_data_flag){
           uart_data_flag=false;
-          check_buffer(&uart_buffer_r);
+            for (u_int8_t i=0; i<buffer_length+1; i++){
+                 circ_buffer_get_char(&uart_rx_circBuff, &buffer[i]);
+            }
+            if(buffer_check(&buffer)){
+                uart_send_string(&huart1,"apropirate_code\r\n");
+
+            }
+            else{
+                uart_send_string(&huart1,"bad_code\r\n");
+
+            }
       }
-      if(check_code){
-          check_code=false;
-          check_buffer(&buffer);
+      if(flag_char){
+          flag_char=0;
+          timeout_char_flag=true;
+          if(buffer_count==0){
+              timeout_start(&htim11);
+          }
+          timeout_reset(&htim11);
+          if(buffer_count < buffer_length){
+              if(number_char){
+                  buffer_update(&buffer,&buffer_count,Key_char);
+                  buffer_update(&buffer_do_lcd,&buffer_count,'X');
+                  buffer_count++
+                  ;
+              }
+          }
+          else if(buffer_count==6){
+              timeout_stop(&htim11);
+          }
+          else{
+              if(Key_char=='#'){
+                  buffer_count=0;
+                  if(buffer_check(&buffer)){
+                      timeout_start(&htim11);
+                      strcpy(buffer2,"fajnie   ");
+                      buffer_clear(&buffer,buffer_length);
+                      buffer_clear(&buffer_do_lcd,buffer_length);
+                  }
+                  else{
+                      timeout_start(&htim11);
+                      strcpy(buffer2,"niefajnie");
+                      buffer_clear(&buffer,buffer_length);
+                      buffer_clear(&buffer_do_lcd,buffer_length);
+                  }
+              }
+          }
+             if (Key_char=='C'){
+                 buffer_clear(&buffer,buffer_length);
+                 buffer_clear(&buffer_do_lcd,buffer_length);
+                 buffer_count=0;
+             }
+
       }
-      else{
-  //        strcpy(buffer2,"      ");
-      }
-      TM_HD44780_Puts(0,0,buffer);
       TM_HD44780_Puts(0,1,buffer2);
+
+#ifdef TEST
+      strcpy(buffer_do_lcd,buffer);
+
+#endif
+      TM_HD44780_Puts(0,0,buffer_do_lcd);
 
   }
 
@@ -230,7 +292,7 @@ static void MX_TIM6_Init(void)
   htim6.Instance = TIM6;
   htim6.Init.Prescaler = 83;
   htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim6.Init.Period = 9999;
+  htim6.Init.Period = 999;
   if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
@@ -239,6 +301,22 @@ static void MX_TIM6_Init(void)
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim6, &sMasterConfig) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+}
+
+/* TIM11 init function */
+static void MX_TIM11_Init(void)
+{
+
+  htim11.Instance = TIM11;
+  htim11.Init.Prescaler = 8400-1;
+  htim11.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim11.Init.Period = 10000-1;
+  htim11.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  if (HAL_TIM_Base_Init(&htim11) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
   }
@@ -277,9 +355,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct;
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, LED_Pin|PO1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(PO3_GPIO_Port, PO3_Pin, GPIO_PIN_RESET);
@@ -287,8 +368,12 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, PO2_Pin|PO0_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(PO1_GPIO_Port, PO1_Pin, GPIO_PIN_RESET);
+  /*Configure GPIO pins : LED_Pin PO1_Pin */
+  GPIO_InitStruct.Pin = LED_Pin|PO1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PO3_Pin */
   GPIO_InitStruct.Pin = PO3_Pin;
@@ -316,17 +401,16 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(PI0_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PO1_Pin */
-  GPIO_InitStruct.Pin = PO1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(PO1_GPIO_Port, &GPIO_InitStruct);
-
 }
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+
+
+
+
+
+
     if(htim->Instance == TIM6){
     u_int8_t i=0;
 
@@ -343,62 +427,48 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
             sw_flag[i]=0;
         }
     }
-
-    }
-}
-
-
-void bufor_update(void){
-    char temp_buff0;
-    if(buffer_count < buffer_length){
-        strcpy(buffer2,"                ");
-        if(Key_char == '1' || Key_char =='2' || Key_char =='3'||Key_char =='4' || Key_char =='5' || Key_char =='6'||Key_char =='7' || Key_char =='8' || Key_char =='9'){
-        buffer[buffer_count] = Key_char;
-        buffer_count++;
-        }
-        else if (Key_char == 'C'){
-            buffer_count=0;
-            strcpy(buffer,"      ");
-        }
+    if(Key_char == '1' || Key_char =='2' || Key_char =='3'||Key_char =='4' || Key_char =='5' || Key_char =='6'||Key_char =='7' || Key_char =='8' || Key_char =='9'){
+        number_char=true;
     }
     else{
-        if(Key_char == '#'){
-            check_code=true;
+        number_char=false;
+    }
+    }
+    if(htim->Instance == TIM11){
+        if(timeout_char_flag){
+             timeout_char_flag=false;
+             buffer_clear(&buffer,6);
+             buffer_clear(&buffer2,16);
+             buffer_count=0;
+
         }
-        else if (Key_char == 'C'){
-            buffer_count=0;
-            strcpy(buffer,"      ");
+        else{
+            HAL_GPIO_TogglePin(LED_GPIO_Port,LED_Pin);
+            HAL_TIM_Base_Stop_IT(&htim11);
+            circ_buffer_clear(&uart_rx_circBuff);
+            uart_send_string(&huart1,"Timeout try again\r\n");
         }
 
-    }
-}
-void check_buffer(char *buffer){
-    if(strcmp(buffer,code) == 0){
-        strcpy(buffer2,"fajnie");
-        strcpy(buffer,"      ");
-        buffer_count=0;
-    }
-    else{
-        strcpy(buffer2,"nie_fajnie");
-        strcpy(buffer,"      ");
-        buffer_count=0;
-    }
 
+    }
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-
-
- uart_buffer_r[uart_buffer_count]=Data_recived_temp;
- uart_buffer_count++;
- if(uart_buffer_count>=code_length){
-     uart_buffer_count=0;
-     uart_data_flag=true;
- }
- HAL_UART_Receive_IT(&huart1, &Data_recived_temp, 1);
-
-
+    bool error_return;
+    if(uart_rx_circBuff.head==uart_rx_circBuff.tail){
+        timeout_start(&htim11);
+    }
+    error_return=circ_buffer_put_char(&uart_rx_circBuff, Data_recived_temp);
+    if(error_return == 1){
+        uart_data_flag=true;
+        timeout_stop(&htim11);
+    }
+    else{
+        timeout_reset(&htim11);
+    }
+    HAL_UART_Receive_IT(&huart1, &Data_recived_temp, 1);
 }
+
 /* USER CODE END 4 */
 
 /**

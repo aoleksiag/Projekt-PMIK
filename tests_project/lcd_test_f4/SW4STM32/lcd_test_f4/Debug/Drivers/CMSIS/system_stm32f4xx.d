@@ -24,7 +24,9 @@ Drivers/CMSIS/system_stm32f4xx.o: \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
- C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
+ C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+ C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+ C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 
@@ -75,3 +77,7 @@ C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4x
 C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
+
+C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
+
+C:/Users/Adrian/Desktop/Projekt\ PMIK/tests_project/lcd_test_f4/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:

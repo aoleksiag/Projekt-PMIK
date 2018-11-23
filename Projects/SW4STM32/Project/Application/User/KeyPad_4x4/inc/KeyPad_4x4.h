@@ -1,16 +1,7 @@
-/*
-Library:						4x4 Keypad drive for STM32 MCUs
-Written by:					Mohamed Yaqoob
-Date written:				03/04/2018
-Description:				The MY_Keypad4x4 library consists of the following public functions
-										Function(1)- Keypad4x4_Init
-										Function(2)- Keypad4x4_ReadKeypad
-										Function(3)- Keypad4x4_GetChar
-*/
 
-//Header files
 #include "stm32f4xx_hal.h"
 #include <stdbool.h>
+#include "define.h"
 
 //***** Constant variables and typedefs *****//
 typedef struct

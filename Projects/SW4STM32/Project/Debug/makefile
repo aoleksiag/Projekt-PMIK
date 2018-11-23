@@ -10,8 +10,11 @@ RM := rm -rf
 -include sources.mk
 -include Drivers/STM32F4xx_HAL_Driver/subdir.mk
 -include Drivers/CMSIS/subdir.mk
+-include Application/User/UART/src/subdir.mk
+-include Application/User/Timeout/src/subdir.mk
 -include Application/User/Lcd_driver/src/subdir.mk
 -include Application/User/KeyPad_4x4/src/subdir.mk
+-include Application/User/Circular_buffer/src/subdir.mk
 -include Application/User/subdir.mk
 -include Application/SW4STM32/subdir.mk
 -include subdir.mk

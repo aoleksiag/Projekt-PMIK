@@ -37,8 +37,8 @@
 #define HD44780_E_PORT      GPIOA
 #define HD44780_E_PIN       GPIO_PIN_7
 //D4 - Data 4 pin
-#define HD44780_D4_PORT     GPIOA
-#define HD44780_D4_PIN      GPIO_PIN_5
+#define HD44780_D4_PORT     GPIOB
+#define HD44780_D4_PIN      GPIO_PIN_6
 //D5 - Data 5 pin
 #define HD44780_D5_PORT     GPIOA
 #define HD44780_D5_PIN      GPIO_PIN_6
