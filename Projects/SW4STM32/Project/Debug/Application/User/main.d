@@ -26,6 +26,8 @@ Application/User/main.o: \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h \
+ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
@@ -38,7 +40,8 @@ Application/User/main.o: \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/define.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/Circular_buffer/inc/circular_buffer.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/Timeout/inc/timeout.h \
- C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/UART/inc/uart.h
+ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/UART/inc/uart.h \
+ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/Rtc/inc/rtc.h
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Inc/main.h:
 
@@ -92,6 +95,10 @@ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
 
+C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h:
+
+C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h:
+
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
@@ -117,3 +124,5 @@ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/Timeout/inc/timeout.h:
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/UART/inc/uart.h:
+
+C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/Rtc/inc/rtc.h:

@@ -49,11 +49,13 @@
 #include "define.h"
 #include"timeout.h"
 #include"uart.h"
-
+#include "rtc.h"
 
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
+RTC_HandleTypeDef hrtc;
+
 TIM_HandleTypeDef htim6;
 TIM_HandleTypeDef htim11;
 
@@ -62,12 +64,14 @@ UART_HandleTypeDef huart1;
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 
-
 Keypad_WiresTypeDef keyPad_struct;
 
 
 volatile char uart_rxBuff[UART_RX_BUF_SIZE];
 volatile circ_buffer_t uart_rx_circBuff = { uart_rxBuff, 0, 0 };
+
+
+
 
 volatile u_int8_t buffer_count=0;
 
@@ -90,7 +94,6 @@ bool timeout_char_flag;
 bool uart_data_flag;
 bool number_char;
 
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -99,6 +102,7 @@ static void MX_GPIO_Init(void);
 static void MX_TIM6_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_TIM11_Init(void);
+static void MX_RTC_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
@@ -114,7 +118,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+    u_int8_t i=0;
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -138,6 +142,7 @@ int main(void)
   MX_TIM6_Init();
   MX_USART1_UART_Init();
   MX_TIM11_Init();
+  MX_RTC_Init();
 
   /* USER CODE BEGIN 2 */
   KeyPad_4x4_Init(&keyPad_struct);
@@ -146,6 +151,19 @@ int main(void)
 
   strcpy(code,"123456");
   HAL_UART_Receive_IT(&huart1, &Data_recived_temp, 1); // Ponowne w³¹czenie nas³uchiwania
+  //1) Set time
+  sTime.Hours = 23;
+  sTime.Minutes = 59;
+  sTime.Seconds = 45;
+  HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+  //2) Set date
+  sDate.Date = 31;
+  sDate.Month = RTC_MONTH_DECEMBER;
+  sDate.WeekDay = RTC_WEEKDAY_SUNDAY;
+  sDate.Year = 17;
+  HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -158,7 +176,7 @@ int main(void)
 
       if(uart_data_flag){
           uart_data_flag=false;
-            for (u_int8_t i=0; i<buffer_length+1; i++){
+            for ( i=0; i<buffer_length+1; i++){
                  circ_buffer_get_char(&uart_rx_circBuff, &buffer[i]);
             }
             if(buffer_check(&buffer)){
@@ -209,16 +227,22 @@ int main(void)
                  buffer_clear(&buffer,buffer_length);
                  buffer_clear(&buffer_do_lcd,buffer_length);
                  buffer_count=0;
+                 save_time();
              }
 
       }
+
       TM_HD44780_Puts(0,1,buffer2);
 
 #ifdef TEST
       strcpy(buffer_do_lcd,buffer);
 
 #endif
+
+
       TM_HD44780_Puts(0,0,buffer_do_lcd);
+
+
 
   }
 
@@ -233,6 +257,7 @@ void SystemClock_Config(void)
 
   RCC_OscInitTypeDef RCC_OscInitStruct;
   RCC_ClkInitTypeDef RCC_ClkInitStruct;
+  RCC_PeriphCLKInitTypeDef PeriphClkInitStruct;
 
     /**Configure the main internal regulator output voltage 
     */
@@ -242,9 +267,10 @@ void SystemClock_Config(void)
 
     /**Initializes the CPU, AHB and APB busses clocks 
     */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = 16;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PLLM = 16;
@@ -271,6 +297,13 @@ void SystemClock_Config(void)
     _Error_Handler(__FILE__, __LINE__);
   }
 
+  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_RTC;
+  PeriphClkInitStruct.RTCClockSelection = RCC_RTCCLKSOURCE_LSI;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
     /**Configure the Systick interrupt time 
     */
   HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
@@ -281,6 +314,55 @@ void SystemClock_Config(void)
 
   /* SysTick_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
+}
+
+/* RTC init function */
+static void MX_RTC_Init(void)
+{
+
+  RTC_TimeTypeDef sTime;
+  RTC_DateTypeDef sDate;
+
+    /**Initialize RTC Only 
+    */
+  hrtc.Instance = RTC;
+  hrtc.Init.HourFormat = RTC_HOURFORMAT_24;
+  hrtc.Init.AsynchPrediv = 127;
+  hrtc.Init.SynchPrediv = 255;
+  hrtc.Init.OutPut = RTC_OUTPUT_DISABLE;
+  hrtc.Init.OutPutPolarity = RTC_OUTPUT_POLARITY_HIGH;
+  hrtc.Init.OutPutType = RTC_OUTPUT_TYPE_OPENDRAIN;
+  if (HAL_RTC_Init(&hrtc) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+    /**Initialize RTC and set the Time and Date 
+    */
+  if(HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR0) != 0x32F2){
+  sTime.Hours = 0;
+  sTime.Minutes = 0;
+  sTime.Seconds = 0;
+  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+  sTime.StoreOperation = RTC_STOREOPERATION_RESET;
+  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  sDate.WeekDay = RTC_WEEKDAY_MONDAY;
+  sDate.Month = RTC_MONTH_JANUARY;
+  sDate.Date = 1;
+  sDate.Year = 0;
+
+  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+    HAL_RTCEx_BKUPWrite(&hrtc,RTC_BKP_DR0,0x32F2);
+  }
+
 }
 
 /* TIM6 init function */

@@ -3,29 +3,26 @@
 #include <stdbool.h>
 #include "define.h"
 
-//***** Constant variables and typedefs *****//
 typedef struct
 {
-	GPIO_TypeDef* IN0_Port;
-	GPIO_TypeDef* IN1_Port;
-	GPIO_TypeDef* IN2_Port;
-	GPIO_TypeDef* IN3_Port;
-	GPIO_TypeDef* OUT0_Port;
-	GPIO_TypeDef* OUT1_Port;
-	GPIO_TypeDef* OUT2_Port;
-	GPIO_TypeDef* OUT3_Port;
+    GPIO_TypeDef* IN0_Port;
+    GPIO_TypeDef* IN1_Port;
+    GPIO_TypeDef* IN2_Port;
+    GPIO_TypeDef* IN3_Port;
+    GPIO_TypeDef* OUT0_Port;
+    GPIO_TypeDef* OUT1_Port;
+    GPIO_TypeDef* OUT2_Port;
+    GPIO_TypeDef* OUT3_Port;
 
-	uint16_t	IN0pin;
-	uint16_t	IN1pin;
-	uint16_t	IN2pin;
-	uint16_t	IN3pin;
-	uint16_t	OUT0pin;
-	uint16_t	OUT1pin;
-	uint16_t	OUT2pin;
-	uint16_t	OUT3pin;
+    uint16_t    IN0pin;
+    uint16_t    IN1pin;
+    uint16_t    IN2pin;
+    uint16_t    IN3pin;
+    uint16_t    OUT0pin;
+    uint16_t    OUT1pin;
+    uint16_t    OUT2pin;
+    uint16_t    OUT3pin;
 }Keypad_WiresTypeDef;
-
-//List of keys as chars
 
 
 

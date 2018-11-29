@@ -19,6 +19,7 @@ Application/SW4STM32 \
 Application/User/Circular_buffer/src \
 Application/User/KeyPad_4x4/src \
 Application/User/Lcd_driver/src \
+Application/User/Rtc/src \
 Application/User/Timeout/src \
 Application/User/UART/src \
 Application/User \

@@ -12,6 +12,7 @@ RM := rm -rf
 -include Drivers/CMSIS/subdir.mk
 -include Application/User/UART/src/subdir.mk
 -include Application/User/Timeout/src/subdir.mk
+-include Application/User/Rtc/src/subdir.mk
 -include Application/User/Lcd_driver/src/subdir.mk
 -include Application/User/KeyPad_4x4/src/subdir.mk
 -include Application/User/Circular_buffer/src/subdir.mk
