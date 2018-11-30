@@ -35,5 +35,10 @@ bool uart_data_flag;
 bool number_char;
 bool uart_empty_flag;
 bool uart_send_log;
+bool uart_new_line_flag;
+bool uart_send_log_flag;
+char uart_log_str[LOG_BUFF_SIZE];
+
+volatile u_int8_t uart_string_tosend_count;
 
 

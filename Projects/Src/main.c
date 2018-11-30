@@ -56,6 +56,7 @@
 RTC_HandleTypeDef hrtc;
 
 TIM_HandleTypeDef htim6;
+TIM_HandleTypeDef htim9;
 TIM_HandleTypeDef htim11;
 
 UART_HandleTypeDef huart1;
@@ -70,7 +71,7 @@ Keypad_WiresTypeDef keyPad_struct;
 volatile char uart_rxBuff[UART_RX_BUF_SIZE];
 volatile circ_buffer_t uart_rx_circBuff = { uart_rxBuff, 0, 0 };
 
-volatile circ_buffer_2d log_circ_buff = { "      ", 0, 0 };
+volatile circ_buffer_2d log_circ_buff = { "      ", 0, 0};
 
 
 
@@ -86,6 +87,7 @@ static void MX_TIM6_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_TIM11_Init(void);
 static void MX_RTC_Init(void);
+static void MX_TIM9_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
@@ -101,8 +103,8 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-char uart_log_str[LOG_BUFF_SIZE];
-char *ptr = uart_log_str;
+
+
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -127,16 +129,19 @@ char *ptr = uart_log_str;
   MX_USART1_UART_Init();
   MX_TIM11_Init();
   MX_RTC_Init();
+  MX_TIM9_Init();
 
   /* USER CODE BEGIN 2 */
   KeyPad_4x4_Init(&keyPad_struct);
   TM_HD44780_Init(16, 2);
   HAL_TIM_Base_Start_IT(&htim6);
-
+  HAL_TIM_Base_Start_IT(&htim9);
   strcpy(code,"123456");
   HAL_UART_Receive_IT(&huart1, &Data_recived_temp, 1); // Ponowne w³¹czenie nas³uchiwania
   buffer_count=0;
   uart_empty_flag=true;
+  uart_string_tosend_count=0;
+  uart_send_log_flag=false;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -150,26 +155,23 @@ char *ptr = uart_log_str;
       if(uart_data_flag){
           uart_data_flag=false;
           if(uart_send_log == true){
-           //   uart_string_tosend_count=LOG_BUFF_LENGTH;
+              uart_send_log_flag=true;
+              uart_send_log=false;
+          } else
+          {
               for (u_int8_t i=0; i<buffer_length+1; i++){
-                               circ_buffer_get_string(&log_circ_buff,uart_log_str);
-                               uart_send_string(&huart1,uart_log_str);
-                               uart_send_string(&huart1,"\r\n");
-                          }
+                  circ_buffer_get_char(&uart_rx_circBuff, &buffer[i]);
+              }
+              uart_empty_flag=true;
+              if(buffer_check(&buffer)){
+                  uart_send_string(&huart1,"apropirate_code\r\n");
+
+              }
+              else{
+                  uart_send_string(&huart1,"bad_code\r\n");
+
+              }
           }
-          uart_send_log=false;
-            for (u_int8_t i=0; i<buffer_length+1; i++){
-                 circ_buffer_get_char(&uart_rx_circBuff, &buffer[i]);
-            }
-            uart_empty_flag=true;
-            if(buffer_check(&buffer)){
-                uart_send_string(&huart1,"apropirate_code\r\n");
-
-            }
-            else{
-                uart_send_string(&huart1,"bad_code\r\n");
-
-            }
       }
       if(flag_char){
           flag_char=0;
@@ -211,6 +213,8 @@ char *ptr = uart_log_str;
                  buffer_clear(&buffer_do_lcd,buffer_length);
                  buffer_count=0;
                  save_time(&log_circ_buff);
+                 uart_string_tosend_count++;
+
              }
 
       }
@@ -367,6 +371,30 @@ static void MX_TIM6_Init(void)
 
 }
 
+/* TIM9 init function */
+static void MX_TIM9_Init(void)
+{
+
+  TIM_ClockConfigTypeDef sClockSourceConfig;
+
+  htim9.Instance = TIM9;
+  htim9.Init.Prescaler = 84-1;
+  htim9.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim9.Init.Period = 30000-1;
+  htim9.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  if (HAL_TIM_Base_Init(&htim9) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim9, &sClockSourceConfig) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+}
+
 /* TIM11 init function */
 static void MX_TIM11_Init(void)
 {
@@ -465,34 +493,28 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-
-
-
-
-
-
     if(htim->Instance == TIM6){
-    u_int8_t i=0;
+        u_int8_t i=0;
 
-    Keypad4x4_ReadKeypad(&sw,&keyPad_struct);
+        Keypad4x4_ReadKeypad(&sw,&keyPad_struct);
 
-    for(i=0; i<16; i++){
-        if(sw[i] && sw_flag[i] == 0 ){
-            sw_flag[i]=1;
-            Key_char=Keypad4x4_GetChar(i);
-            k++;
-            flag_char=1;
+        for(i=0; i<16; i++){
+            if(sw[i] && sw_flag[i] == 0 ){
+                sw_flag[i]=1;
+                Key_char=Keypad4x4_GetChar(i);
+                k++;
+                flag_char=1;
+            }
+            else if (sw[i] == 0){
+                sw_flag[i]=0;
+            }
         }
-        else if (sw[i] == 0){
-            sw_flag[i]=0;
+        if(Key_char == '1' || Key_char =='2' || Key_char =='3'||Key_char =='4' || Key_char =='5' || Key_char =='6'||Key_char =='7' || Key_char =='8' || Key_char =='9'){
+            number_char=true;
         }
-    }
-    if(Key_char == '1' || Key_char =='2' || Key_char =='3'||Key_char =='4' || Key_char =='5' || Key_char =='6'||Key_char =='7' || Key_char =='8' || Key_char =='9'){
-        number_char=true;
-    }
-    else{
-        number_char=false;
-    }
+        else{
+            number_char=false;
+        }
     }
     if(htim->Instance == TIM11){
         if(timeout_char_flag){
@@ -502,8 +524,23 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
         else{
             timeout_uart(&htim11,&huart1,&uart_rx_circBuff);
         }
-
-
+    }
+    if(htim->Instance == TIM9){
+        if(uart_send_log_flag == true){
+            if (uart_new_line_flag==1) {
+                uart_send_string(&huart1,"\n\r");
+                uart_new_line_flag=false;
+            }
+            else{
+                uart_new_line_flag=true;
+                if(circ_buffer_get_string(&log_circ_buff,uart_log_str)){
+                    uart_send_log_flag=false;
+                    //uart_new_line_flag=false;
+                }else{
+                uart_send_string(&huart1,uart_log_str);
+                }
+            }
+        }
     }
 }
 

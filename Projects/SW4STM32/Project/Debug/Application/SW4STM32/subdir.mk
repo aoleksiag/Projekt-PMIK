@@ -4,14 +4,14 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 S_SRCS += \
-C:/Users/Adrian/Desktop/Projekt-PMIK-master/Projects/SW4STM32/startup_stm32f410rx.s 
+C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/startup_stm32f410rx.s 
 
 OBJS += \
 ./Application/SW4STM32/startup_stm32f410rx.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-Application/SW4STM32/startup_stm32f410rx.o: C:/Users/Adrian/Desktop/Projekt-PMIK-master/Projects/SW4STM32/startup_stm32f410rx.s
+Application/SW4STM32/startup_stm32f410rx.o: C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/startup_stm32f410rx.s
 	@echo 'Building file: $<'
 	@echo 'Invoking: MCU GCC Assembler'
 	@echo $(PWD)
