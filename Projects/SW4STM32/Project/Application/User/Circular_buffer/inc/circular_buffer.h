@@ -6,17 +6,20 @@
  */
 #include "define.h"
 #include "stm32f4xx_hal.h"
-#include <stdbool.h>
+#include "struct.h"
 
-typedef struct {
-    volatile char * const buffer;
-    u_int8_t head;
-    u_int8_t tail;
-} circ_buffer_t;
+
+
+
+
 
 bool circ_buffer_get_char(circ_buffer_t *q, char *data);
 
+bool circ_buffer_get_string(circ_buffer_2d *q, char *data);
+
 bool circ_buffer_put_char(circ_buffer_t *q, char data);
+
+bool circ_buffer_put_string(circ_buffer_2d *q, char *data);
 
 void circ_buffer_clear(circ_buffer_t *q);
 

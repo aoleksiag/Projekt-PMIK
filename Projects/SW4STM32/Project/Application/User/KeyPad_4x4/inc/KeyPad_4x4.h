@@ -1,8 +1,7 @@
 
 #include "stm32f4xx_hal.h"
-#include <stdbool.h>
 #include "define.h"
-
+//***** Constant variables and typedefs *****//
 typedef struct
 {
     GPIO_TypeDef* IN0_Port;
@@ -23,6 +22,8 @@ typedef struct
     uint16_t    OUT2pin;
     uint16_t    OUT3pin;
 }Keypad_WiresTypeDef;
+
+
 
 
 

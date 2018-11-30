@@ -40,16 +40,15 @@
 #include "stm32f4xx_hal.h"
 
 /* USER CODE BEGIN Includes */
-
+//#include "define.h"
 #include "tm_stm32_delay.h"
 #include "tm_stm32_hd44780.h"
 #include <string.h>
 #include "KeyPad_4x4.h"
 #include "circular_buffer.h"
-#include "define.h"
 #include"timeout.h"
 #include"uart.h"
-#include "rtc.h"
+
 
 /* USER CODE END Includes */
 
@@ -64,35 +63,19 @@ UART_HandleTypeDef huart1;
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 
+
 Keypad_WiresTypeDef keyPad_struct;
 
 
 volatile char uart_rxBuff[UART_RX_BUF_SIZE];
 volatile circ_buffer_t uart_rx_circBuff = { uart_rxBuff, 0, 0 };
 
+volatile circ_buffer_2d log_circ_buff = { "      ", 0, 0 };
 
 
-
-volatile u_int8_t buffer_count=0;
-
-volatile bool sw[16];
-volatile bool sw_flag[16];
 
 u_int8_t k=0;
 
-char buffer[code_lenght];
-char buffer_do_lcd[code_lenght];
-char buffer2[16];
-
-char code[code_lenght];
-
-volatile char Data_recived_temp;
-volatile char Key_char;
-
-bool flag_char;
-bool timeout_char_flag;
-bool uart_data_flag;
-bool number_char;
 
 /* USER CODE END PV */
 
@@ -118,7 +101,8 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-    u_int8_t i=0;
+char uart_log_str[LOG_BUFF_SIZE];
+char *ptr = uart_log_str;
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -151,19 +135,8 @@ int main(void)
 
   strcpy(code,"123456");
   HAL_UART_Receive_IT(&huart1, &Data_recived_temp, 1); // Ponowne w³¹czenie nas³uchiwania
-  //1) Set time
-  sTime.Hours = 23;
-  sTime.Minutes = 59;
-  sTime.Seconds = 45;
-  HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
-  //2) Set date
-  sDate.Date = 31;
-  sDate.Month = RTC_MONTH_DECEMBER;
-  sDate.WeekDay = RTC_WEEKDAY_SUNDAY;
-  sDate.Year = 17;
-  HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
-
-
+  buffer_count=0;
+  uart_empty_flag=true;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -176,9 +149,19 @@ int main(void)
 
       if(uart_data_flag){
           uart_data_flag=false;
-            for ( i=0; i<buffer_length+1; i++){
+          if(uart_send_log == true){
+           //   uart_string_tosend_count=LOG_BUFF_LENGTH;
+              for (u_int8_t i=0; i<buffer_length+1; i++){
+                               circ_buffer_get_string(&log_circ_buff,uart_log_str);
+                               uart_send_string(&huart1,uart_log_str);
+                               uart_send_string(&huart1,"\r\n");
+                          }
+          }
+          uart_send_log=false;
+            for (u_int8_t i=0; i<buffer_length+1; i++){
                  circ_buffer_get_char(&uart_rx_circBuff, &buffer[i]);
             }
+            uart_empty_flag=true;
             if(buffer_check(&buffer)){
                 uart_send_string(&huart1,"apropirate_code\r\n");
 
@@ -196,15 +179,15 @@ int main(void)
           }
           timeout_reset(&htim11);
           if(buffer_count < buffer_length){
+              if(buffer_count==5){
+                            timeout_stop(&htim11);
+              }
               if(number_char){
                   buffer_update(&buffer,&buffer_count,Key_char);
                   buffer_update(&buffer_do_lcd,&buffer_count,'X');
-                  buffer_count++
-                  ;
-              }
-          }
-          else if(buffer_count==6){
-              timeout_stop(&htim11);
+                  buffer_count++;
+                   }
+
           }
           else{
               if(Key_char=='#'){
@@ -227,23 +210,18 @@ int main(void)
                  buffer_clear(&buffer,buffer_length);
                  buffer_clear(&buffer_do_lcd,buffer_length);
                  buffer_count=0;
-                 save_time();
+                 save_time(&log_circ_buff);
              }
 
       }
-
       TM_HD44780_Puts(0,1,buffer2);
 
 #ifdef TEST
       strcpy(buffer_do_lcd,buffer);
 
 #endif
-
-
       TM_HD44780_Puts(0,0,buffer_do_lcd);
-
-
-
+ //       test(uart_log_str);
   }
 
   /* USER CODE END 3 */
@@ -518,17 +496,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
     }
     if(htim->Instance == TIM11){
         if(timeout_char_flag){
-             timeout_char_flag=false;
-             buffer_clear(&buffer,6);
-             buffer_clear(&buffer2,16);
-             buffer_count=0;
+            timeout_keypad(&htim11);
 
         }
         else{
-            HAL_GPIO_TogglePin(LED_GPIO_Port,LED_Pin);
-            HAL_TIM_Base_Stop_IT(&htim11);
-            circ_buffer_clear(&uart_rx_circBuff);
-            uart_send_string(&huart1,"Timeout try again\r\n");
+            timeout_uart(&htim11,&huart1,&uart_rx_circBuff);
         }
 
 
@@ -537,6 +509,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
     bool error_return;
+
+
     if(uart_rx_circBuff.head==uart_rx_circBuff.tail){
         timeout_start(&htim11);
     }
@@ -548,8 +522,20 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
     else{
         timeout_reset(&htim11);
     }
+
+    if(Data_recived_temp =='$'){
+        if(uart_empty_flag == true){
+            uart_data_flag=true;
+            uart_send_log=true;
+            timeout_stop(&htim11);
+            circ_buffer_clear(&uart_rx_circBuff);
+        }
+    }
+
+
     HAL_UART_Receive_IT(&huart1, &Data_recived_temp, 1);
-}
+ }
+
 
 /* USER CODE END 4 */
 
