@@ -1,7 +1,8 @@
+/* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * File Name          : main.c
-  * Description        : Main program body
+  * @file           : main.c
+  * @brief          : Main program body
   ******************************************************************************
   ** This notice applies to any and all portions of this file
   * that are not between comment pairs USER CODE BEGIN and
@@ -35,10 +36,12 @@
   *
   ******************************************************************************
   */
+/* USER CODE END Header */
+
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "stm32f4xx_hal.h"
 
+/* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 //#include "define.h"
 #include "tm_stm32_delay.h"
@@ -46,11 +49,26 @@
 #include <string.h>
 #include "KeyPad_4x4.h"
 #include "circular_buffer.h"
-#include"timeout.h"
-#include"uart.h"
+#include "timeout.h"
+#include "uart.h"
 
 
 /* USER CODE END Includes */
+
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
 RTC_HandleTypeDef hrtc;
@@ -71,11 +89,11 @@ Keypad_WiresTypeDef keyPad_struct;
 volatile char uart_rxBuff[UART_RX_BUF_SIZE];
 volatile circ_buffer_t uart_rx_circBuff = { uart_rxBuff, 0, 0 };
 
-volatile circ_buffer_2d log_circ_buff = { "      ", 0, 0};
+volatile circ_buffer_2d log_circ_buff = { NULL, 0, 0};
 
 
 
-u_int8_t k=0;
+
 
 
 /* USER CODE END PV */
@@ -88,26 +106,31 @@ static void MX_USART1_UART_Init(void);
 static void MX_TIM11_Init(void);
 static void MX_RTC_Init(void);
 static void MX_TIM9_Init(void);
-
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 
 /* USER CODE END PFP */
 
+/* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+void keypad_serv(void);
+void uart_serv(void);
+void Proj_Init(void);
 /* USER CODE END 0 */
 
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
 int main(void)
 {
-
   /* USER CODE BEGIN 1 */
 
 
   /* USER CODE END 1 */
 
-  /* MCU Configuration----------------------------------------------------------*/
+  /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
@@ -130,93 +153,24 @@ int main(void)
   MX_TIM11_Init();
   MX_RTC_Init();
   MX_TIM9_Init();
-
   /* USER CODE BEGIN 2 */
-  KeyPad_4x4_Init(&keyPad_struct);
-  TM_HD44780_Init(16, 2);
-  HAL_TIM_Base_Start_IT(&htim6);
-  HAL_TIM_Base_Start_IT(&htim9);
-  strcpy(code,"123456");
-  HAL_UART_Receive_IT(&huart1, &Data_recived_temp, 1); // Ponowne w³¹czenie nas³uchiwania
-  buffer_count=0;
-  uart_empty_flag=true;
-  uart_string_tosend_count=0;
-  uart_send_log_flag=false;
+  Proj_Init();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-  /* USER CODE END WHILE */
+    /* USER CODE END WHILE */
 
-  /* USER CODE BEGIN 3 */
+    /* USER CODE BEGIN 3 */
 
       if(uart_data_flag){
-          uart_data_flag=false;
-          if(uart_send_log == true){
-              uart_send_log_flag=true;
-              uart_send_log=false;
-          } else
-          {
-              for (u_int8_t i=0; i<buffer_length+1; i++){
-                  circ_buffer_get_char(&uart_rx_circBuff, &buffer[i]);
-              }
-              uart_empty_flag=true;
-              if(buffer_check(&buffer)){
-                  uart_send_string(&huart1,"apropirate_code\r\n");
-
-              }
-              else{
-                  uart_send_string(&huart1,"bad_code\r\n");
-
-              }
-          }
+    	  uart_serv();
       }
       if(flag_char){
-          flag_char=0;
-          timeout_char_flag=true;
-          if(buffer_count==0){
-              timeout_start(&htim11);
-          }
-          timeout_reset(&htim11);
-          if(buffer_count < buffer_length){
-              if(buffer_count==5){
-                            timeout_stop(&htim11);
-              }
-              if(number_char){
-                  buffer_update(&buffer,&buffer_count,Key_char);
-                  buffer_update(&buffer_do_lcd,&buffer_count,'X');
-                  buffer_count++;
-                   }
-
-          }
-          else{
-              if(Key_char=='#'){
-                  buffer_count=0;
-                  if(buffer_check(&buffer)){
-                      timeout_start(&htim11);
-                      strcpy(buffer2,"fajnie   ");
-                      buffer_clear(&buffer,buffer_length);
-                      buffer_clear(&buffer_do_lcd,buffer_length);
-                  }
-                  else{
-                      timeout_start(&htim11);
-                      strcpy(buffer2,"niefajnie");
-                      buffer_clear(&buffer,buffer_length);
-                      buffer_clear(&buffer_do_lcd,buffer_length);
-                  }
-              }
-          }
-             if (Key_char=='C'){
-                 buffer_clear(&buffer,buffer_length);
-                 buffer_clear(&buffer_do_lcd,buffer_length);
-                 buffer_count=0;
-                 save_time(&log_circ_buff);
-                 uart_string_tosend_count++;
-
-             }
-
+          keypad_serv();
       }
       TM_HD44780_Puts(0,1,buffer2);
 
@@ -225,33 +179,30 @@ int main(void)
 
 #endif
       TM_HD44780_Puts(0,0,buffer_do_lcd);
- //       test(uart_log_str);
   }
 
   /* USER CODE END 3 */
-
 }
 
-/** System Clock Configuration
-*/
+/**
+  * @brief System Clock Configuration
+  * @retval None
+  */
 void SystemClock_Config(void)
 {
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
 
-  RCC_OscInitTypeDef RCC_OscInitStruct;
-  RCC_ClkInitTypeDef RCC_ClkInitStruct;
-  RCC_PeriphCLKInitTypeDef PeriphClkInitStruct;
-
-    /**Configure the main internal regulator output voltage 
-    */
+  /**Configure the main internal regulator output voltage 
+  */
   __HAL_RCC_PWR_CLK_ENABLE();
-
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
-
-    /**Initializes the CPU, AHB and APB busses clocks 
-    */
+  /**Initializes the CPU, AHB and APB busses clocks 
+  */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue = 16;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
@@ -262,11 +213,10 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLR = 2;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
-    _Error_Handler(__FILE__, __LINE__);
+    Error_Handler();
   }
-
-    /**Initializes the CPU, AHB and APB busses clocks 
-    */
+  /**Initializes the CPU, AHB and APB busses clocks 
+  */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
@@ -276,37 +226,36 @@ void SystemClock_Config(void)
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
   {
-    _Error_Handler(__FILE__, __LINE__);
+    Error_Handler();
   }
-
   PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_RTC;
   PeriphClkInitStruct.RTCClockSelection = RCC_RTCCLKSOURCE_LSI;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
   {
-    _Error_Handler(__FILE__, __LINE__);
+    Error_Handler();
   }
-
-    /**Configure the Systick interrupt time 
-    */
-  HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
-
-    /**Configure the Systick 
-    */
-  HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
-
-  /* SysTick_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 }
 
-/* RTC init function */
+/**
+  * @brief RTC Initialization Function
+  * @param None
+  * @retval None
+  */
 static void MX_RTC_Init(void)
 {
 
-  RTC_TimeTypeDef sTime;
-  RTC_DateTypeDef sDate;
+  /* USER CODE BEGIN RTC_Init 0 */
 
-    /**Initialize RTC Only 
-    */
+  /* USER CODE END RTC_Init 0 */
+
+  RTC_TimeTypeDef sTime = {0};
+  RTC_DateTypeDef sDate = {0};
+
+  /* USER CODE BEGIN RTC_Init 1 */
+
+  /* USER CODE END RTC_Init 1 */
+  /**Initialize RTC Only 
+  */
   hrtc.Instance = RTC;
   hrtc.Init.HourFormat = RTC_HOURFORMAT_24;
   hrtc.Init.AsynchPrediv = 127;
@@ -316,12 +265,15 @@ static void MX_RTC_Init(void)
   hrtc.Init.OutPutType = RTC_OUTPUT_TYPE_OPENDRAIN;
   if (HAL_RTC_Init(&hrtc) != HAL_OK)
   {
-    _Error_Handler(__FILE__, __LINE__);
+    Error_Handler();
   }
 
-    /**Initialize RTC and set the Time and Date 
-    */
-  if(HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR0) != 0x32F2){
+  /* USER CODE BEGIN Check_RTC_BKUP */
+    
+  /* USER CODE END Check_RTC_BKUP */
+
+  /**Initialize RTC and set the Time and Date 
+  */
   sTime.Hours = 0;
   sTime.Minutes = 0;
   sTime.Seconds = 0;
@@ -329,9 +281,8 @@ static void MX_RTC_Init(void)
   sTime.StoreOperation = RTC_STOREOPERATION_RESET;
   if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN) != HAL_OK)
   {
-    _Error_Handler(__FILE__, __LINE__);
+    Error_Handler();
   }
-
   sDate.WeekDay = RTC_WEEKDAY_MONDAY;
   sDate.Month = RTC_MONTH_JANUARY;
   sDate.Date = 1;
@@ -339,44 +290,68 @@ static void MX_RTC_Init(void)
 
   if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN) != HAL_OK)
   {
-    _Error_Handler(__FILE__, __LINE__);
+    Error_Handler();
   }
+  /* USER CODE BEGIN RTC_Init 2 */
 
-    HAL_RTCEx_BKUPWrite(&hrtc,RTC_BKP_DR0,0x32F2);
-  }
+  /* USER CODE END RTC_Init 2 */
 
 }
 
-/* TIM6 init function */
+/**
+  * @brief TIM6 Initialization Function
+  * @param None
+  * @retval None
+  */
 static void MX_TIM6_Init(void)
 {
 
-  TIM_MasterConfigTypeDef sMasterConfig;
+  /* USER CODE BEGIN TIM6_Init 0 */
 
+  /* USER CODE END TIM6_Init 0 */
+
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM6_Init 1 */
+
+  /* USER CODE END TIM6_Init 1 */
   htim6.Instance = TIM6;
   htim6.Init.Prescaler = 83;
   htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim6.Init.Period = 999;
   if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
   {
-    _Error_Handler(__FILE__, __LINE__);
+    Error_Handler();
   }
-
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim6, &sMasterConfig) != HAL_OK)
   {
-    _Error_Handler(__FILE__, __LINE__);
+    Error_Handler();
   }
+  /* USER CODE BEGIN TIM6_Init 2 */
+
+  /* USER CODE END TIM6_Init 2 */
 
 }
 
-/* TIM9 init function */
+/**
+  * @brief TIM9 Initialization Function
+  * @param None
+  * @retval None
+  */
 static void MX_TIM9_Init(void)
 {
 
-  TIM_ClockConfigTypeDef sClockSourceConfig;
+  /* USER CODE BEGIN TIM9_Init 0 */
 
+  /* USER CODE END TIM9_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+
+  /* USER CODE BEGIN TIM9_Init 1 */
+
+  /* USER CODE END TIM9_Init 1 */
   htim9.Instance = TIM9;
   htim9.Init.Prescaler = 84-1;
   htim9.Init.CounterMode = TIM_COUNTERMODE_UP;
@@ -384,21 +359,34 @@ static void MX_TIM9_Init(void)
   htim9.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   if (HAL_TIM_Base_Init(&htim9) != HAL_OK)
   {
-    _Error_Handler(__FILE__, __LINE__);
+    Error_Handler();
   }
-
   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
   if (HAL_TIM_ConfigClockSource(&htim9, &sClockSourceConfig) != HAL_OK)
   {
-    _Error_Handler(__FILE__, __LINE__);
+    Error_Handler();
   }
+  /* USER CODE BEGIN TIM9_Init 2 */
+
+  /* USER CODE END TIM9_Init 2 */
 
 }
 
-/* TIM11 init function */
+/**
+  * @brief TIM11 Initialization Function
+  * @param None
+  * @retval None
+  */
 static void MX_TIM11_Init(void)
 {
 
+  /* USER CODE BEGIN TIM11_Init 0 */
+
+  /* USER CODE END TIM11_Init 0 */
+
+  /* USER CODE BEGIN TIM11_Init 1 */
+
+  /* USER CODE END TIM11_Init 1 */
   htim11.Instance = TIM11;
   htim11.Init.Prescaler = 8400-1;
   htim11.Init.CounterMode = TIM_COUNTERMODE_UP;
@@ -406,15 +394,29 @@ static void MX_TIM11_Init(void)
   htim11.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   if (HAL_TIM_Base_Init(&htim11) != HAL_OK)
   {
-    _Error_Handler(__FILE__, __LINE__);
+    Error_Handler();
   }
+  /* USER CODE BEGIN TIM11_Init 2 */
+
+  /* USER CODE END TIM11_Init 2 */
 
 }
 
-/* USART1 init function */
+/**
+  * @brief USART1 Initialization Function
+  * @param None
+  * @retval None
+  */
 static void MX_USART1_UART_Init(void)
 {
 
+  /* USER CODE BEGIN USART1_Init 0 */
+
+  /* USER CODE END USART1_Init 0 */
+
+  /* USER CODE BEGIN USART1_Init 1 */
+
+  /* USER CODE END USART1_Init 1 */
   huart1.Instance = USART1;
   huart1.Init.BaudRate = 9600;
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
@@ -425,22 +427,22 @@ static void MX_USART1_UART_Init(void)
   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
   if (HAL_UART_Init(&huart1) != HAL_OK)
   {
-    _Error_Handler(__FILE__, __LINE__);
+    Error_Handler();
   }
+  /* USER CODE BEGIN USART1_Init 2 */
+
+  /* USER CODE END USART1_Init 2 */
 
 }
 
-/** Configure pins as 
-        * Analog 
-        * Input 
-        * Output
-        * EVENT_OUT
-        * EXTI
-*/
+/**
+  * @brief GPIO Initialization Function
+  * @param None
+  * @retval None
+  */
 static void MX_GPIO_Init(void)
 {
-
-  GPIO_InitTypeDef GPIO_InitStruct;
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOA_CLK_ENABLE();
@@ -547,7 +549,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
     bool error_return;
 
-
     if(uart_rx_circBuff.head==uart_rx_circBuff.tail){
         timeout_start(&htim11);
     }
@@ -555,8 +556,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
     if(error_return == 1){
         uart_data_flag=true;
         timeout_stop(&htim11);
-    }
-    else{
+    }else{
         timeout_reset(&htim11);
     }
 
@@ -568,55 +568,149 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
             circ_buffer_clear(&uart_rx_circBuff);
         }
     }
-
-
+    if(Data_recived_temp =='T'){
+        if(uart_empty_flag == true){
+            uart_set_time_flag=true;
+        }
+    }
+    if(Data_recived_temp =='D'){
+        if(uart_empty_flag == true){
+            uart_set_date_flag=true;
+        }
+    }
     HAL_UART_Receive_IT(&huart1, &Data_recived_temp, 1);
- }
+}
 
+void uart_serv(void){
+    uart_data_flag=false;
+    if(uart_set_time_flag == true){
+        uart_set_time_flag = false;
+        for (u_int8_t i=0; i<buffer_length+1; i++){
+            circ_buffer_get_char(&uart_rx_circBuff, &buffer_temp[i]);
+        }
+        uart_empty_flag=true;
+        set_time(&buffer_temp);
+    }
+    else if(uart_set_date_flag == true){
+           uart_set_date_flag = false;
+           for (u_int8_t i=0; i<buffer_length+1; i++){
+               circ_buffer_get_char(&uart_rx_circBuff, &buffer_temp[i]);
+           }
+           uart_empty_flag=true;
+           set_date(&buffer_temp);
+       }
+    else if(uart_send_log == true){
+        uart_send_log_flag=true;
+        uart_send_log=false;
+    }else{
+        for (u_int8_t i=0; i<buffer_length+1; i++){
+            circ_buffer_get_char(&uart_rx_circBuff, &buffer[i]);
+        }
+        uart_empty_flag=true;
+        if(buffer_check(&buffer)){
+            uart_send_string(&huart1,"apropirate_code\r\n");
+        }
+        else{
+            uart_send_string(&huart1,"bad_code\r\n");
+        }
+    }
+}
+void keypad_serv(void){
+    flag_char=0;
+    timeout_char_flag=true;
+    if(buffer_count==0){
+        timeout_start(&htim11);
+    }
+    timeout_reset(&htim11);
+    if(buffer_count < buffer_length){
+        if(buffer_count==5){
+            timeout_stop(&htim11);
+        }
+        if(number_char){
+            buffer_update(&buffer,&buffer_count,Key_char);
+            buffer_update(&buffer_do_lcd,&buffer_count,'X');
+            buffer_count++;
+        }
+    }else{
+        if(Key_char=='#'){
+            buffer_count=0;
+            if(buffer_check(&buffer)){
+                timeout_start(&htim11);
+                strcpy(buffer2,"fajnie   ");
+                buffer_clear(&buffer,buffer_length);
+                buffer_clear(&buffer_do_lcd,buffer_length);
+            }else{
+                timeout_start(&htim11);
+                strcpy(buffer2,"niefajnie");
+                buffer_clear(&buffer,buffer_length);
+                buffer_clear(&buffer_do_lcd,buffer_length);
+            }
+        }
+    }
+    if (Key_char=='C'){
+        buffer_clear(&buffer,buffer_length);
+        buffer_clear(&buffer_do_lcd,buffer_length);
+        buffer_count=0;
+#ifdef TEST
+        save_time(&log_circ_buff);
+#endif
+    }
+}
+void Proj_Init(void){
+    KeyPad_4x4_Init(&keyPad_struct);
+    TM_HD44780_Init(16, 2);
+    HAL_TIM_Base_Start_IT(&htim6);
+    HAL_TIM_Base_Start_IT(&htim9);
+    k=0;
+    strcpy(code,"123456");
+    HAL_UART_Receive_IT(&huart1, &Data_recived_temp, 1);
+    buffer_count=0;
+    uart_empty_flag=true;
+    uart_send_log_flag=false;
+
+    save_time(&log_circ_buff);
+    save_time(&log_circ_buff);
+    circ_buffer_get_string(&log_circ_buff,uart_log_str);
+    circ_buffer_get_string(&log_circ_buff,uart_log_str);
+    save_time(&log_circ_buff);
+    save_time(&log_circ_buff);
+    circ_buffer_get_string(&log_circ_buff,uart_log_str);
+    circ_buffer_get_string(&log_circ_buff,uart_log_str);
+
+
+}
 
 /* USER CODE END 4 */
 
 /**
   * @brief  This function is executed in case of error occurrence.
-  * @param  None
   * @retval None
   */
-void _Error_Handler(char * file, int line)
+void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
-  while(1) 
+  while(1)
   {
   }
-  /* USER CODE END Error_Handler_Debug */ 
+  /* USER CODE END Error_Handler_Debug */
 }
 
-#ifdef USE_FULL_ASSERT
-
+#ifdef  USE_FULL_ASSERT
 /**
-   * @brief Reports the name of the source file and the source line number
-   * where the assert_param error has occurred.
-   * @param file: pointer to the source file name
-   * @param line: assert_param error line source number
-   * @retval None
-   */
-void assert_failed(uint8_t* file, uint32_t line)
-{
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(uint8_t *file, uint32_t line)
+{ 
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
-
 }
-
-#endif
-
-/**
-  * @}
-  */ 
-
-/**
-  * @}
-*/ 
+#endif /* USE_FULL_ASSERT */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -104,7 +104,7 @@ void buffer_clear(char *buffer,u_int8_t buffer_len){
 }
 
 bool buffer_check(char *buffer){
-    if(strcmp(buffer,"123456") == 0){  ///jednorozszc
+    if(strcmp(buffer,code) == 0){  ///jednorozszc
         return 1;
     }
     else{

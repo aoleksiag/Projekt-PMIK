@@ -57,13 +57,13 @@
 			<type>1</type>
 			<location>PARENT-2-PROJECT_LOC/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c</location>
 		</link><link>
-			<name>Application/User/stm32f4xx_hal_msp.c</name>
-			<type>1</type>
-			<location>PARENT-2-PROJECT_LOC/Src/stm32f4xx_hal_msp.c</location>
-		</link><link>
 			<name>Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.c</name>
 			<type>1</type>
 			<location>PARENT-2-PROJECT_LOC/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c</location>
+		</link><link>
+			<name>Application/SW4STM32/syscalls.c</name>
+			<type>1</type>
+			<location>PARENT-1-PROJECT_LOC/syscalls.c</location>
 		</link><link>
 			<name>Application/SW4STM32/startup_stm32f410rx.s</name>
 			<type>1</type>
@@ -72,10 +72,6 @@
 			<name>Drivers/CMSIS/system_stm32f4xx.c</name>
 			<type>1</type>
 			<location>PARENT-2-PROJECT_LOC/Src/system_stm32f4xx.c</location>
-		</link><link>
-			<name>Application/User/main.c</name>
-			<type>1</type>
-			<location>PARENT-2-PROJECT_LOC/Src/main.c</location>
 		</link><link>
 			<name>Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr_ex.c</name>
 			<type>1</type>
@@ -88,10 +84,6 @@
 			<name>Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma.c</name>
 			<type>1</type>
 			<location>PARENT-2-PROJECT_LOC/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c</location>
-		</link><link>
-			<name>Application/User/stm32f4xx_it.c</name>
-			<type>1</type>
-			<location>PARENT-2-PROJECT_LOC/Src/stm32f4xx_it.c</location>
 		</link><link>
 			<name>Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.c</name>
 			<type>1</type>
@@ -114,5 +106,17 @@
 			<location>PARENT-2-PROJECT_LOC/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c</location>
 		</link>
 		
-	</linkedResources>
+	<link>
+			<name>Application/User/main.c</name>
+			<type>1</type>
+			<location>PARENT-2-PROJECT_LOC/Src/main.c</location>
+		</link><link>
+			<name>Application/User/stm32f4xx_it.c</name>
+			<type>1</type>
+			<location>PARENT-2-PROJECT_LOC/Src/stm32f4xx_it.c</location>
+		</link><link>
+			<name>Application/User/stm32f4xx_hal_msp.c</name>
+			<type>1</type>
+			<location>PARENT-2-PROJECT_LOC/Src/stm32f4xx_hal_msp.c</location>
+		</link></linkedResources>
 </projectDescription>

@@ -1,8 +1,8 @@
 Application/User/stm32f4xx_hal_msp.o: \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Src/stm32f4xx_hal_msp.c \
+ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Inc/main.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Inc/stm32f4xx_hal_conf.h \
- C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Inc/main.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
@@ -31,11 +31,11 @@ Application/User/stm32f4xx_hal_msp.o: \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 
+C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Inc/main.h:
+
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Inc/stm32f4xx_hal_conf.h:
-
-C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Inc/main.h:
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
 

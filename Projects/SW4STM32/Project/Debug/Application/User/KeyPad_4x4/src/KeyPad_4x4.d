@@ -3,7 +3,6 @@ Application/User/KeyPad_4x4/src/KeyPad_4x4.o: \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/KeyPad_4x4/inc/KeyPad_4x4.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Inc/stm32f4xx_hal_conf.h \
- C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Inc/main.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
@@ -39,8 +38,6 @@ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Inc/stm32f4xx_hal_conf.h:
-
-C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Inc/main.h:
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
 

@@ -1,4 +1,5 @@
 "Application/SW4STM32/startup_stm32f410rx.o"
+"Application/SW4STM32/syscalls.o"
 "Application/User/Circular_buffer/src/circular_buffer.o"
 "Application/User/KeyPad_4x4/src/KeyPad_4x4.o"
 "Application/User/Lcd_driver/src/tm_stm32_delay.o"
