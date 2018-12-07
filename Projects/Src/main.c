@@ -645,6 +645,7 @@ void uart_serv(void){
         else{
         if(buffer_check(&buffer)){
             uart_send_string(&huart1,"apropirate_code\r\n");
+            lock_open();
         }
         else{
             uart_send_string(&huart1,"bad_code\r\n");
@@ -657,51 +658,59 @@ void keypad_serv(void){
     char str[15];
     timeout_char_flag=true;
     if(number_of_bad_code == 3){
-            strcpy(buffer2,"keypad is block");
-            timeout_start(&htim11);
-    }else{
-    if(buffer_count==0){
+        strcpy(buffer2,"keypad is block");
         timeout_start(&htim11);
-    }
-    timeout_reset(&htim11);
-    if(buffer_count < buffer_length){
-        if(buffer_count==5){
-            timeout_stop(&htim11);
-        }
-        if(number_char){
-            buffer_update(&buffer,&buffer_count,Key_char);
-            buffer_update(&buffer_do_lcd,&buffer_count,'X');
-            buffer_count++;
-            buffer_clear(&buffer2,16);
-
-        }
     }else{
-        if(Key_char=='#'){
-            buffer_count=0;
-            if(buffer_check(&buffer)){
-                timeout_start(&htim11);
-                strcpy(buffer2,"lock open");
-                buffer_clear(&buffer,buffer_length);
-                buffer_clear(&buffer_do_lcd,buffer_length);
-                number_of_bad_code = 0;
+        if(buffer_count == 0){
+            timeout_start(&htim11);
+        }
+        if(lock_open_flag){
+                if(Key_char == '*'){
+                    strcpy(buffer2,"lock close");
+                    lock_close();
+                }
+        }else{
+            timeout_reset(&htim11);
+            if(buffer_count < buffer_length){
+                if(buffer_count==5){
+                    timeout_stop(&htim11);
+                }
+                if(number_char){
+                    buffer_update(&buffer,&buffer_count,Key_char);
+                    buffer_update(&buffer_do_lcd,&buffer_count,'X');
+                    buffer_count++;
+                    buffer_clear(&buffer2,16);
+
+                }
             }else{
-                timeout_start(&htim11);
-                sprintf(str,"remained %d try",NUMBER_OF_BAD_CODE-number_of_bad_code);
-                strcpy(buffer2,str);
+                if(Key_char=='#'){
+                    buffer_count=0;
+                    if(buffer_check(&buffer)){
+                        timeout_start(&htim11);
+                        strcpy(buffer2,"lock open");
+                        buffer_clear(&buffer,buffer_length);
+                        buffer_clear(&buffer_do_lcd,buffer_length);
+                        number_of_bad_code = 0;
+                        lock_open();
+                    }else{
+                        timeout_start(&htim11);
+                        sprintf(str,"remained %d try",NUMBER_OF_BAD_CODE-number_of_bad_code);
+                        strcpy(buffer2,str);
+                        buffer_clear(&buffer,buffer_length);
+                        buffer_clear(&buffer_do_lcd,buffer_length);
+                        number_of_bad_code++;
+                    }
+                }
+            }
+            if (Key_char=='C'){
                 buffer_clear(&buffer,buffer_length);
                 buffer_clear(&buffer_do_lcd,buffer_length);
-                number_of_bad_code++;
+                buffer_count=0;
+#ifdef TEST
+                save_time(&log_circ_buff);
+#endif
             }
         }
-    }
-    if (Key_char=='C'){
-        buffer_clear(&buffer,buffer_length);
-        buffer_clear(&buffer_do_lcd,buffer_length);
-        buffer_count=0;
-#ifdef TEST
-        save_time(&log_circ_buff);
-#endif
-    }
     }
 }
 void Proj_Init(void){
@@ -716,8 +725,17 @@ void Proj_Init(void){
     uart_empty_flag=true;
     uart_send_log_flag=false;
     number_of_bad_code=0;
+    lock_open_flag=false;
 
-
+}
+void lock_close(void){
+    lock_open_flag=false;
+    HAL_GPIO_WritePin(LED_GPIO_Port,LED_Pin,0);
+}
+void lock_open(void){
+    lock_open_flag=true;
+    HAL_GPIO_WritePin(LED_GPIO_Port,LED_Pin,1);
+    save_time(&log_circ_buff);
 }
 
 /* USER CODE END 4 */

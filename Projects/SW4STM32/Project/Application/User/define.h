@@ -45,6 +45,7 @@ bool uart_set_date_flag;
 bool uart_set_change_pass_flag;
 bool uart_set_pass;
 bool uart_new_pass;
+bool lock_open_flag;
 char uart_log_str[LOG_BUFF_SIZE];
 
 volatile u_int8_t uart_string_tosend_count;
