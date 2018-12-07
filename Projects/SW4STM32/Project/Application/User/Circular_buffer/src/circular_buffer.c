@@ -38,11 +38,16 @@ bool circ_buffer_put_string(circ_buffer_2d *q, char *data)
     if ( head_temp == LOG_BUFF_LENGTH )
         head_temp = 0;
 
-    if ( head_temp == q->tail )
-        return 1;
+    if ( head_temp == q->tail ){
+        q->tail += 1;
+        if (q->tail == LOG_BUFF_LENGTH){
+                q->tail = 0;
+        }
+    }
 
 
-    strcpy(q->log_buff[q->head], data);
+
+    strcpy(q->log_buff[head_temp], data);
     q->head = head_temp;
 
 
@@ -82,8 +87,6 @@ bool circ_buffer_get_string(circ_buffer_2d *q, char *data)
         q->tail = 0;
 
     strcpy(data, q->log_buff[q->tail]);
-  //  strcpy(data,"dupa");
-   // *data = q->log_buff[q->tail];
 
     return 0;
 
@@ -104,20 +107,13 @@ void buffer_clear(char *buffer,u_int8_t buffer_len){
 }
 
 bool buffer_check(char *buffer){
-    if(strcmp(buffer,code) == 0){  ///jednorozszc
-        return 1;
-    }
-    else{
+    int8_t i;
+    for (i=0; i<buffer_length; i++){
+    if(buffer[i] != code[i])
         return 0;
     }
-}
-
-bool test( char *data)
-{
-    const char *src= "DUpa";
-    strcpy(data,"dupa");
-
-
-    return 0;
+        return 1;
 
 }
+
+

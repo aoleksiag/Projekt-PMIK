@@ -578,12 +578,30 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
             uart_set_date_flag=true;
         }
     }
+    if(Data_recived_temp =='c'){
+        if(uart_empty_flag == true){
+            uart_set_change_pass_flag=true;
+        }
+    }
+
     HAL_UART_Receive_IT(&huart1, &Data_recived_temp, 1);
 }
 
 void uart_serv(void){
     uart_data_flag=false;
-    if(uart_set_time_flag == true){
+    if(uart_set_change_pass_flag == true){
+            uart_set_change_pass_flag = false;
+            for (u_int8_t i=0; i<buffer_length+1; i++){
+                circ_buffer_get_char(&uart_rx_circBuff, &buffer_temp[i]);
+            }
+            uart_empty_flag=true;
+            if(strcmp(buffer_temp,"chpass")==0){
+                uart_set_pass=true;
+                uart_send_string(&huart1,"send previous password\r\n");
+            }
+
+        }
+    else if(uart_set_time_flag == true){
         uart_set_time_flag = false;
         for (u_int8_t i=0; i<buffer_length+1; i++){
             circ_buffer_get_char(&uart_rx_circBuff, &buffer_temp[i]);
@@ -602,22 +620,46 @@ void uart_serv(void){
     else if(uart_send_log == true){
         uart_send_log_flag=true;
         uart_send_log=false;
-    }else{
+    }
+    else{
+
         for (u_int8_t i=0; i<buffer_length+1; i++){
             circ_buffer_get_char(&uart_rx_circBuff, &buffer[i]);
         }
         uart_empty_flag=true;
+        if(uart_new_pass == true){
+            uart_new_pass=false;
+            strcpy(code,buffer);
+            uart_send_string(&huart1,"password changed\r\n");
+        }
+        else if(uart_set_pass == true){
+            uart_set_pass = false;
+            if(buffer_check(&buffer)){
+                uart_send_string(&huart1,"send new password\r\n");
+                uart_new_pass = true;
+            }
+            else{
+                uart_send_string(&huart1,"bad_code\r\n");
+            }
+        }
+        else{
         if(buffer_check(&buffer)){
             uart_send_string(&huart1,"apropirate_code\r\n");
         }
         else{
             uart_send_string(&huart1,"bad_code\r\n");
         }
+        }
     }
 }
 void keypad_serv(void){
     flag_char=0;
+    char str[15];
     timeout_char_flag=true;
+    if(number_of_bad_code == 3){
+            strcpy(buffer2,"keypad is block");
+            timeout_start(&htim11);
+    }else{
     if(buffer_count==0){
         timeout_start(&htim11);
     }
@@ -630,20 +672,25 @@ void keypad_serv(void){
             buffer_update(&buffer,&buffer_count,Key_char);
             buffer_update(&buffer_do_lcd,&buffer_count,'X');
             buffer_count++;
+            buffer_clear(&buffer2,16);
+
         }
     }else{
         if(Key_char=='#'){
             buffer_count=0;
             if(buffer_check(&buffer)){
                 timeout_start(&htim11);
-                strcpy(buffer2,"fajnie   ");
+                strcpy(buffer2,"lock open");
                 buffer_clear(&buffer,buffer_length);
                 buffer_clear(&buffer_do_lcd,buffer_length);
+                number_of_bad_code = 0;
             }else{
                 timeout_start(&htim11);
-                strcpy(buffer2,"niefajnie");
+                sprintf(str,"remained %d try",NUMBER_OF_BAD_CODE-number_of_bad_code);
+                strcpy(buffer2,str);
                 buffer_clear(&buffer,buffer_length);
                 buffer_clear(&buffer_do_lcd,buffer_length);
+                number_of_bad_code++;
             }
         }
     }
@@ -654,6 +701,7 @@ void keypad_serv(void){
 #ifdef TEST
         save_time(&log_circ_buff);
 #endif
+    }
     }
 }
 void Proj_Init(void){
@@ -667,15 +715,7 @@ void Proj_Init(void){
     buffer_count=0;
     uart_empty_flag=true;
     uart_send_log_flag=false;
-
-    save_time(&log_circ_buff);
-    save_time(&log_circ_buff);
-    circ_buffer_get_string(&log_circ_buff,uart_log_str);
-    circ_buffer_get_string(&log_circ_buff,uart_log_str);
-    save_time(&log_circ_buff);
-    save_time(&log_circ_buff);
-    circ_buffer_get_string(&log_circ_buff,uart_log_str);
-    circ_buffer_get_string(&log_circ_buff,uart_log_str);
+    number_of_bad_code=0;
 
 
 }

@@ -8,6 +8,7 @@
 #define LOG_BUFF_LENGTH 5
 #define BUF_SIZE 7
 #define TEST
+#define NUMBER_OF_BAD_CODE 2
 
 
 
@@ -19,6 +20,7 @@ bool sw[16];
 bool sw_flag[16];
 
 volatile u_int8_t buffer_count;
+int8_t number_of_bad_code;
 
 char buffer[code_length];
 char buffer_temp[code_length];
@@ -40,6 +42,9 @@ bool uart_new_line_flag;
 bool uart_send_log_flag;
 bool uart_set_time_flag;
 bool uart_set_date_flag;
+bool uart_set_change_pass_flag;
+bool uart_set_pass;
+bool uart_new_pass;
 char uart_log_str[LOG_BUFF_SIZE];
 
 volatile u_int8_t uart_string_tosend_count;
