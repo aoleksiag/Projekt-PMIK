@@ -35,10 +35,11 @@ Application/User/main.o: \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/Lcd_driver/inc/tm_stm32_hd44780.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/Lcd_driver/inc/tm_stm32_delay.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/Lcd_driver/inc/tm_stm32_gpio.h \
- C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/KeyPad_4x4/inc/KeyPad_4x4.h \
+ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/global_variable.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/define.h \
- C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/Circular_buffer/inc/circular_buffer.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/struct.h \
+ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/KeyPad_4x4/inc/KeyPad_4x4.h \
+ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/Circular_buffer/inc/circular_buffer.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/Timeout/inc/timeout.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/UART/inc/uart.h
 
@@ -112,13 +113,15 @@ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/Lcd_driver/inc/tm_stm32_gpio.h:
 
-C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/KeyPad_4x4/inc/KeyPad_4x4.h:
+C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/global_variable.h:
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/define.h:
 
-C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/Circular_buffer/inc/circular_buffer.h:
-
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/struct.h:
+
+C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/KeyPad_4x4/inc/KeyPad_4x4.h:
+
+C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/Circular_buffer/inc/circular_buffer.h:
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/Timeout/inc/timeout.h:
 

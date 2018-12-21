@@ -1,6 +1,6 @@
-#include "define.h"
+//#include "define.h"
 #include "stm32f4xx_hal.h"
-//#include "struct.h"
+#include "global_variable.h"
 
 void timeout_start(TIM_HandleTypeDef *htim);
 

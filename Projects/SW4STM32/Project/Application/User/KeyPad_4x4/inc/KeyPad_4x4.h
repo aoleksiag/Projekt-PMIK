@@ -1,6 +1,6 @@
-
+#include "global_variable.h"
 #include "stm32f4xx_hal.h"
-#include "define.h"
+//#include "define.h"
 //***** Constant variables and typedefs *****//
 typedef struct
 {

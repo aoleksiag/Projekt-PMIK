@@ -1,4 +1,6 @@
 #include "stm32f4xx_hal.h"
+#include "define.h"
+
 
 typedef struct {
     char log_buff[LOG_BUFF_LENGTH][LOG_BUFF_SIZE];

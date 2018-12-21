@@ -1,12 +1,6 @@
-/*
- * circular_buffer.h
- *
- *  Created on: 21.11.2018
- *      Author: Adrian
- */
-#include "define.h"
+#include "global_variable.h"
 #include "stm32f4xx_hal.h"
-#include "struct.h"
+
 
 
 

@@ -1,6 +1,7 @@
 Application/User/KeyPad_4x4/src/KeyPad_4x4.o: \
  ../Application/User/KeyPad_4x4/src/KeyPad_4x4.c \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/KeyPad_4x4/inc/KeyPad_4x4.h \
+ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/global_variable.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Inc/stm32f4xx_hal_conf.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -31,9 +32,12 @@ Application/User/KeyPad_4x4/src/KeyPad_4x4.o: \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/define.h \
+ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/struct.h \
  C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Inc/main.h
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/KeyPad_4x4/inc/KeyPad_4x4.h:
+
+C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/global_variable.h:
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 
@@ -94,5 +98,7 @@ C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/define.h:
+
+C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/SW4STM32/Project/Application/User/struct.h:
 
 C:/Users/Adrian/Desktop/Projekt\ PMIK/Projects/Inc/main.h:

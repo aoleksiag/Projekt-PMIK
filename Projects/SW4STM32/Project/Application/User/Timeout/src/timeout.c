@@ -5,7 +5,7 @@
  *      Author: Adrian
  */
 #include "timeout.h"
-#include "struct.h"
+//#include "struct.h"
 /**
   * @brief Start timer and configure apropirate register to timeout opreration
   * @param htim pointer to a TIM_HandleTypeDef structure that contains

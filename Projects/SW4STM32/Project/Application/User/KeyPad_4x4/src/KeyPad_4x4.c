@@ -138,3 +138,64 @@ char* Keypad4x4_GetChar(uint8_t keypadSw)
 
 }
 
+void keypad_serv(TIM_HandleTypeDef *htim11,circ_buffer_2d *log_circ_buff){
+    flag_char=0;
+    char str[15];
+    timeout_char_flag=true;
+    if(number_of_bad_code == 3){
+        strcpy(buffer2,"keypad is block");
+        timeout_start(htim11);
+    }else{
+        if(buffer_count == 0){
+            timeout_start(htim11);
+        }
+        if(lock_open_flag){
+                if(Key_char == '*'){
+                    strcpy(buffer2,"lock close");
+                    lock_close();
+                }
+        }else{
+            timeout_reset(htim11);
+            if(buffer_count < buffer_length){
+                if(buffer_count==5){
+                    timeout_stop(htim11);
+                }
+                if(number_char){
+                    buffer_update(&buffer,&buffer_count,Key_char);
+                    buffer_update(&buffer_do_lcd,&buffer_count,'X');
+                    buffer_count++;
+                    buffer_clear(&buffer2,16);
+
+                }
+            }else{
+                if(Key_char=='#'){
+                    buffer_count=0;
+                    if(buffer_check(&buffer)){
+                        timeout_start(htim11);
+                        strcpy(buffer2,"lock open");
+                        buffer_clear(&buffer,buffer_length);
+                        buffer_clear(&buffer_do_lcd,buffer_length);
+                        number_of_bad_code = 0;
+                        lock_open();
+                    }else{
+                        timeout_start(htim11);
+                        sprintf(str,"remained %d try",NUMBER_OF_BAD_CODE-number_of_bad_code);
+                        strcpy(buffer2,str);
+                        buffer_clear(&buffer,buffer_length);
+                        buffer_clear(&buffer_do_lcd,buffer_length);
+                        number_of_bad_code++;
+                    }
+                }
+            }
+            if (Key_char=='C'){
+                buffer_clear(&buffer,buffer_length);
+                buffer_clear(&buffer_do_lcd,buffer_length);
+                buffer_count=0;
+#ifdef TEST
+                save_time(log_circ_buff);
+#endif
+            }
+        }
+    }
+}
+
