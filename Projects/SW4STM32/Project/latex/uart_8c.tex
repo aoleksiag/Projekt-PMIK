@@ -1,0 +1,89 @@
+\hypertarget{uart_8c}{}\section{Application/\+User/\+U\+A\+R\+T/src/uart.c File Reference}
+\label{uart_8c}\index{Application/\+User/\+U\+A\+R\+T/src/uart.\+c@{Application/\+User/\+U\+A\+R\+T/src/uart.\+c}}
+{\ttfamily \#include \char`\"{}uart.\+h\char`\"{}}\newline
+Include dependency graph for uart.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{uart_8c_ac165c56328ee5c1e15e57cc925962de9}{uart\+\_\+send\+\_\+string} (U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$huart, char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Send string via uart protocol. \end{DoxyCompactList}\item 
+void \hyperlink{uart_8c_afa8f9dac5210b9dde4480c5a2e53c1bd}{uart\+\_\+get\+\_\+char} (T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$htim, \hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d} $\ast$\hyperlink{main_8c_a3546501861e6f7ce4c13165b0b249041}{uart\+\_\+rx\+\_\+circ\+Buff})
+\begin{DoxyCompactList}\small\item\em Capture character from uart buffer. \end{DoxyCompactList}\item 
+void \hyperlink{uart_8c_afcdf7d09cdd2fefc6eeec2a1cedffe23}{uart\+\_\+serv} (U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$huart, \hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d} $\ast$\hyperlink{main_8c_a3546501861e6f7ce4c13165b0b249041}{uart\+\_\+rx\+\_\+circ\+Buff})
+\begin{DoxyCompactList}\small\item\em Function handling uart data service. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{uart_8c_afa8f9dac5210b9dde4480c5a2e53c1bd}\label{uart_8c_afa8f9dac5210b9dde4480c5a2e53c1bd}} 
+\index{uart.\+c@{uart.\+c}!uart\+\_\+get\+\_\+char@{uart\+\_\+get\+\_\+char}}
+\index{uart\+\_\+get\+\_\+char@{uart\+\_\+get\+\_\+char}!uart.\+c@{uart.\+c}}
+\subsubsection{\texorpdfstring{uart\+\_\+get\+\_\+char()}{uart\_get\_char()}}
+{\footnotesize\ttfamily void uart\+\_\+get\+\_\+char (\begin{DoxyParamCaption}\item[{T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$}]{htim,  }\item[{\hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d} $\ast$}]{uart\+\_\+rx\+\_\+circ\+Buff }\end{DoxyParamCaption})}
+
+
+
+Capture character from uart buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em htim} & pointer to Timer structure, which i generate by cube\+MX \\
+\hline
+{\em uart\+\_\+rx\+\_\+circ\+Buff} & pointer to \hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d} with contains place to store data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{uart_8c_ac165c56328ee5c1e15e57cc925962de9}\label{uart_8c_ac165c56328ee5c1e15e57cc925962de9}} 
+\index{uart.\+c@{uart.\+c}!uart\+\_\+send\+\_\+string@{uart\+\_\+send\+\_\+string}}
+\index{uart\+\_\+send\+\_\+string@{uart\+\_\+send\+\_\+string}!uart.\+c@{uart.\+c}}
+\subsubsection{\texorpdfstring{uart\+\_\+send\+\_\+string()}{uart\_send\_string()}}
+{\footnotesize\ttfamily void uart\+\_\+send\+\_\+string (\begin{DoxyParamCaption}\item[{U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$}]{huart,  }\item[{char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Send string via uart protocol. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em huart} & pointer to Uart structure, which i generate by cube\+MX \\
+\hline
+{\em s} & string, which is transmit \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{uart_8c_afcdf7d09cdd2fefc6eeec2a1cedffe23}\label{uart_8c_afcdf7d09cdd2fefc6eeec2a1cedffe23}} 
+\index{uart.\+c@{uart.\+c}!uart\+\_\+serv@{uart\+\_\+serv}}
+\index{uart\+\_\+serv@{uart\+\_\+serv}!uart.\+c@{uart.\+c}}
+\subsubsection{\texorpdfstring{uart\+\_\+serv()}{uart\_serv()}}
+{\footnotesize\ttfamily void uart\+\_\+serv (\begin{DoxyParamCaption}\item[{U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$}]{huart,  }\item[{\hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d} $\ast$}]{uart\+\_\+rx\+\_\+circ\+Buff }\end{DoxyParamCaption})}
+
+
+
+Function handling uart data service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em huart} & pointer to Uart structure, which i generate by cube\+MX \\
+\hline
+{\em htim} & pointer to Timer structure, which i generate by cube\+MX \\
+\hline
+{\em uart\+\_\+rx\+\_\+circ\+Buff} & pointer to \hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d} with contains place to store data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 2

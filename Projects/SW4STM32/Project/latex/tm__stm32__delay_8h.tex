@@ -1,0 +1,86 @@
+\hypertarget{tm__stm32__delay_8h}{}\section{Application/\+User/\+Lcd\+\_\+driver/inc/tm\+\_\+stm32\+\_\+delay.h File Reference}
+\label{tm__stm32__delay_8h}\index{Application/\+User/\+Lcd\+\_\+driver/inc/tm\+\_\+stm32\+\_\+delay.\+h@{Application/\+User/\+Lcd\+\_\+driver/inc/tm\+\_\+stm32\+\_\+delay.\+h}}
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}defines.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdlib.\+h\char`\"{}}\newline
+Include dependency graph for tm\+\_\+stm32\+\_\+delay.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct___t_m___d_e_l_a_y___timer__t}{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Custom timer structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{tm__stm32__delay_8h_afd0d98054035fea3d058f2f22eb214df}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+H}~100
+\begin{DoxyCompactList}\small\item\em Library template. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___t_m___d_e_l_a_y___macros_ga4430f41745879f32d4be22748ba2fbcd}{D\+E\+L\+A\+Y\+\_\+\+M\+A\+X\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+T\+I\+M\+E\+RS}~5
+\begin{DoxyCompactList}\small\item\em Number of allowed custom timers. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___t_m___d_e_l_a_y___macros_ga2f6cdb38a7467b3003737690a87a9e5d}{L\+I\+B\+\_\+\+A\+L\+L\+O\+C\+\_\+\+F\+U\+NC}~malloc
+\item 
+\#define \hyperlink{group___t_m___d_e_l_a_y___macros_ga23427d671214ac855a2205fcd02c3fc5}{L\+I\+B\+\_\+\+F\+R\+E\+E\+\_\+\+F\+U\+NC}~free
+\item 
+\#define \hyperlink{group___t_m___d_e_l_a_y___functions_gaaf46291b088791f6b2025d327a810c16}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Time}()~(\hyperlink{group___t_m___d_e_l_a_y___variables_ga7c995255b1d6e58256f1b6e1db969000}{T\+M\+\_\+\+Time})
+\begin{DoxyCompactList}\small\item\em Gets the T\+M\+\_\+\+Time variable value. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___t_m___d_e_l_a_y___functions_ga72caa68e7ce61cb2dcb4ed9e219f58ce}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Set\+Time}(time)~(\hyperlink{group___t_m___d_e_l_a_y___variables_ga7c995255b1d6e58256f1b6e1db969000}{T\+M\+\_\+\+Time} = (time))
+\begin{DoxyCompactList}\small\item\em Sets value for T\+M\+\_\+\+Time variable. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___t_m___d_e_l_a_y___functions_ga5781218a9887f4883a311b52c11a7a59}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Time2}()~(\hyperlink{group___t_m___d_e_l_a_y___variables_ga7a35a6c16b0617fdea660d351139ecc7}{T\+M\+\_\+\+Time2})
+\begin{DoxyCompactList}\small\item\em Gets the T\+M\+\_\+\+Time2 variable value. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___t_m___d_e_l_a_y___functions_ga6b725c20fcbea9c3f3e549d86434d030}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Set\+Time2}(time)~(\hyperlink{group___t_m___d_e_l_a_y___variables_ga7a35a6c16b0617fdea660d351139ecc7}{T\+M\+\_\+\+Time2} = (time))
+\begin{DoxyCompactList}\small\item\em Sets value for T\+M\+\_\+\+Time variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct___t_m___d_e_l_a_y___timer__t}{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} \hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Custom timer structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{group___t_m___d_e_l_a_y___functions_ga4ef7d542ba00287843b9e8575be8ecbc}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Initializes delay functions. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE void \hyperlink{group___t_m___d_e_l_a_y___functions_gae88c9bdf0f377e67efc2c200dc04ab89}{Delay} (\+\_\+\+\_\+\+IO uint32\+\_\+t micros)
+\begin{DoxyCompactList}\small\item\em Delays for amount of micro seconds. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE void \hyperlink{group___t_m___d_e_l_a_y___functions_gab5d59e0b5fa9b331871d7fdd5bbad903}{Delayms} (uint32\+\_\+t millis)
+\begin{DoxyCompactList}\small\item\em Delays for amount of milli seconds. \end{DoxyCompactList}\item 
+\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$ \hyperlink{group___t_m___d_e_l_a_y___timer___functions_ga848f0e5f378dc5c28b3a5a0a86153118}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Create} (uint32\+\_\+t Reload\+Value, uint8\+\_\+t Auto\+Reload\+Cmd, uint8\+\_\+t Start\+Timer, void($\ast$T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Custom\+Timer\+Callback)(struct \hyperlink{struct___t_m___d_e_l_a_y___timer__t}{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$, void $\ast$), void $\ast$User\+Parameters)
+\begin{DoxyCompactList}\small\item\em Creates a new custom timer which has 1ms resolution. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___d_e_l_a_y___timer___functions_ga396cc635fa4700caebd8a756ce9197a3}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Delete} (\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$Timer)
+\begin{DoxyCompactList}\small\item\em Deletes already allocated timer. \end{DoxyCompactList}\item 
+\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$ \hyperlink{group___t_m___d_e_l_a_y___timer___functions_ga860e1fa6c7ae18b54d89425ccbd280a5}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Stop} (\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$Timer)
+\begin{DoxyCompactList}\small\item\em Stops custom timer from counting. \end{DoxyCompactList}\item 
+\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$ \hyperlink{group___t_m___d_e_l_a_y___timer___functions_ga3d811bc37a1b9f975ba3738f577021dc}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Start} (\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$Timer)
+\begin{DoxyCompactList}\small\item\em Starts custom timer counting. \end{DoxyCompactList}\item 
+\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$ \hyperlink{group___t_m___d_e_l_a_y___timer___functions_ga0817b5f2921d7e9b0efc9ea97a38a621}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Reset} (\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$Timer)
+\begin{DoxyCompactList}\small\item\em Resets custom timer counter value. \end{DoxyCompactList}\item 
+\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$ \hyperlink{group___t_m___d_e_l_a_y___timer___functions_ga4a62180a12d19b372b3da3d98898d9d3}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Auto\+Reload\+Command} (\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$Timer, uint8\+\_\+t Auto\+Reload\+Cmd)
+\begin{DoxyCompactList}\small\item\em Sets auto reload feature for timer. \end{DoxyCompactList}\item 
+\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$ \hyperlink{group___t_m___d_e_l_a_y___timer___functions_gaa9fdfeb8a094bdfec218134cba774b9e}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Auto\+Reload\+Value} (\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$Timer, uint32\+\_\+t Auto\+Reload\+Value)
+\begin{DoxyCompactList}\small\item\em Sets auto reload value for timer. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___d_e_l_a_y___functions_gadb034c7ca23c2f3f8a3a1a84004860b1}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+1ms\+Handler} (void)
+\begin{DoxyCompactList}\small\item\em User function, called each 1ms when interrupt from timer happen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+\+IO uint32\+\_\+t \hyperlink{group___t_m___d_e_l_a_y___variables_ga7c995255b1d6e58256f1b6e1db969000}{T\+M\+\_\+\+Time}
+\item 
+\+\_\+\+\_\+\+IO uint32\+\_\+t \hyperlink{group___t_m___d_e_l_a_y___variables_ga7a35a6c16b0617fdea660d351139ecc7}{T\+M\+\_\+\+Time2}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{tm__stm32__delay_8h_afd0d98054035fea3d058f2f22eb214df}\label{tm__stm32__delay_8h_afd0d98054035fea3d058f2f22eb214df}} 
+\index{tm\+\_\+stm32\+\_\+delay.\+h@{tm\+\_\+stm32\+\_\+delay.\+h}!T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+H@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+H}}
+\index{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+H@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+H}!tm\+\_\+stm32\+\_\+delay.\+h@{tm\+\_\+stm32\+\_\+delay.\+h}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+H}{TM\_DELAY\_H}}
+{\footnotesize\ttfamily \#define T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+H~100}
+
+
+
+Library template. 
+
+\begin{DoxyAuthor}{Author}
+Tilen Majerle  \href{mailto:tilen@majerle.eu}{\tt tilen@majerle.\+eu}  \href{http://stm32f4-discovery.net}{\tt http\+://stm32f4-\/discovery.\+net} \hyperlink{}{v1.\+0  Keil u\+Vision  M\+IT  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Copyright (c) 2016 Tilen Majerle  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  T\+HE S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+TY OF A\+NY K\+I\+ND, E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED, I\+N\+C\+L\+U\+D\+I\+NG B\+UT N\+OT L\+I\+M\+I\+T\+ED TO T\+HE W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY, F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+ND N\+O\+N\+I\+N\+F\+R\+I\+N\+G\+E\+M\+E\+NT. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE A\+U\+T\+H\+O\+RS OR C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY C\+L\+A\+IM, D\+A\+M\+A\+G\+ES OR O\+T\+H\+ER L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN AN A\+C\+T\+I\+ON OF C\+O\+N\+T\+R\+A\+CT, T\+O\+RT OR O\+T\+H\+E\+R\+W\+I\+SE, A\+R\+I\+S\+I\+NG F\+R\+OM, O\+UT OF OR IN C\+O\+N\+N\+E\+C\+T\+I\+ON W\+I\+TH T\+HE S\+O\+F\+T\+W\+A\+RE OR T\+HE U\+SE OR O\+T\+H\+ER D\+E\+A\+L\+I\+N\+GS IN T\+HE S\+O\+F\+T\+W\+A\+RE. -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/  }
+\end{DoxyAuthor}

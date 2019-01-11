@@ -1,0 +1,89 @@
+\hypertarget{group___t_m___h_d44780}{}\section{T\+M\+\_\+\+H\+D44780}
+\label{group___t_m___h_d44780}\index{T\+M\+\_\+\+H\+D44780@{T\+M\+\_\+\+H\+D44780}}
+
+
+H\+D44780 L\+CD driver library for S\+T\+M32\+Fxxx -\/ \href{http://stm32f4-discovery.net/2015/07/hal-library-15-hd44780-for-stm32fxxx/}{\tt http\+://stm32f4-\/discovery.\+net/2015/07/hal-\/library-\/15-\/hd44780-\/for-\/stm32fxxx/}.  
+
+
+Collaboration diagram for T\+M\+\_\+\+H\+D44780\+:
+% FIG 0
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group___t_m___h_d44780___macros}{T\+M\+\_\+\+H\+D44780\+\_\+\+Macros}
+\begin{DoxyCompactList}\small\item\em Library defines. \end{DoxyCompactList}\item 
+\hyperlink{group___t_m___h_d44780___functions}{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}
+\begin{DoxyCompactList}\small\item\em Library Functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+H\+D44780 L\+CD driver library for S\+T\+M32\+Fxxx -\/ \href{http://stm32f4-discovery.net/2015/07/hal-library-15-hd44780-for-stm32fxxx/}{\tt http\+://stm32f4-\/discovery.\+net/2015/07/hal-\/library-\/15-\/hd44780-\/for-\/stm32fxxx/}. 
+
+It also supports all H\+D44780 compatible L\+CD drivers.
+
+\begin{DoxyParagraph}{Default pinout}
+
+\end{DoxyParagraph}
+\begin{DoxyVerb}LCD   STM32Fxxx         DESCRIPTION
+
+GND   GND               Ground
+VCC   +5V               Power supply for LCD
+V0    Potentiometer     Contrast voltage. Connect to potentiometer
+RS    PB2               Register select, can be overwritten in your project's defines.h file
+RW    GND               Read/write
+E     PB7               Enable pin, can be overwritten in your project's defines.h file
+D0    -                 Data 0 - doesn't care
+D1    -                 Data 1 - doesn't care
+D2    -                 Data 2 - doesn't care
+D3    -                 Data 3 - doesn't  care
+D4    PC12              Data 4, can be overwritten in your project's defines.h file
+D5    PC13              Data 5, can be overwritten in your project's defines.h file
+D6    PB12              Data 6, can be overwritten in your project's defines.h file
+D7    PB13              Data 7, can be overwritten in your project's defines.h file
+A     +3V3              Back light positive power
+K     GND               Ground for back light
+\end{DoxyVerb}
+
+
+If you want to change pinout, do this in your \hyperlink{defines_8h}{defines.\+h} file with lines below and set your own settings\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{//RS - Register select pin}
+\textcolor{preprocessor}{#define HD44780\_RS\_PORT     GPIOB}
+\textcolor{preprocessor}{#define HD44780\_RS\_PIN      GPIO\_PIN\_2}
+\textcolor{comment}{//E - Enable pin}
+\textcolor{preprocessor}{#define HD44780\_E\_PORT      GPIOB}
+\textcolor{preprocessor}{#define HD44780\_E\_PIN       GPIO\_PIN\_7}
+\textcolor{comment}{//D4 - Data 4 pin}
+\textcolor{preprocessor}{#define HD44780\_D4\_PORT     GPIOC}
+\textcolor{preprocessor}{#define HD44780\_D4\_PIN      GPIO\_PIN\_12}
+\textcolor{comment}{//D5 - Data 5 pin}
+\textcolor{preprocessor}{#define HD44780\_D5\_PORT     GPIOC}
+\textcolor{preprocessor}{#define HD44780\_D5\_PIN      GPIO\_PIN\_13}
+\textcolor{comment}{//D6 - Data 6 pin}
+\textcolor{preprocessor}{#define HD44780\_D6\_PORT     GPIOB}
+\textcolor{preprocessor}{#define HD44780\_D6\_PIN      GPIO\_PIN\_12}
+\textcolor{comment}{//D7 - Data 7 pin}
+\textcolor{preprocessor}{#define HD44780\_D7\_PORT     GPIOB}
+\textcolor{preprocessor}{#define HD44780\_D7\_PIN      GPIO\_PIN\_13}
+\end{DoxyCode}
+
+
+\begin{DoxyParagraph}{Changelog}
+
+\end{DoxyParagraph}
+\begin{DoxyVerb} Version 1.0
+  - First release
+\end{DoxyVerb}
+
+
+\begin{DoxyParagraph}{Dependencies}
+
+\end{DoxyParagraph}
+\begin{DoxyVerb} - STM32Fxxx HAL
+ - defines.h
+ - TM DELAY
+ - TM GPIO
+\end{DoxyVerb}
+ 

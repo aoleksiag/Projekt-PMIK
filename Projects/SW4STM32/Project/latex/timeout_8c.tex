@@ -1,0 +1,129 @@
+\hypertarget{timeout_8c}{}\section{Application/\+User/\+Timeout/src/timeout.c File Reference}
+\label{timeout_8c}\index{Application/\+User/\+Timeout/src/timeout.\+c@{Application/\+User/\+Timeout/src/timeout.\+c}}
+{\ttfamily \#include \char`\"{}timeout.\+h\char`\"{}}\newline
+Include dependency graph for timeout.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{timeout_8c_aae822db4421521370650c0abb8bfdcd2}{timeout\+\_\+start} (T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$htim)
+\begin{DoxyCompactList}\small\item\em Start timer and configure apropirate register to timeout opreration. \end{DoxyCompactList}\item 
+void \hyperlink{timeout_8c_a3538fcacacf2f080aeef19d2817915a2}{timeout\+\_\+stop} (T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$htim)
+\begin{DoxyCompactList}\small\item\em Stop timer and configure apropirate register. \end{DoxyCompactList}\item 
+void \hyperlink{timeout_8c_ae26365065c9574f542e6676b81b86806}{timeout\+\_\+reset} (T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$htim)
+\begin{DoxyCompactList}\small\item\em reset timer (ctn register is set to 0) \end{DoxyCompactList}\item 
+void \hyperlink{timeout_8c_ab7b8dc57e59cade28f6c906ab0b4e5af}{timeout\+\_\+keypad} (T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$htim)
+\begin{DoxyCompactList}\small\item\em Timeout operation witch take care about keypad buffer and lcd buffer when timeout occur. \end{DoxyCompactList}\item 
+void \hyperlink{timeout_8c_a63e5a223bb5f5d5a16cf650f71049515}{timeout\+\_\+uart} (T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$htim, U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$huart, \hyperlink{structcirc__buffer__t}{circ\+\_\+buffer\+\_\+t} $\ast$q)
+\begin{DoxyCompactList}\small\item\em Timeout operation witch take care about uart buffer and send message by uart. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{timeout_8c_ab7b8dc57e59cade28f6c906ab0b4e5af}\label{timeout_8c_ab7b8dc57e59cade28f6c906ab0b4e5af}} 
+\index{timeout.\+c@{timeout.\+c}!timeout\+\_\+keypad@{timeout\+\_\+keypad}}
+\index{timeout\+\_\+keypad@{timeout\+\_\+keypad}!timeout.\+c@{timeout.\+c}}
+\subsubsection{\texorpdfstring{timeout\+\_\+keypad()}{timeout\_keypad()}}
+{\footnotesize\ttfamily void timeout\+\_\+keypad (\begin{DoxyParamCaption}\item[{T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$}]{htim }\end{DoxyParamCaption})}
+
+
+
+Timeout operation witch take care about keypad buffer and lcd buffer when timeout occur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em htim} & pointer to a T\+I\+M\+\_\+\+Handle\+Type\+Def structure that contains the configuration information for T\+IM module. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{timeout_8c_ae26365065c9574f542e6676b81b86806}\label{timeout_8c_ae26365065c9574f542e6676b81b86806}} 
+\index{timeout.\+c@{timeout.\+c}!timeout\+\_\+reset@{timeout\+\_\+reset}}
+\index{timeout\+\_\+reset@{timeout\+\_\+reset}!timeout.\+c@{timeout.\+c}}
+\subsubsection{\texorpdfstring{timeout\+\_\+reset()}{timeout\_reset()}}
+{\footnotesize\ttfamily void timeout\+\_\+reset (\begin{DoxyParamCaption}\item[{T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$}]{htim }\end{DoxyParamCaption})}
+
+
+
+reset timer (ctn register is set to 0) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em htim} & pointer to a T\+I\+M\+\_\+\+Handle\+Type\+Def structure that contains the configuration information for T\+IM module. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{timeout_8c_aae822db4421521370650c0abb8bfdcd2}\label{timeout_8c_aae822db4421521370650c0abb8bfdcd2}} 
+\index{timeout.\+c@{timeout.\+c}!timeout\+\_\+start@{timeout\+\_\+start}}
+\index{timeout\+\_\+start@{timeout\+\_\+start}!timeout.\+c@{timeout.\+c}}
+\subsubsection{\texorpdfstring{timeout\+\_\+start()}{timeout\_start()}}
+{\footnotesize\ttfamily void timeout\+\_\+start (\begin{DoxyParamCaption}\item[{T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$}]{htim }\end{DoxyParamCaption})}
+
+
+
+Start timer and configure apropirate register to timeout opreration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em htim} & pointer to a T\+I\+M\+\_\+\+Handle\+Type\+Def structure that contains the configuration information for T\+IM module. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{timeout_8c_a3538fcacacf2f080aeef19d2817915a2}\label{timeout_8c_a3538fcacacf2f080aeef19d2817915a2}} 
+\index{timeout.\+c@{timeout.\+c}!timeout\+\_\+stop@{timeout\+\_\+stop}}
+\index{timeout\+\_\+stop@{timeout\+\_\+stop}!timeout.\+c@{timeout.\+c}}
+\subsubsection{\texorpdfstring{timeout\+\_\+stop()}{timeout\_stop()}}
+{\footnotesize\ttfamily void timeout\+\_\+stop (\begin{DoxyParamCaption}\item[{T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$}]{htim }\end{DoxyParamCaption})}
+
+
+
+Stop timer and configure apropirate register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em htim} & pointer to a T\+I\+M\+\_\+\+Handle\+Type\+Def structure that contains the configuration information for T\+IM module. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{timeout_8c_a63e5a223bb5f5d5a16cf650f71049515}\label{timeout_8c_a63e5a223bb5f5d5a16cf650f71049515}} 
+\index{timeout.\+c@{timeout.\+c}!timeout\+\_\+uart@{timeout\+\_\+uart}}
+\index{timeout\+\_\+uart@{timeout\+\_\+uart}!timeout.\+c@{timeout.\+c}}
+\subsubsection{\texorpdfstring{timeout\+\_\+uart()}{timeout\_uart()}}
+{\footnotesize\ttfamily void timeout\+\_\+uart (\begin{DoxyParamCaption}\item[{T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$}]{htim,  }\item[{U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$}]{huart,  }\item[{\hyperlink{structcirc__buffer__t}{circ\+\_\+buffer\+\_\+t} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+Timeout operation witch take care about uart buffer and send message by uart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em htim} & pointer to a T\+I\+M\+\_\+\+Handle\+Type\+Def structure that contains the configuration information for T\+IM module. \\
+\hline
+{\em huart} & pointer to U\+A\+R\+T\+\_\+\+Handle\+Type\+Def structure contains the configuration information for Uart module. \\
+\hline
+{\em q} & pointer to \hyperlink{structcirc__buffer__t}{circ\+\_\+buffer\+\_\+t} structure \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 2

@@ -54,7 +54,11 @@ void save_time(circ_buffer_2d *log_circ_buff){
 
     circ_buffer_put_string(log_circ_buff, &log_buff_temp);
 }
-
+/**
+  * @brief Set time in RTC module
+  * @param buffer pointer to place where time is store
+  * @retval None
+  */
 void set_time(char *buffer){
     u_int8_t number;
     char str[2];
@@ -77,6 +81,11 @@ void set_time(char *buffer){
     HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 
 }
+/**
+  * @brief Set data in RTC module
+  * @param buffer pointer to place where data is store
+  * @retval None
+  */
 void set_date(char *buffer){
     u_int8_t number;
     char str[2];

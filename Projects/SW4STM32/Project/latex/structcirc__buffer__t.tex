@@ -1,0 +1,51 @@
+\hypertarget{structcirc__buffer__t}{}\section{circ\+\_\+buffer\+\_\+t Struct Reference}
+\label{structcirc__buffer__t}\index{circ\+\_\+buffer\+\_\+t@{circ\+\_\+buffer\+\_\+t}}
+
+
+Data structure implemented as circular buffer.  
+
+
+
+
+{\ttfamily \#include $<$struct.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+volatile char $\ast$const \hyperlink{structcirc__buffer__t_aa817597980b60e12f1fff8a95496564c}{buffer}
+\item 
+u\+\_\+int8\+\_\+t \hyperlink{structcirc__buffer__t_aef8f62f80f1f898826f8289c3c8ee3e1}{head}
+\item 
+u\+\_\+int8\+\_\+t \hyperlink{structcirc__buffer__t_ac263e578598ba3ca3c25af3977450e27}{tail}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Data structure implemented as circular buffer. 
+
+Data in this structure is 1d. It was implemented to deal with uart data. 
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structcirc__buffer__t_aa817597980b60e12f1fff8a95496564c}\label{structcirc__buffer__t_aa817597980b60e12f1fff8a95496564c}} 
+\index{circ\+\_\+buffer\+\_\+t@{circ\+\_\+buffer\+\_\+t}!buffer@{buffer}}
+\index{buffer@{buffer}!circ\+\_\+buffer\+\_\+t@{circ\+\_\+buffer\+\_\+t}}
+\subsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily volatile char$\ast$ const circ\+\_\+buffer\+\_\+t\+::buffer}
+
+char container \mbox{\Hypertarget{structcirc__buffer__t_aef8f62f80f1f898826f8289c3c8ee3e1}\label{structcirc__buffer__t_aef8f62f80f1f898826f8289c3c8ee3e1}} 
+\index{circ\+\_\+buffer\+\_\+t@{circ\+\_\+buffer\+\_\+t}!head@{head}}
+\index{head@{head}!circ\+\_\+buffer\+\_\+t@{circ\+\_\+buffer\+\_\+t}}
+\subsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily u\+\_\+int8\+\_\+t circ\+\_\+buffer\+\_\+t\+::head}
+
+variable hold place where is the oldest data \mbox{\Hypertarget{structcirc__buffer__t_ac263e578598ba3ca3c25af3977450e27}\label{structcirc__buffer__t_ac263e578598ba3ca3c25af3977450e27}} 
+\index{circ\+\_\+buffer\+\_\+t@{circ\+\_\+buffer\+\_\+t}!tail@{tail}}
+\index{tail@{tail}!circ\+\_\+buffer\+\_\+t@{circ\+\_\+buffer\+\_\+t}}
+\subsubsection{\texorpdfstring{tail}{tail}}
+{\footnotesize\ttfamily u\+\_\+int8\+\_\+t circ\+\_\+buffer\+\_\+t\+::tail}
+
+variable hold place where is the newest data 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Application/\+User/\hyperlink{struct_8h}{struct.\+h}\end{DoxyCompactItemize}

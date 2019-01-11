@@ -1,0 +1,15 @@
+digraph "TM_GPIO"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="TM_STM32Fxxx_HAL_Libraries",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___t_m___s_t_m32_fxxx___h_a_l___libraries.html"];
+  Node2 [label="TM_GPIO_Macros",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___t_m___g_p_i_o___macros.html",tooltip="GPIO Library macros. "];
+  Node0 [label="TM_GPIO",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3 [label="TM_GPIO_Typedefs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___t_m___g_p_i_o___typedefs.html",tooltip="GPIO Typedefs used for GPIO library for initialization purposes. "];
+  Node4 [label="TM_GPIO_Functions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___t_m___g_p_i_o___functions.html",tooltip="GPIO Functions. "];
+  Node1->Node0 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node4 [shape=plaintext, dir="back", style="solid"];
+}

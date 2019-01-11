@@ -1,0 +1,17 @@
+digraph "uart_get_char"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="uart_get_char",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="timeout_start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$timeout_8c.html#aae822db4421521370650c0abb8bfdcd2",tooltip="Start timer and configure apropirate register to timeout opreration. "];
+  Node0 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="circ_buffer_put_char",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$circular__buffer_8c.html#a334ce70427261ea1df018dde9889a679",tooltip="Put character in circular buffer. "];
+  Node0 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="timeout_stop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$timeout_8c.html#a3538fcacacf2f080aeef19d2817915a2",tooltip="Stop timer and configure apropirate register. "];
+  Node0 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="timeout_reset",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$timeout_8c.html#ae26365065c9574f542e6676b81b86806",tooltip="reset timer (ctn register is set to 0) "];
+  Node0 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="circ_buffer_clear",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$circular__buffer_8c.html#a5b404ab87c63d621304270ce477069c8",tooltip="Clear circular buffer. "];
+}

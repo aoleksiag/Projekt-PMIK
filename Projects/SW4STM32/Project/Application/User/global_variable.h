@@ -7,12 +7,9 @@
 #endif /* APPLICATION_USER_CIRCULAR_BUFFER_INC_COS_H_ */
 
 
-
-
 RTC_TimeTypeDef sTime;
 RTC_DateTypeDef sDate;
 RTC_HandleTypeDef hrtc;
-
 
 
 bool sw[16];
@@ -45,16 +42,11 @@ bool uart_set_change_pass_flag;
 bool uart_set_pass;
 bool uart_new_pass;
 bool lock_open_flag;
+bool lock;
 char uart_log_str[LOG_BUFF_SIZE];
 
 volatile u_int8_t uart_string_tosend_count;
 
-
 u_int8_t k;
-
-/*volatile circ_buffer_2d log_circ_buff;
-
-volatile char uart_rxBuff[UART_RX_BUF_SIZE];
-volatile circ_buffer_t uart_rx_circBuff ;*/
 
 

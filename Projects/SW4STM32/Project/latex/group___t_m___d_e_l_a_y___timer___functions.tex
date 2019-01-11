@@ -1,0 +1,195 @@
+\hypertarget{group___t_m___d_e_l_a_y___timer___functions}{}\section{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions}
+\label{group___t_m___d_e_l_a_y___timer___functions}\index{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions}}
+
+
+Software timer functions.  
+
+
+Collaboration diagram for T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$ \hyperlink{group___t_m___d_e_l_a_y___timer___functions_ga848f0e5f378dc5c28b3a5a0a86153118}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Create} (uint32\+\_\+t Reload\+Value, uint8\+\_\+t Auto\+Reload\+Cmd, uint8\+\_\+t Start\+Timer, void($\ast$T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Custom\+Timer\+Callback)(struct \hyperlink{struct___t_m___d_e_l_a_y___timer__t}{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$, void $\ast$), void $\ast$User\+Parameters)
+\begin{DoxyCompactList}\small\item\em Creates a new custom timer which has 1ms resolution. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___d_e_l_a_y___timer___functions_ga396cc635fa4700caebd8a756ce9197a3}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Delete} (\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$Timer)
+\begin{DoxyCompactList}\small\item\em Deletes already allocated timer. \end{DoxyCompactList}\item 
+\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$ \hyperlink{group___t_m___d_e_l_a_y___timer___functions_ga860e1fa6c7ae18b54d89425ccbd280a5}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Stop} (\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$Timer)
+\begin{DoxyCompactList}\small\item\em Stops custom timer from counting. \end{DoxyCompactList}\item 
+\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$ \hyperlink{group___t_m___d_e_l_a_y___timer___functions_ga3d811bc37a1b9f975ba3738f577021dc}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Start} (\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$Timer)
+\begin{DoxyCompactList}\small\item\em Starts custom timer counting. \end{DoxyCompactList}\item 
+\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$ \hyperlink{group___t_m___d_e_l_a_y___timer___functions_ga0817b5f2921d7e9b0efc9ea97a38a621}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Reset} (\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$Timer)
+\begin{DoxyCompactList}\small\item\em Resets custom timer counter value. \end{DoxyCompactList}\item 
+\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$ \hyperlink{group___t_m___d_e_l_a_y___timer___functions_ga4a62180a12d19b372b3da3d98898d9d3}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Auto\+Reload\+Command} (\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$Timer, uint8\+\_\+t Auto\+Reload\+Cmd)
+\begin{DoxyCompactList}\small\item\em Sets auto reload feature for timer. \end{DoxyCompactList}\item 
+\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$ \hyperlink{group___t_m___d_e_l_a_y___timer___functions_gaa9fdfeb8a094bdfec218134cba774b9e}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Auto\+Reload\+Value} (\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$Timer, uint32\+\_\+t Auto\+Reload\+Value)
+\begin{DoxyCompactList}\small\item\em Sets auto reload value for timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Software timer functions. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___t_m___d_e_l_a_y___timer___functions_ga4a62180a12d19b372b3da3d98898d9d3}\label{group___t_m___d_e_l_a_y___timer___functions_ga4a62180a12d19b372b3da3d98898d9d3}} 
+\index{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions}!T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Auto\+Reload\+Command@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Auto\+Reload\+Command}}
+\index{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Auto\+Reload\+Command@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Auto\+Reload\+Command}!T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Auto\+Reload\+Command()}{TM\_DELAY\_TimerAutoReloadCommand()}}
+{\footnotesize\ttfamily \hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}$\ast$ T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Auto\+Reload\+Command (\begin{DoxyParamCaption}\item[{\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$}]{Timer,  }\item[{uint8\+\_\+t}]{Auto\+Reload\+Cmd }\end{DoxyParamCaption})}
+
+
+
+Sets auto reload feature for timer. 
+
+\begin{DoxyNote}{Note}
+Auto reload features is used for timer which starts again when zero is reached if auto reload active 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+Timer} & Pointer to \hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} structure \\
+\hline
+{\em Auto\+Reload} & Set to 1 if you want to enable Auto\+Reload or 0 to disable \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Pointer} & to \hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} structure \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___d_e_l_a_y___timer___functions_gaa9fdfeb8a094bdfec218134cba774b9e}\label{group___t_m___d_e_l_a_y___timer___functions_gaa9fdfeb8a094bdfec218134cba774b9e}} 
+\index{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions}!T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Auto\+Reload\+Value@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Auto\+Reload\+Value}}
+\index{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Auto\+Reload\+Value@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Auto\+Reload\+Value}!T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Auto\+Reload\+Value()}{TM\_DELAY\_TimerAutoReloadValue()}}
+{\footnotesize\ttfamily \hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}$\ast$ T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Auto\+Reload\+Value (\begin{DoxyParamCaption}\item[{\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$}]{Timer,  }\item[{uint32\+\_\+t}]{Auto\+Reload\+Value }\end{DoxyParamCaption})}
+
+
+
+Sets auto reload value for timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+Timer} & Pointer to \hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} structure \\
+\hline
+{\em Auto\+Reload\+Value} & Value for timer to be set when zero is reached and callback is called \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Auto\+Reload feature must be enabled for timer in order to get this to work properly 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em Pointer} & to \hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} structure \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___d_e_l_a_y___timer___functions_ga848f0e5f378dc5c28b3a5a0a86153118}\label{group___t_m___d_e_l_a_y___timer___functions_ga848f0e5f378dc5c28b3a5a0a86153118}} 
+\index{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions}!T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Create@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Create}}
+\index{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Create@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Create}!T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Create()}{TM\_DELAY\_TimerCreate()}}
+{\footnotesize\ttfamily \hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}$\ast$ T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Create (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{Reload\+Value,  }\item[{uint8\+\_\+t}]{Auto\+Reload\+Cmd,  }\item[{uint8\+\_\+t}]{Start\+Timer,  }\item[{void($\ast$)(struct \hyperlink{struct___t_m___d_e_l_a_y___timer__t}{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$, void $\ast$)}]{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Custom\+Timer\+Callback,  }\item[{void $\ast$}]{User\+Parameters }\end{DoxyParamCaption})}
+
+
+
+Creates a new custom timer which has 1ms resolution. 
+
+\begin{DoxyNote}{Note}
+It uses malloc for memory allocation for timer structure 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em Reload\+Value} & Number of milliseconds when timer reaches zero and callback function is called \\
+\hline
+{\em Auto\+Reload\+Cmd} & If set to 1, timer will start again when it reaches zero and callback is called \\
+\hline
+{\em Start\+Timer} & If set to 1, timer will start immediately \\
+\hline
+{\em $\ast$\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Custom\+Timer\+Callback} & Pointer to callback function which will be called when timer reaches zero \\
+\hline
+{\em $\ast$\+User\+Parameters} & Pointer to void pointer to user parameters used as first parameter in callback function \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Pointer} & to allocated timer structure \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___d_e_l_a_y___timer___functions_ga396cc635fa4700caebd8a756ce9197a3}\label{group___t_m___d_e_l_a_y___timer___functions_ga396cc635fa4700caebd8a756ce9197a3}} 
+\index{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions}!T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Delete@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Delete}}
+\index{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Delete@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Delete}!T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Delete()}{TM\_DELAY\_TimerDelete()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Delete (\begin{DoxyParamCaption}\item[{\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$}]{Timer }\end{DoxyParamCaption})}
+
+
+
+Deletes already allocated timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+Timer} & Pointer to \hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} structure \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___d_e_l_a_y___timer___functions_ga0817b5f2921d7e9b0efc9ea97a38a621}\label{group___t_m___d_e_l_a_y___timer___functions_ga0817b5f2921d7e9b0efc9ea97a38a621}} 
+\index{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions}!T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Reset@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Reset}}
+\index{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Reset@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Reset}!T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Reset()}{TM\_DELAY\_TimerReset()}}
+{\footnotesize\ttfamily \hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}$\ast$ T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Reset (\begin{DoxyParamCaption}\item[{\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$}]{Timer }\end{DoxyParamCaption})}
+
+
+
+Resets custom timer counter value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+Timer} & Pointer to \hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} structure \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Pointer} & to \hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} structure \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___d_e_l_a_y___timer___functions_ga3d811bc37a1b9f975ba3738f577021dc}\label{group___t_m___d_e_l_a_y___timer___functions_ga3d811bc37a1b9f975ba3738f577021dc}} 
+\index{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions}!T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Start@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Start}}
+\index{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Start@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Start}!T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Start()}{TM\_DELAY\_TimerStart()}}
+{\footnotesize\ttfamily \hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}$\ast$ T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Start (\begin{DoxyParamCaption}\item[{\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$}]{Timer }\end{DoxyParamCaption})}
+
+
+
+Starts custom timer counting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+Timer} & Pointer to \hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} structure \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Pointer} & to \hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} structure \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___d_e_l_a_y___timer___functions_ga860e1fa6c7ae18b54d89425ccbd280a5}\label{group___t_m___d_e_l_a_y___timer___functions_ga860e1fa6c7ae18b54d89425ccbd280a5}} 
+\index{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions}!T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Stop@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Stop}}
+\index{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Stop@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Stop}!T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions@{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Stop()}{TM\_DELAY\_TimerStop()}}
+{\footnotesize\ttfamily \hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}$\ast$ T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+Stop (\begin{DoxyParamCaption}\item[{\hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$}]{Timer }\end{DoxyParamCaption})}
+
+
+
+Stops custom timer from counting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+Timer} & Pointer to \hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} structure \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Pointer} & to \hyperlink{group___t_m___d_e_l_a_y___typedefs_gaf0beeb077a757f34c8b176464d9a0e85}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} structure \\
+\hline
+\end{DoxyRetVals}

@@ -1,0 +1,98 @@
+\hypertarget{struct___t_m___d_e_l_a_y___timer__t}{}\section{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t Struct Reference}
+\label{struct___t_m___d_e_l_a_y___timer__t}\index{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}}
+
+
+Custom timer structure.  
+
+
+
+
+{\ttfamily \#include $<$tm\+\_\+stm32\+\_\+delay.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \{\\
+\>\>uint8\_t \hyperlink{struct___t_m___d_e_l_a_y___timer__t_a1f3bc377ac159922473d6c06f1c73522}{AREN}:1\\
+\>\>uint8\_t \hyperlink{struct___t_m___d_e_l_a_y___timer__t_acf0c4d077f4631ab0190a58c614dbfca}{CNTEN}:1\\
+\>\} \hyperlink{struct___t_m___d_e_l_a_y___timer__t_a40b6046972a42f803c4419f2e38f03aa}{F}\\
+\>uint8\_t \hyperlink{struct___t_m___d_e_l_a_y___timer__t_aa65211e90cc3a0081998ef3d562980bd}{FlagsVal}\\
+\} \hyperlink{struct___t_m___d_e_l_a_y___timer__t_a6beb9f090d6c112ed5506fdf284f82bc}{Flags}\\
+
+\end{tabbing}\item 
+uint32\+\_\+t \hyperlink{struct___t_m___d_e_l_a_y___timer__t_a28d91cd581c439f87c95362664933101}{A\+RR}
+\item 
+uint32\+\_\+t \hyperlink{struct___t_m___d_e_l_a_y___timer__t_af853003aa6db01a3b266193fbc48ac65}{C\+NT}
+\item 
+void($\ast$ \hyperlink{struct___t_m___d_e_l_a_y___timer__t_ae32cf4569f33c997d7498f037aea8d9e}{Callback} )(struct \hyperlink{struct___t_m___d_e_l_a_y___timer__t}{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$, void $\ast$)
+\item 
+void $\ast$ \hyperlink{struct___t_m___d_e_l_a_y___timer__t_acdb9175c7724f3bc7df957dab22d913f}{User\+Parameters}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Custom timer structure. 
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{struct___t_m___d_e_l_a_y___timer__t_a1f3bc377ac159922473d6c06f1c73522}\label{struct___t_m___d_e_l_a_y___timer__t_a1f3bc377ac159922473d6c06f1c73522}} 
+\index{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}!A\+R\+EN@{A\+R\+EN}}
+\index{A\+R\+EN@{A\+R\+EN}!\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}}
+\subsubsection{\texorpdfstring{A\+R\+EN}{AREN}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t\+::\+A\+R\+EN}
+
+Auto-\/reload enabled \mbox{\Hypertarget{struct___t_m___d_e_l_a_y___timer__t_a28d91cd581c439f87c95362664933101}\label{struct___t_m___d_e_l_a_y___timer__t_a28d91cd581c439f87c95362664933101}} 
+\index{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}!A\+RR@{A\+RR}}
+\index{A\+RR@{A\+RR}!\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}}
+\subsubsection{\texorpdfstring{A\+RR}{ARR}}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t\+::\+A\+RR}
+
+Auto reload value \mbox{\Hypertarget{struct___t_m___d_e_l_a_y___timer__t_ae32cf4569f33c997d7498f037aea8d9e}\label{struct___t_m___d_e_l_a_y___timer__t_ae32cf4569f33c997d7498f037aea8d9e}} 
+\index{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}!Callback@{Callback}}
+\index{Callback@{Callback}!\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}}
+\subsubsection{\texorpdfstring{Callback}{Callback}}
+{\footnotesize\ttfamily void($\ast$ \+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t\+::\+Callback) (struct \hyperlink{struct___t_m___d_e_l_a_y___timer__t}{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t} $\ast$, void $\ast$)}
+
+Callback which will be called when timer reaches zero \mbox{\Hypertarget{struct___t_m___d_e_l_a_y___timer__t_af853003aa6db01a3b266193fbc48ac65}\label{struct___t_m___d_e_l_a_y___timer__t_af853003aa6db01a3b266193fbc48ac65}} 
+\index{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}!C\+NT@{C\+NT}}
+\index{C\+NT@{C\+NT}!\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}}
+\subsubsection{\texorpdfstring{C\+NT}{CNT}}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t\+::\+C\+NT}
+
+Counter value, counter counts down \mbox{\Hypertarget{struct___t_m___d_e_l_a_y___timer__t_acf0c4d077f4631ab0190a58c614dbfca}\label{struct___t_m___d_e_l_a_y___timer__t_acf0c4d077f4631ab0190a58c614dbfca}} 
+\index{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}!C\+N\+T\+EN@{C\+N\+T\+EN}}
+\index{C\+N\+T\+EN@{C\+N\+T\+EN}!\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}}
+\subsubsection{\texorpdfstring{C\+N\+T\+EN}{CNTEN}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t\+::\+C\+N\+T\+EN}
+
+Count enabled \mbox{\Hypertarget{struct___t_m___d_e_l_a_y___timer__t_a40b6046972a42f803c4419f2e38f03aa}\label{struct___t_m___d_e_l_a_y___timer__t_a40b6046972a42f803c4419f2e38f03aa}} 
+\index{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}!F@{F}}
+\index{F@{F}!\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}}
+\subsubsection{\texorpdfstring{F}{F}}
+{\footnotesize\ttfamily struct \{ ... \}   \+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t\+::F}
+
+\mbox{\Hypertarget{struct___t_m___d_e_l_a_y___timer__t_a6beb9f090d6c112ed5506fdf284f82bc}\label{struct___t_m___d_e_l_a_y___timer__t_a6beb9f090d6c112ed5506fdf284f82bc}} 
+\index{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}!Flags@{Flags}}
+\index{Flags@{Flags}!\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}}
+\subsubsection{\texorpdfstring{Flags}{Flags}}
+{\footnotesize\ttfamily union \{ ... \}   \+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t\+::\+Flags}
+
+\mbox{\Hypertarget{struct___t_m___d_e_l_a_y___timer__t_aa65211e90cc3a0081998ef3d562980bd}\label{struct___t_m___d_e_l_a_y___timer__t_aa65211e90cc3a0081998ef3d562980bd}} 
+\index{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}!Flags\+Val@{Flags\+Val}}
+\index{Flags\+Val@{Flags\+Val}!\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}}
+\subsubsection{\texorpdfstring{Flags\+Val}{FlagsVal}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t\+::\+Flags\+Val}
+
+\mbox{\Hypertarget{struct___t_m___d_e_l_a_y___timer__t_acdb9175c7724f3bc7df957dab22d913f}\label{struct___t_m___d_e_l_a_y___timer__t_acdb9175c7724f3bc7df957dab22d913f}} 
+\index{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}!User\+Parameters@{User\+Parameters}}
+\index{User\+Parameters@{User\+Parameters}!\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t@{\+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t}}
+\subsubsection{\texorpdfstring{User\+Parameters}{UserParameters}}
+{\footnotesize\ttfamily void$\ast$ \+\_\+\+T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+t\+::\+User\+Parameters}
+
+Pointer to user parameters used for callback function 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Application/\+User/\+Lcd\+\_\+driver/inc/\hyperlink{tm__stm32__delay_8h}{tm\+\_\+stm32\+\_\+delay.\+h}\end{DoxyCompactItemize}

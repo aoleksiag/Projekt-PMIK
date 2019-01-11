@@ -1,0 +1,82 @@
+\hypertarget{tm__stm32__gpio_8c}{}\section{Application/\+User/\+Lcd\+\_\+driver/src/tm\+\_\+stm32\+\_\+gpio.c File Reference}
+\label{tm__stm32__gpio_8c}\index{Application/\+User/\+Lcd\+\_\+driver/src/tm\+\_\+stm32\+\_\+gpio.\+c@{Application/\+User/\+Lcd\+\_\+driver/src/tm\+\_\+stm32\+\_\+gpio.\+c}}
+{\ttfamily \#include \char`\"{}tm\+\_\+stm32\+\_\+gpio.\+h\char`\"{}}\newline
+Include dependency graph for tm\+\_\+stm32\+\_\+gpio.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{tm__stm32__gpio_8c_ae8a3a9d414ec5c8786e556305883e4fc}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Enable\+Clock} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox)
+\item 
+void \hyperlink{tm__stm32__gpio_8c_a355c1b2a17d073a13dba94db1b556c0b}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Disable\+Clock} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox)
+\item 
+void \hyperlink{tm__stm32__gpio_8c_aa62b1d8c486e76c5b080c38a32e1f7e1}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Init} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, \hyperlink{group___t_m___g_p_i_o___typedefs_gacbb363a57d0e70ea563e494eff1db3ca}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Mode\+\_\+t} G\+P\+I\+O\+\_\+\+Mode, \hyperlink{group___t_m___g_p_i_o___typedefs_ga1d443fe266a4073f40ea271ae7b8df9f}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+O\+Type\+\_\+t} G\+P\+I\+O\+\_\+\+O\+Type, \hyperlink{group___t_m___g_p_i_o___typedefs_ga50ddb0da56d8a388dee368c55e968602}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+t} G\+P\+I\+O\+\_\+\+Pu\+Pd, \hyperlink{group___t_m___g_p_i_o___typedefs_gaa57736d106efbe14067be22025f296c4}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Speed\+\_\+t} G\+P\+I\+O\+\_\+\+Speed)
+\item 
+void \hyperlink{group___t_m___g_p_i_o___functions_ga7ea61719f45c8d46e56f636d7ffdf0d0}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, \hyperlink{group___t_m___g_p_i_o___typedefs_gacbb363a57d0e70ea563e494eff1db3ca}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Mode\+\_\+t} G\+P\+I\+O\+\_\+\+Mode, \hyperlink{group___t_m___g_p_i_o___typedefs_ga1d443fe266a4073f40ea271ae7b8df9f}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+O\+Type\+\_\+t} G\+P\+I\+O\+\_\+\+O\+Type, \hyperlink{group___t_m___g_p_i_o___typedefs_ga50ddb0da56d8a388dee368c55e968602}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+t} G\+P\+I\+O\+\_\+\+Pu\+Pd, \hyperlink{group___t_m___g_p_i_o___typedefs_gaa57736d106efbe14067be22025f296c4}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Speed\+\_\+t} G\+P\+I\+O\+\_\+\+Speed)
+\begin{DoxyCompactList}\small\item\em Initializes G\+P\+IO pins(s) \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___g_p_i_o___functions_gac91349d1bf42b50463ebc2716130eb89}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init\+Alternate} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, \hyperlink{group___t_m___g_p_i_o___typedefs_ga1d443fe266a4073f40ea271ae7b8df9f}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+O\+Type\+\_\+t} G\+P\+I\+O\+\_\+\+O\+Type, \hyperlink{group___t_m___g_p_i_o___typedefs_ga50ddb0da56d8a388dee368c55e968602}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+t} G\+P\+I\+O\+\_\+\+Pu\+Pd, \hyperlink{group___t_m___g_p_i_o___typedefs_gaa57736d106efbe14067be22025f296c4}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Speed\+\_\+t} G\+P\+I\+O\+\_\+\+Speed, uint8\+\_\+t Alternate)
+\begin{DoxyCompactList}\small\item\em Initializes G\+P\+IO pins(s) as alternate function. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___g_p_i_o___functions_gac87f1d18ac3e984bce0cbf44f7210198}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+De\+Init} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Deinitializes pin(s) \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___g_p_i_o___functions_ga9c5ca4f894b1f46d413d2bfc692fcf43}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Input} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Sets pin(s) as input. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___g_p_i_o___functions_gabfa399cb17386714bd9c395a81b43035}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Output} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Sets pin(s) as output. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___g_p_i_o___functions_gaeaa3015995a3d1947d63a63240b38433}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Analog} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Sets pin(s) as analog. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___g_p_i_o___functions_ga7828700c54f2449fed2afb0a84c1698d}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Alternate} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Sets pin(s) as alternate function. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___g_p_i_o___functions_ga2c9473d78b1c2f5031d914a38bab036a}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pull\+Resistor} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, \hyperlink{group___t_m___g_p_i_o___typedefs_ga50ddb0da56d8a388dee368c55e968602}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+t} G\+P\+I\+O\+\_\+\+Pu\+Pd)
+\begin{DoxyCompactList}\small\item\em Sets pull resistor settings to G\+P\+IO pin(s) \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___g_p_i_o___functions_gaf52cf03a031c506fa46518a1e42c8ce2}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Lock} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Locks G\+P\+I\+Ox register for future changes. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group___t_m___g_p_i_o___functions_ga29aaed3ba7054d4c3a3fed55012403e5}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Pin\+Source} (uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Gets pin source from desired G\+P\+IO pin. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group___t_m___g_p_i_o___functions_gaa5a2f30f33cc19408daeb5db3b7cb59c}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Source} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox)
+\begin{DoxyCompactList}\small\item\em Gets port source from desired G\+P\+I\+Ox P\+O\+RT. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group___t_m___g_p_i_o___functions_ga8fc67a53f59d23b221e82a4a71642f30}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Used\+Pins} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox)
+\begin{DoxyCompactList}\small\item\em Gets bit separated pins which were used at least once in library and were not deinitialized. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group___t_m___g_p_i_o___functions_ga72bffec02520314763c10defc9406400}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Free\+Pins} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox)
+\begin{DoxyCompactList}\small\item\em Gets bit separated pins which were not used at in library or were deinitialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static uint16\+\_\+t \hyperlink{tm__stm32__gpio_8c_a049a40275ce191255d7b401da6edf882}{G\+P\+I\+O\+\_\+\+Used\+Pins} \mbox{[}13\mbox{]} = \{0,0,0,0,0,0,0,0,0,0,0,0,0\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{tm__stm32__gpio_8c_a355c1b2a17d073a13dba94db1b556c0b}\label{tm__stm32__gpio_8c_a355c1b2a17d073a13dba94db1b556c0b}} 
+\index{tm\+\_\+stm32\+\_\+gpio.\+c@{tm\+\_\+stm32\+\_\+gpio.\+c}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Disable\+Clock@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Disable\+Clock}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Disable\+Clock@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Disable\+Clock}!tm\+\_\+stm32\+\_\+gpio.\+c@{tm\+\_\+stm32\+\_\+gpio.\+c}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Disable\+Clock()}{TM\_GPIO\_INT\_DisableClock()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Disable\+Clock (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{tm__stm32__gpio_8c_ae8a3a9d414ec5c8786e556305883e4fc}\label{tm__stm32__gpio_8c_ae8a3a9d414ec5c8786e556305883e4fc}} 
+\index{tm\+\_\+stm32\+\_\+gpio.\+c@{tm\+\_\+stm32\+\_\+gpio.\+c}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Enable\+Clock@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Enable\+Clock}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Enable\+Clock@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Enable\+Clock}!tm\+\_\+stm32\+\_\+gpio.\+c@{tm\+\_\+stm32\+\_\+gpio.\+c}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Enable\+Clock()}{TM\_GPIO\_INT\_EnableClock()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Enable\+Clock (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{tm__stm32__gpio_8c_aa62b1d8c486e76c5b080c38a32e1f7e1}\label{tm__stm32__gpio_8c_aa62b1d8c486e76c5b080c38a32e1f7e1}} 
+\index{tm\+\_\+stm32\+\_\+gpio.\+c@{tm\+\_\+stm32\+\_\+gpio.\+c}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Init@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Init}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Init@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Init}!tm\+\_\+stm32\+\_\+gpio.\+c@{tm\+\_\+stm32\+\_\+gpio.\+c}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Init()}{TM\_GPIO\_INT\_Init()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+Init (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{\hyperlink{group___t_m___g_p_i_o___typedefs_gacbb363a57d0e70ea563e494eff1db3ca}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Mode\+\_\+t}}]{G\+P\+I\+O\+\_\+\+Mode,  }\item[{\hyperlink{group___t_m___g_p_i_o___typedefs_ga1d443fe266a4073f40ea271ae7b8df9f}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+O\+Type\+\_\+t}}]{G\+P\+I\+O\+\_\+\+O\+Type,  }\item[{\hyperlink{group___t_m___g_p_i_o___typedefs_ga50ddb0da56d8a388dee368c55e968602}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+t}}]{G\+P\+I\+O\+\_\+\+Pu\+Pd,  }\item[{\hyperlink{group___t_m___g_p_i_o___typedefs_gaa57736d106efbe14067be22025f296c4}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Speed\+\_\+t}}]{G\+P\+I\+O\+\_\+\+Speed }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 3
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{tm__stm32__gpio_8c_a049a40275ce191255d7b401da6edf882}\label{tm__stm32__gpio_8c_a049a40275ce191255d7b401da6edf882}} 
+\index{tm\+\_\+stm32\+\_\+gpio.\+c@{tm\+\_\+stm32\+\_\+gpio.\+c}!G\+P\+I\+O\+\_\+\+Used\+Pins@{G\+P\+I\+O\+\_\+\+Used\+Pins}}
+\index{G\+P\+I\+O\+\_\+\+Used\+Pins@{G\+P\+I\+O\+\_\+\+Used\+Pins}!tm\+\_\+stm32\+\_\+gpio.\+c@{tm\+\_\+stm32\+\_\+gpio.\+c}}
+\subsubsection{\texorpdfstring{G\+P\+I\+O\+\_\+\+Used\+Pins}{GPIO\_UsedPins}}
+{\footnotesize\ttfamily uint16\+\_\+t G\+P\+I\+O\+\_\+\+Used\+Pins\mbox{[}13\mbox{]} = \{0,0,0,0,0,0,0,0,0,0,0,0,0\}\hspace{0.3cm}{\ttfamily [static]}}
+
+$\vert$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- $\vert$ Copyright (c) 2016 Tilen Majerle $\vert$ $\vert$ Permission is hereby granted, free of charge, to any person $\vert$ obtaining a copy of this software and associated documentation $\vert$ files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, $\vert$ including without limitation the rights to use, copy, modify, merge, $\vert$ publish, distribute, sublicense, and/or sell copies of the Software, $\vert$ and to permit persons to whom the Software is furnished to do so, $\vert$ subject to the following conditions\+: $\vert$ $\vert$ The above copyright notice and this permission notice shall be $\vert$ included in all copies or substantial portions of the Software. $\vert$ $\vert$ T\+HE S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+TY OF A\+NY K\+I\+ND, $\vert$ E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED, I\+N\+C\+L\+U\+D\+I\+NG B\+UT N\+OT L\+I\+M\+I\+T\+ED TO T\+HE W\+A\+R\+R\+A\+N\+T\+I\+ES $\vert$ OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY, F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE $\vert$ A\+ND N\+O\+N\+I\+N\+F\+R\+I\+N\+G\+E\+M\+E\+NT. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE A\+U\+T\+H\+O\+RS OR C\+O\+P\+Y\+R\+I\+G\+HT $\vert$ H\+O\+L\+D\+E\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY C\+L\+A\+IM, D\+A\+M\+A\+G\+ES OR O\+T\+H\+ER L\+I\+A\+B\+I\+L\+I\+TY, $\vert$ W\+H\+E\+T\+H\+ER IN AN A\+C\+T\+I\+ON OF C\+O\+N\+T\+R\+A\+CT, T\+O\+RT OR O\+T\+H\+E\+R\+W\+I\+SE, A\+R\+I\+S\+I\+NG $\vert$ F\+R\+OM, O\+UT OF OR IN C\+O\+N\+N\+E\+C\+T\+I\+ON W\+I\+TH T\+HE S\+O\+F\+T\+W\+A\+RE OR T\+HE U\+SE OR $\vert$ O\+T\+H\+ER D\+E\+A\+L\+I\+N\+GS IN T\+HE S\+O\+F\+T\+W\+A\+RE. $\vert$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 

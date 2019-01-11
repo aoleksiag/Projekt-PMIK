@@ -1,0 +1,60 @@
+\hypertarget{tm__stm32__hd44780_8h}{}\section{Application/\+User/\+Lcd\+\_\+driver/inc/tm\+\_\+stm32\+\_\+hd44780.h File Reference}
+\label{tm__stm32__hd44780_8h}\index{Application/\+User/\+Lcd\+\_\+driver/inc/tm\+\_\+stm32\+\_\+hd44780.\+h@{Application/\+User/\+Lcd\+\_\+driver/inc/tm\+\_\+stm32\+\_\+hd44780.\+h}}
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}defines.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tm\+\_\+stm32\+\_\+delay.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tm\+\_\+stm32\+\_\+gpio.\+h\char`\"{}}\newline
+Include dependency graph for tm\+\_\+stm32\+\_\+hd44780.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{tm__stm32__hd44780_8h_ab47128500a3161470e5f7b581d10682a}{T\+M\+\_\+\+H\+D44780\+\_\+H}~100
+\begin{DoxyCompactList}\small\item\em H\+D44780 L\+CD driver library for S\+T\+M32\+Fxxx. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga95ddcfeff8a1e3979f453e3e87164a37}{T\+M\+\_\+\+H\+D44780\+\_\+\+Init} (uint8\+\_\+t cols, uint8\+\_\+t rows)
+\begin{DoxyCompactList}\small\item\em Initializes H\+D44780 L\+CD. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga2f61b153a32e30c63a67888cf8e0ee86}{T\+M\+\_\+\+H\+D44780\+\_\+\+Display\+On} (void)
+\begin{DoxyCompactList}\small\item\em Turn display on. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga72f1b22b97fd06cc7e64fc743b16b492}{T\+M\+\_\+\+H\+D44780\+\_\+\+Display\+Off} (void)
+\begin{DoxyCompactList}\small\item\em Turn display off. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga0a7a99ba13104c13646bbb40e5ee3bd9}{T\+M\+\_\+\+H\+D44780\+\_\+\+Clear} (void)
+\begin{DoxyCompactList}\small\item\em Clears entire L\+CD. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga67a3b90f620284520a052c20fab4ee3e}{T\+M\+\_\+\+H\+D44780\+\_\+\+Puts} (uint8\+\_\+t x, uint8\+\_\+t y, char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Puts string on lcd. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga90b3c2e024edc54e3a00b074a5e12b35}{T\+M\+\_\+\+H\+D44780\+\_\+\+Blink\+On} (void)
+\begin{DoxyCompactList}\small\item\em Enables cursor blink. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga4e4bd5908824745d2d7b00f20616bdb0}{T\+M\+\_\+\+H\+D44780\+\_\+\+Blink\+Off} (void)
+\begin{DoxyCompactList}\small\item\em Disables cursor blink. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_gaee93c2b0c5485e82b5bdb299851da4c3}{T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+On} (void)
+\begin{DoxyCompactList}\small\item\em Shows cursor. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_gab469e6dacbf2526bbdac70114edd11ba}{T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+Off} (void)
+\begin{DoxyCompactList}\small\item\em Hides cursor. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_gabd360dcaabda6114a4d63ab3d63fde48}{T\+M\+\_\+\+H\+D44780\+\_\+\+Scroll\+Left} (void)
+\begin{DoxyCompactList}\small\item\em Scrolls display to the left. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga9ac0912d00ab55d31f36bfef953dd0bf}{T\+M\+\_\+\+H\+D44780\+\_\+\+Scroll\+Right} (void)
+\begin{DoxyCompactList}\small\item\em Scrolls display to the right. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga32d98afae3fae1d278778dec7aac9130}{T\+M\+\_\+\+H\+D44780\+\_\+\+Create\+Char} (uint8\+\_\+t location, uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Creates custom character. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga7bebbde61659ffbd254d5153ddf44ea4}{T\+M\+\_\+\+H\+D44780\+\_\+\+Put\+Custom} (uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t location)
+\begin{DoxyCompactList}\small\item\em Puts custom created character on L\+CD. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{tm__stm32__hd44780_8h_ab47128500a3161470e5f7b581d10682a}\label{tm__stm32__hd44780_8h_ab47128500a3161470e5f7b581d10682a}} 
+\index{tm\+\_\+stm32\+\_\+hd44780.\+h@{tm\+\_\+stm32\+\_\+hd44780.\+h}!T\+M\+\_\+\+H\+D44780\+\_\+H@{T\+M\+\_\+\+H\+D44780\+\_\+H}}
+\index{T\+M\+\_\+\+H\+D44780\+\_\+H@{T\+M\+\_\+\+H\+D44780\+\_\+H}!tm\+\_\+stm32\+\_\+hd44780.\+h@{tm\+\_\+stm32\+\_\+hd44780.\+h}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+H}{TM\_HD44780\_H}}
+{\footnotesize\ttfamily \#define T\+M\+\_\+\+H\+D44780\+\_\+H~100}
+
+
+
+H\+D44780 L\+CD driver library for S\+T\+M32\+Fxxx. 
+
+\begin{DoxyAuthor}{Author}
+Tilen Majerle  \href{mailto:tilen@majerle.eu}{\tt tilen@majerle.\+eu}  \href{http://stm32f4-discovery.net}{\tt http\+://stm32f4-\/discovery.\+net} \hyperlink{}{v1.\+0  Keil u\+Vision  M\+IT  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Copyright (c) 2016 Tilen Majerle  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  T\+HE S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+TY OF A\+NY K\+I\+ND, E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED, I\+N\+C\+L\+U\+D\+I\+NG B\+UT N\+OT L\+I\+M\+I\+T\+ED TO T\+HE W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY, F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+ND N\+O\+N\+I\+N\+F\+R\+I\+N\+G\+E\+M\+E\+NT. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE A\+U\+T\+H\+O\+RS OR C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY C\+L\+A\+IM, D\+A\+M\+A\+G\+ES OR O\+T\+H\+ER L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN AN A\+C\+T\+I\+ON OF C\+O\+N\+T\+R\+A\+CT, T\+O\+RT OR O\+T\+H\+E\+R\+W\+I\+SE, A\+R\+I\+S\+I\+NG F\+R\+OM, O\+UT OF OR IN C\+O\+N\+N\+E\+C\+T\+I\+ON W\+I\+TH T\+HE S\+O\+F\+T\+W\+A\+RE OR T\+HE U\+SE OR O\+T\+H\+ER D\+E\+A\+L\+I\+N\+GS IN T\+HE S\+O\+F\+T\+W\+A\+RE. -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/  }
+\end{DoxyAuthor}

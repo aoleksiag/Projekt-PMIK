@@ -1,0 +1,57 @@
+\hypertarget{group___t_m___d_e_l_a_y}{}\section{T\+M\+\_\+\+D\+E\+L\+AY}
+\label{group___t_m___d_e_l_a_y}\index{T\+M\+\_\+\+D\+E\+L\+AY@{T\+M\+\_\+\+D\+E\+L\+AY}}
+
+
+Delay library for S\+T\+M32\+Fxxx devices -\/ \href{http://stm32f4-discovery.net/2015/07/hal-library-3-delay-for-stm32fxxx/}{\tt http\+://stm32f4-\/discovery.\+net/2015/07/hal-\/library-\/3-\/delay-\/for-\/stm32fxxx/}.  
+
+
+Collaboration diagram for T\+M\+\_\+\+D\+E\+L\+AY\+:
+% FIG 0
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group___t_m___d_e_l_a_y___macros}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Macros}
+\begin{DoxyCompactList}\small\item\em Library defines. \end{DoxyCompactList}\item 
+\hyperlink{group___t_m___d_e_l_a_y___typedefs}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Typedefs}
+\begin{DoxyCompactList}\small\item\em Library Typedefs. \end{DoxyCompactList}\item 
+\hyperlink{group___t_m___d_e_l_a_y___variables}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Variables}
+\begin{DoxyCompactList}\small\item\em Library variables. \end{DoxyCompactList}\item 
+\hyperlink{group___t_m___d_e_l_a_y___functions}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Functions}
+\begin{DoxyCompactList}\small\item\em Library Functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Delay library for S\+T\+M32\+Fxxx devices -\/ \href{http://stm32f4-discovery.net/2015/07/hal-library-3-delay-for-stm32fxxx/}{\tt http\+://stm32f4-\/discovery.\+net/2015/07/hal-\/library-\/3-\/delay-\/for-\/stm32fxxx/}. 
+
+\begin{DoxyParagraph}{Milliseconds delay}
+
+\end{DoxyParagraph}
+Milliseconds delay range is done using Systick interrupts which are made each 1ms. Interrupt handler Systick\+\_\+\+Handler() function can be found in project file stm32fxxx\+\_\+it.\+c file which should call \hyperlink{tm__stm32__delay_8c_aa8361d44d76b7f6256834f828165837a}{H\+A\+L\+\_\+\+Inc\+Tick()}. This function is build in H\+AL drivers, but has {\ttfamily weak} parameter which means it can be replaced. It is replaced in \hyperlink{group___t_m___d_e_l_a_y}{T\+M\+\_\+\+D\+E\+L\+AY} library.
+
+\begin{DoxyParagraph}{Microseconds delay}
+
+\end{DoxyParagraph}
+Microseconds delay range is done using D\+WT cycle counter to get maximum possible accuracy in 1us delay range. This delay is not supported on S\+T\+M32\+F0xx series, because Cortex-\/\+M0 does not have D\+WT section built-\/in.
+
+\begin{DoxyParagraph}{Software timers}
+
+\end{DoxyParagraph}
+As mentioned in Milliseconds delay section, library has active Systick timer, which makes interrupt every 1 ms. This allows you also, to make software timers, which has resolution of 1 ms. I\textquotesingle{}ve added some support functions for software timers.
+
+The main idea of software timers is that when timer reaches zero (timers are down-\/counters), callback function is called where user can do its work which should be done periodically, or only once if needed. Check \hyperlink{group___t_m___d_e_l_a_y___timer___functions}{T\+M\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+Timer\+\_\+\+Functions} group with all functions which can be used for timers.
+
+\begin{DoxyParagraph}{Changelog}
+
+\end{DoxyParagraph}
+\begin{DoxyVerb} Version 1.0
+  - First release
+\end{DoxyVerb}
+
+
+\begin{DoxyParagraph}{Dependencies}
+
+\end{DoxyParagraph}
+\begin{DoxyVerb} - STM32Fxxx HAL
+ - defines.h
+\end{DoxyVerb}
+ 

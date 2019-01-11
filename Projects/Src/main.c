@@ -498,50 +498,29 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
     if(htim->Instance == TIM6){
-        u_int8_t i=0;
-
         Keypad4x4_ReadKeypad(&sw,&keyPad_struct);
-
-        for(i=0; i<16; i++){
-            if(sw[i] && sw_flag[i] == 0 ){
-                sw_flag[i]=1;
-                Key_char=Keypad4x4_GetChar(i);
-                k++;
-                flag_char=1;
-            }
-            else if (sw[i] == 0){
-                sw_flag[i]=0;
-            }
-        }
-        if(Key_char == '1' || Key_char =='2' || Key_char =='3'||Key_char =='4' || Key_char =='5' || Key_char =='6'||Key_char =='7' || Key_char =='8' || Key_char =='9'){
-            number_char=true;
-        }
-        else{
-            number_char=false;
-        }
+        keyCheck();
     }
     if(htim->Instance == TIM11){
         if(timeout_char_flag){
             timeout_keypad(&htim11);
-
         }
         else{
             timeout_uart(&htim11,&huart1,&uart_rx_circBuff);
         }
     }
-    if(htim->Instance == TIM9){
+    if(htim->Instance == TIM9){             // TIM9 s³u¿y do obs³ugi wysy³ania danych przez uart
         if(uart_send_log_flag == true){
-            if (uart_new_line_flag==1) {
-                uart_send_string(&huart1,"\n\r");
-                uart_new_line_flag=false;
+            if (uart_new_line_flag == 1) {
+                uart_send_string(&huart1,"\n");
+                uart_new_line_flag = false;
             }
             else{
                 uart_new_line_flag=true;
                 if(circ_buffer_get_string(&log_circ_buff,uart_log_str)){
-                    uart_send_log_flag=false;
-                    //uart_new_line_flag=false;
+                    uart_send_log_flag = false;
                 }else{
-                uart_send_string(&huart1,uart_log_str);
+                    uart_send_string(&huart1,uart_log_str);
                 }
             }
         }
@@ -568,7 +547,7 @@ void Proj_Init(void){
     uart_send_log_flag=false;
     number_of_bad_code=0;
     lock_open_flag=false;
-
+    lock=true;
 }
 void lock_close(void){
     lock_open_flag=false;

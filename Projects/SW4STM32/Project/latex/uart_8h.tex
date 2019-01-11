@@ -1,0 +1,38 @@
+\hypertarget{uart_8h}{}\section{Application/\+User/\+U\+A\+R\+T/inc/uart.h File Reference}
+\label{uart_8h}\index{Application/\+User/\+U\+A\+R\+T/inc/uart.\+h@{Application/\+User/\+U\+A\+R\+T/inc/uart.\+h}}
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}global\+\_\+variable.\+h\char`\"{}}\newline
+Include dependency graph for uart.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{uart_8h_ac165c56328ee5c1e15e57cc925962de9}{uart\+\_\+send\+\_\+string} (U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$huart, char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Send string via uart protocol. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{uart_8h_ac165c56328ee5c1e15e57cc925962de9}\label{uart_8h_ac165c56328ee5c1e15e57cc925962de9}} 
+\index{uart.\+h@{uart.\+h}!uart\+\_\+send\+\_\+string@{uart\+\_\+send\+\_\+string}}
+\index{uart\+\_\+send\+\_\+string@{uart\+\_\+send\+\_\+string}!uart.\+h@{uart.\+h}}
+\subsubsection{\texorpdfstring{uart\+\_\+send\+\_\+string()}{uart\_send\_string()}}
+{\footnotesize\ttfamily void uart\+\_\+send\+\_\+string (\begin{DoxyParamCaption}\item[{U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$}]{huart,  }\item[{char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Send string via uart protocol. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em huart} & pointer to Uart structure, which i generate by cube\+MX \\
+\hline
+{\em s} & string, which is transmit \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

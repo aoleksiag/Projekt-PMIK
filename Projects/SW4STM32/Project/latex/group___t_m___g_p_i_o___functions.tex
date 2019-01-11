@@ -1,0 +1,638 @@
+\hypertarget{group___t_m___g_p_i_o___functions}{}\section{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}
+\label{group___t_m___g_p_i_o___functions}\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+
+
+G\+P\+IO Functions.  
+
+
+Collaboration diagram for T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___t_m___g_p_i_o___functions_gaccceda87ce348c73b43780fdfed048d3}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+Low}(G\+P\+I\+Ox,  G\+P\+I\+O\+\_\+\+Pin)~((G\+P\+I\+Ox)-\/$>$B\+S\+RR = (uint32\+\_\+t)(((uint32\+\_\+t)G\+P\+I\+O\+\_\+\+Pin) $<$$<$ 16))
+\begin{DoxyCompactList}\small\item\em Sets pin(s) low. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___t_m___g_p_i_o___functions_gac5aa8fbc39ed67f47972097fb7c8d69d}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+High}(G\+P\+I\+Ox,  G\+P\+I\+O\+\_\+\+Pin)~((G\+P\+I\+Ox)-\/$>$B\+S\+RR = (uint32\+\_\+t)(G\+P\+I\+O\+\_\+\+Pin))
+\begin{DoxyCompactList}\small\item\em Sets pin(s) high. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___t_m___g_p_i_o___functions_gaf0bc34b72794ca43246ef88cfd261e80}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+Value}(G\+P\+I\+Ox,  G\+P\+I\+O\+\_\+\+Pin,  val)~((val) ? \hyperlink{group___t_m___g_p_i_o___functions_gac5aa8fbc39ed67f47972097fb7c8d69d}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+High}(G\+P\+I\+Ox, G\+P\+I\+O\+\_\+\+Pin) \+: \hyperlink{group___t_m___g_p_i_o___functions_gaccceda87ce348c73b43780fdfed048d3}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+Low}(G\+P\+I\+Ox, G\+P\+I\+O\+\_\+\+Pin))
+\begin{DoxyCompactList}\small\item\em Sets pin(s) value. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___t_m___g_p_i_o___functions_ga92ef176c8195c54b326b3c7526b878b2}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Toggle\+Pin\+Value}(G\+P\+I\+Ox,  G\+P\+I\+O\+\_\+\+Pin)~((G\+P\+I\+Ox)-\/$>$O\+DR $^\wedge$= (G\+P\+I\+O\+\_\+\+Pin))
+\begin{DoxyCompactList}\small\item\em Toggles pin(s) \end{DoxyCompactList}\item 
+\#define \hyperlink{group___t_m___g_p_i_o___functions_ga191a4bbb4e55573d19eb5c2f18122680}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Port\+Value}(G\+P\+I\+Ox,  value)~((G\+P\+I\+Ox)-\/$>$O\+DR = (value))
+\begin{DoxyCompactList}\small\item\em Sets value to entire G\+P\+IO P\+O\+RT. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___t_m___g_p_i_o___functions_gacd91a02149d1f1bc648a3fe06648460d}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Input\+Pin\+Value}(G\+P\+I\+Ox,  G\+P\+I\+O\+\_\+\+Pin)~(((G\+P\+I\+Ox)-\/$>$I\+DR \& (G\+P\+I\+O\+\_\+\+Pin)) == 0 ? 0 \+: 1)
+\begin{DoxyCompactList}\small\item\em Gets input data bit. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___t_m___g_p_i_o___functions_ga6402ec4503fa0f3380d3bdbb1d9510db}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Output\+Pin\+Value}(G\+P\+I\+Ox,  G\+P\+I\+O\+\_\+\+Pin)~(((G\+P\+I\+Ox)-\/$>$O\+DR \& (G\+P\+I\+O\+\_\+\+Pin)) == 0 ? 0 \+: 1)
+\begin{DoxyCompactList}\small\item\em Gets output data bit. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___t_m___g_p_i_o___functions_gabab8c885687b36adc083ae906f5d432e}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Input\+Value}(G\+P\+I\+Ox)~((G\+P\+I\+Ox)-\/$>$I\+DR)
+\begin{DoxyCompactList}\small\item\em Gets input value from entire G\+P\+IO P\+O\+RT. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___t_m___g_p_i_o___functions_gaa84d8eae98478601cb845dfc13089769}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Output\+Value}(G\+P\+I\+Ox)~((G\+P\+I\+Ox)-\/$>$O\+DR)
+\begin{DoxyCompactList}\small\item\em Gets output value from entire G\+P\+IO P\+O\+RT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___t_m___g_p_i_o___functions_ga7ea61719f45c8d46e56f636d7ffdf0d0}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, \hyperlink{group___t_m___g_p_i_o___typedefs_gacbb363a57d0e70ea563e494eff1db3ca}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Mode\+\_\+t} G\+P\+I\+O\+\_\+\+Mode, \hyperlink{group___t_m___g_p_i_o___typedefs_ga1d443fe266a4073f40ea271ae7b8df9f}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+O\+Type\+\_\+t} G\+P\+I\+O\+\_\+\+O\+Type, \hyperlink{group___t_m___g_p_i_o___typedefs_ga50ddb0da56d8a388dee368c55e968602}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+t} G\+P\+I\+O\+\_\+\+Pu\+Pd, \hyperlink{group___t_m___g_p_i_o___typedefs_gaa57736d106efbe14067be22025f296c4}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Speed\+\_\+t} G\+P\+I\+O\+\_\+\+Speed)
+\begin{DoxyCompactList}\small\item\em Initializes G\+P\+IO pins(s) \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___g_p_i_o___functions_gac91349d1bf42b50463ebc2716130eb89}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init\+Alternate} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, \hyperlink{group___t_m___g_p_i_o___typedefs_ga1d443fe266a4073f40ea271ae7b8df9f}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+O\+Type\+\_\+t} G\+P\+I\+O\+\_\+\+O\+Type, \hyperlink{group___t_m___g_p_i_o___typedefs_ga50ddb0da56d8a388dee368c55e968602}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+t} G\+P\+I\+O\+\_\+\+Pu\+Pd, \hyperlink{group___t_m___g_p_i_o___typedefs_gaa57736d106efbe14067be22025f296c4}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Speed\+\_\+t} G\+P\+I\+O\+\_\+\+Speed, uint8\+\_\+t Alternate)
+\begin{DoxyCompactList}\small\item\em Initializes G\+P\+IO pins(s) as alternate function. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___g_p_i_o___functions_gac87f1d18ac3e984bce0cbf44f7210198}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+De\+Init} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Deinitializes pin(s) \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___g_p_i_o___functions_ga9c5ca4f894b1f46d413d2bfc692fcf43}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Input} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Sets pin(s) as input. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___g_p_i_o___functions_gabfa399cb17386714bd9c395a81b43035}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Output} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Sets pin(s) as output. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___g_p_i_o___functions_gaeaa3015995a3d1947d63a63240b38433}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Analog} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Sets pin(s) as analog. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___g_p_i_o___functions_ga7828700c54f2449fed2afb0a84c1698d}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Alternate} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Sets pin(s) as alternate function. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___g_p_i_o___functions_ga2c9473d78b1c2f5031d914a38bab036a}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pull\+Resistor} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, \hyperlink{group___t_m___g_p_i_o___typedefs_ga50ddb0da56d8a388dee368c55e968602}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+t} G\+P\+I\+O\+\_\+\+Pu\+Pd)
+\begin{DoxyCompactList}\small\item\em Sets pull resistor settings to G\+P\+IO pin(s) \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group___t_m___g_p_i_o___functions_gaa5a2f30f33cc19408daeb5db3b7cb59c}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Source} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox)
+\begin{DoxyCompactList}\small\item\em Gets port source from desired G\+P\+I\+Ox P\+O\+RT. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group___t_m___g_p_i_o___functions_ga29aaed3ba7054d4c3a3fed55012403e5}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Pin\+Source} (uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Gets pin source from desired G\+P\+IO pin. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___g_p_i_o___functions_gaf52cf03a031c506fa46518a1e42c8ce2}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Lock} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Locks G\+P\+I\+Ox register for future changes. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group___t_m___g_p_i_o___functions_ga8fc67a53f59d23b221e82a4a71642f30}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Used\+Pins} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox)
+\begin{DoxyCompactList}\small\item\em Gets bit separated pins which were used at least once in library and were not deinitialized. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group___t_m___g_p_i_o___functions_ga72bffec02520314763c10defc9406400}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Free\+Pins} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox)
+\begin{DoxyCompactList}\small\item\em Gets bit separated pins which were not used at in library or were deinitialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+G\+P\+IO Functions. 
+
+T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Typedefs 
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_gacd91a02149d1f1bc648a3fe06648460d}\label{group___t_m___g_p_i_o___functions_gacd91a02149d1f1bc648a3fe06648460d}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Input\+Pin\+Value@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Input\+Pin\+Value}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Input\+Pin\+Value@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Input\+Pin\+Value}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Input\+Pin\+Value}{TM\_GPIO\_GetInputPinValue}}
+{\footnotesize\ttfamily \#define T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Input\+Pin\+Value(\begin{DoxyParamCaption}\item[{}]{G\+P\+I\+Ox,  }\item[{}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})~(((G\+P\+I\+Ox)-\/$>$I\+DR \& (G\+P\+I\+O\+\_\+\+Pin)) == 0 ? 0 \+: 1)}
+
+
+
+Gets input data bit. 
+
+\begin{DoxyNote}{Note}
+Defined as macro to get maximum speed using register access 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & G\+P\+I\+Ox P\+O\+RT where you want to read input bit value \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & G\+P\+IO pin where you want to read value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & in case pin is high, or 0 if low \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_ga6402ec4503fa0f3380d3bdbb1d9510db}\label{group___t_m___g_p_i_o___functions_ga6402ec4503fa0f3380d3bdbb1d9510db}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Output\+Pin\+Value@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Output\+Pin\+Value}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Output\+Pin\+Value@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Output\+Pin\+Value}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Output\+Pin\+Value}{TM\_GPIO\_GetOutputPinValue}}
+{\footnotesize\ttfamily \#define T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Output\+Pin\+Value(\begin{DoxyParamCaption}\item[{}]{G\+P\+I\+Ox,  }\item[{}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})~(((G\+P\+I\+Ox)-\/$>$O\+DR \& (G\+P\+I\+O\+\_\+\+Pin)) == 0 ? 0 \+: 1)}
+
+
+
+Gets output data bit. 
+
+\begin{DoxyNote}{Note}
+Defined as macro to get maximum speed using register access 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & G\+P\+I\+Ox P\+O\+RT where you want to read output bit value \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & G\+P\+IO pin where you want to read value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & in case pin is high, or 0 if low \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_gabab8c885687b36adc083ae906f5d432e}\label{group___t_m___g_p_i_o___functions_gabab8c885687b36adc083ae906f5d432e}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Input\+Value@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Input\+Value}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Input\+Value@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Input\+Value}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Input\+Value}{TM\_GPIO\_GetPortInputValue}}
+{\footnotesize\ttfamily \#define T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Input\+Value(\begin{DoxyParamCaption}\item[{}]{G\+P\+I\+Ox }\end{DoxyParamCaption})~((G\+P\+I\+Ox)-\/$>$I\+DR)}
+
+
+
+Gets input value from entire G\+P\+IO P\+O\+RT. 
+
+\begin{DoxyNote}{Note}
+Defined as macro to get maximum speed using register access 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & G\+P\+I\+Ox P\+O\+RT where you want to read input data value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Entire} & P\+O\+RT I\+N\+P\+UT register \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_gaa84d8eae98478601cb845dfc13089769}\label{group___t_m___g_p_i_o___functions_gaa84d8eae98478601cb845dfc13089769}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Output\+Value@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Output\+Value}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Output\+Value@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Output\+Value}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Output\+Value}{TM\_GPIO\_GetPortOutputValue}}
+{\footnotesize\ttfamily \#define T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Output\+Value(\begin{DoxyParamCaption}\item[{}]{G\+P\+I\+Ox }\end{DoxyParamCaption})~((G\+P\+I\+Ox)-\/$>$O\+DR)}
+
+
+
+Gets output value from entire G\+P\+IO P\+O\+RT. 
+
+\begin{DoxyNote}{Note}
+Defined as macro to get maximum speed using register access 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & G\+P\+I\+Ox P\+O\+RT where you want to read output data value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Entire} & P\+O\+RT O\+U\+T\+P\+UT register \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_gac5aa8fbc39ed67f47972097fb7c8d69d}\label{group___t_m___g_p_i_o___functions_gac5aa8fbc39ed67f47972097fb7c8d69d}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+High@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+High}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+High@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+High}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+High}{TM\_GPIO\_SetPinHigh}}
+{\footnotesize\ttfamily \#define T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+High(\begin{DoxyParamCaption}\item[{}]{G\+P\+I\+Ox,  }\item[{}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})~((G\+P\+I\+Ox)-\/$>$B\+S\+RR = (uint32\+\_\+t)(G\+P\+I\+O\+\_\+\+Pin))}
+
+
+
+Sets pin(s) high. 
+
+\begin{DoxyNote}{Note}
+Defined as macro to get maximum speed using register access 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & G\+P\+I\+Ox P\+O\+RT where you want to set pin high \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & Select G\+P\+IO pin(s). You can select more pins with $\vert$ (OR) operator to set them high \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_gaccceda87ce348c73b43780fdfed048d3}\label{group___t_m___g_p_i_o___functions_gaccceda87ce348c73b43780fdfed048d3}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+Low@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+Low}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+Low@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+Low}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+Low}{TM\_GPIO\_SetPinLow}}
+{\footnotesize\ttfamily \#define T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+Low(\begin{DoxyParamCaption}\item[{}]{G\+P\+I\+Ox,  }\item[{}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})~((G\+P\+I\+Ox)-\/$>$B\+S\+RR = (uint32\+\_\+t)(((uint32\+\_\+t)G\+P\+I\+O\+\_\+\+Pin) $<$$<$ 16))}
+
+
+
+Sets pin(s) low. 
+
+\begin{DoxyNote}{Note}
+Defined as macro to get maximum speed using register access 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & G\+P\+I\+Ox P\+O\+RT where you want to set pin low \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & Select G\+P\+IO pin(s). You can select more pins with $\vert$ (OR) operator to set them low \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_gaf0bc34b72794ca43246ef88cfd261e80}\label{group___t_m___g_p_i_o___functions_gaf0bc34b72794ca43246ef88cfd261e80}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+Value@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+Value}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+Value@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+Value}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+Value}{TM\_GPIO\_SetPinValue}}
+{\footnotesize\ttfamily \#define T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+Value(\begin{DoxyParamCaption}\item[{}]{G\+P\+I\+Ox,  }\item[{}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{}]{val }\end{DoxyParamCaption})~((val) ? \hyperlink{group___t_m___g_p_i_o___functions_gac5aa8fbc39ed67f47972097fb7c8d69d}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+High}(G\+P\+I\+Ox, G\+P\+I\+O\+\_\+\+Pin) \+: \hyperlink{group___t_m___g_p_i_o___functions_gaccceda87ce348c73b43780fdfed048d3}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+Low}(G\+P\+I\+Ox, G\+P\+I\+O\+\_\+\+Pin))}
+
+
+
+Sets pin(s) value. 
+
+\begin{DoxyNote}{Note}
+Defined as macro to get maximum speed using register access 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & G\+P\+I\+Ox P\+O\+RT where you want to set pin value \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & Select G\+P\+IO pin(s). You can select more pins with $\vert$ (OR) operator to set them value \\
+\hline
+{\em val} & If parameter is 0 then pin will be low, otherwise high \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_ga191a4bbb4e55573d19eb5c2f18122680}\label{group___t_m___g_p_i_o___functions_ga191a4bbb4e55573d19eb5c2f18122680}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Port\+Value@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Port\+Value}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Port\+Value@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Port\+Value}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Port\+Value}{TM\_GPIO\_SetPortValue}}
+{\footnotesize\ttfamily \#define T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Port\+Value(\begin{DoxyParamCaption}\item[{}]{G\+P\+I\+Ox,  }\item[{}]{value }\end{DoxyParamCaption})~((G\+P\+I\+Ox)-\/$>$O\+DR = (value))}
+
+
+
+Sets value to entire G\+P\+IO P\+O\+RT. 
+
+\begin{DoxyNote}{Note}
+Defined as macro to get maximum speed using register access 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & G\+P\+I\+Ox P\+O\+RT where you want to set value \\
+\hline
+{\em value} & Value for G\+P\+IO O\+U\+T\+P\+UT data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_ga92ef176c8195c54b326b3c7526b878b2}\label{group___t_m___g_p_i_o___functions_ga92ef176c8195c54b326b3c7526b878b2}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Toggle\+Pin\+Value@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Toggle\+Pin\+Value}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Toggle\+Pin\+Value@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Toggle\+Pin\+Value}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Toggle\+Pin\+Value}{TM\_GPIO\_TogglePinValue}}
+{\footnotesize\ttfamily \#define T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Toggle\+Pin\+Value(\begin{DoxyParamCaption}\item[{}]{G\+P\+I\+Ox,  }\item[{}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})~((G\+P\+I\+Ox)-\/$>$O\+DR $^\wedge$= (G\+P\+I\+O\+\_\+\+Pin))}
+
+
+
+Toggles pin(s) 
+
+\begin{DoxyNote}{Note}
+Defined as macro to get maximum speed using register access 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & G\+P\+I\+Ox P\+O\+RT where you want to toggle pin value \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & Select G\+P\+IO pin(s). You can select more pins with $\vert$ (OR) operator to toggle them all at a time \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_gac87f1d18ac3e984bce0cbf44f7210198}\label{group___t_m___g_p_i_o___functions_gac87f1d18ac3e984bce0cbf44f7210198}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+De\+Init@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+De\+Init}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+De\+Init@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+De\+Init}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+De\+Init()}{TM\_GPIO\_DeInit()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Deinitializes pin(s) 
+
+\begin{DoxyNote}{Note}
+Pins(s) will be set as analog mode to get low power consumption 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & G\+P\+I\+Ox P\+O\+RT where you want to set pin as input \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & Select G\+P\+IO pin(s). You can select more pins with $\vert$ (OR) operator to set them as input \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_ga72bffec02520314763c10defc9406400}\label{group___t_m___g_p_i_o___functions_ga72bffec02520314763c10defc9406400}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Free\+Pins@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Free\+Pins}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Free\+Pins@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Free\+Pins}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Free\+Pins()}{TM\_GPIO\_GetFreePins()}}
+{\footnotesize\ttfamily uint16\+\_\+t T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Free\+Pins (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox }\end{DoxyParamCaption})}
+
+
+
+Gets bit separated pins which were not used at in library or were deinitialized. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+G\+P\+I\+Ox} & Pointer to G\+P\+I\+Ox peripheral where to check used G\+P\+IO pins \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Bit} & values for free pins \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_ga29aaed3ba7054d4c3a3fed55012403e5}\label{group___t_m___g_p_i_o___functions_ga29aaed3ba7054d4c3a3fed55012403e5}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Pin\+Source@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Pin\+Source}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Pin\+Source@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Pin\+Source}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Pin\+Source()}{TM\_GPIO\_GetPinSource()}}
+{\footnotesize\ttfamily uint16\+\_\+t T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Pin\+Source (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Gets pin source from desired G\+P\+IO pin. 
+
+\begin{DoxyNote}{Note}
+Meant for private use, unless you know what are you doing 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+O\+\_\+\+Pin} & G\+P\+IO pin for calculating port source \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Calculated} & pin source for G\+P\+IO pin \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_gaa5a2f30f33cc19408daeb5db3b7cb59c}\label{group___t_m___g_p_i_o___functions_gaa5a2f30f33cc19408daeb5db3b7cb59c}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Source@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Source}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Source@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Source}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Source()}{TM\_GPIO\_GetPortSource()}}
+{\footnotesize\ttfamily uint16\+\_\+t T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Port\+Source (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox }\end{DoxyParamCaption})}
+
+
+
+Gets port source from desired G\+P\+I\+Ox P\+O\+RT. 
+
+\begin{DoxyNote}{Note}
+Meant for private use, unless you know what are you doing 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & G\+P\+IO P\+O\+RT for calculating port source \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Calculated} & port source for G\+P\+IO \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_ga8fc67a53f59d23b221e82a4a71642f30}\label{group___t_m___g_p_i_o___functions_ga8fc67a53f59d23b221e82a4a71642f30}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Used\+Pins@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Used\+Pins}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Used\+Pins@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Used\+Pins}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Used\+Pins()}{TM\_GPIO\_GetUsedPins()}}
+{\footnotesize\ttfamily uint16\+\_\+t T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Used\+Pins (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox }\end{DoxyParamCaption})}
+
+
+
+Gets bit separated pins which were used at least once in library and were not deinitialized. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+G\+P\+I\+Ox} & Pointer to G\+P\+I\+Ox peripheral where to check used G\+P\+IO pins \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Bit} & values for used pins \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_ga7ea61719f45c8d46e56f636d7ffdf0d0}\label{group___t_m___g_p_i_o___functions_ga7ea61719f45c8d46e56f636d7ffdf0d0}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init()}{TM\_GPIO\_Init()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{\hyperlink{group___t_m___g_p_i_o___typedefs_gacbb363a57d0e70ea563e494eff1db3ca}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Mode\+\_\+t}}]{G\+P\+I\+O\+\_\+\+Mode,  }\item[{\hyperlink{group___t_m___g_p_i_o___typedefs_ga1d443fe266a4073f40ea271ae7b8df9f}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+O\+Type\+\_\+t}}]{G\+P\+I\+O\+\_\+\+O\+Type,  }\item[{\hyperlink{group___t_m___g_p_i_o___typedefs_ga50ddb0da56d8a388dee368c55e968602}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+t}}]{G\+P\+I\+O\+\_\+\+Pu\+Pd,  }\item[{\hyperlink{group___t_m___g_p_i_o___typedefs_gaa57736d106efbe14067be22025f296c4}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Speed\+\_\+t}}]{G\+P\+I\+O\+\_\+\+Speed }\end{DoxyParamCaption})}
+
+
+
+Initializes G\+P\+IO pins(s) 
+
+\begin{DoxyNote}{Note}
+This function also enables clock for G\+P\+IO port 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & Pointer to G\+P\+I\+Ox port you will use for initialization \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & G\+P\+IO pin(s) you will use for initialization \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Mode} & Select G\+P\+IO mode. This parameter can be a value of \hyperlink{group___t_m___g_p_i_o___typedefs_gacbb363a57d0e70ea563e494eff1db3ca}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Mode\+\_\+t} enumeration \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+O\+Type} & Select G\+P\+IO Output type. This parameter can be a value of \hyperlink{group___t_m___g_p_i_o___typedefs_ga1d443fe266a4073f40ea271ae7b8df9f}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+O\+Type\+\_\+t} enumeration \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pu\+Pd} & Select G\+P\+IO pull resistor. This parameter can be a value of \hyperlink{group___t_m___g_p_i_o___typedefs_ga50ddb0da56d8a388dee368c55e968602}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+t} enumeration \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Speed} & Select G\+P\+IO speed. This parameter can be a value of \hyperlink{group___t_m___g_p_i_o___typedefs_gaa57736d106efbe14067be22025f296c4}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Speed\+\_\+t} enumeration \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_gac91349d1bf42b50463ebc2716130eb89}\label{group___t_m___g_p_i_o___functions_gac91349d1bf42b50463ebc2716130eb89}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init\+Alternate@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init\+Alternate}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init\+Alternate@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init\+Alternate}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init\+Alternate()}{TM\_GPIO\_InitAlternate()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init\+Alternate (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{\hyperlink{group___t_m___g_p_i_o___typedefs_ga1d443fe266a4073f40ea271ae7b8df9f}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+O\+Type\+\_\+t}}]{G\+P\+I\+O\+\_\+\+O\+Type,  }\item[{\hyperlink{group___t_m___g_p_i_o___typedefs_ga50ddb0da56d8a388dee368c55e968602}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+t}}]{G\+P\+I\+O\+\_\+\+Pu\+Pd,  }\item[{\hyperlink{group___t_m___g_p_i_o___typedefs_gaa57736d106efbe14067be22025f296c4}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Speed\+\_\+t}}]{G\+P\+I\+O\+\_\+\+Speed,  }\item[{uint8\+\_\+t}]{Alternate }\end{DoxyParamCaption})}
+
+
+
+Initializes G\+P\+IO pins(s) as alternate function. 
+
+\begin{DoxyNote}{Note}
+This function also enables clock for G\+P\+IO port 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & Pointer to G\+P\+I\+Ox port you will use for initialization \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & G\+P\+IO pin(s) you will use for initialization \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+O\+Type} & Select G\+P\+IO Output type. This parameter can be a value of \hyperlink{group___t_m___g_p_i_o___typedefs_ga1d443fe266a4073f40ea271ae7b8df9f}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+O\+Type\+\_\+t} enumeration \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pu\+Pd} & Select G\+P\+IO pull resistor. This parameter can be a value of \hyperlink{group___t_m___g_p_i_o___typedefs_ga50ddb0da56d8a388dee368c55e968602}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+t} enumeration \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Speed} & Select G\+P\+IO speed. This parameter can be a value of \hyperlink{group___t_m___g_p_i_o___typedefs_gaa57736d106efbe14067be22025f296c4}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Speed\+\_\+t} enumeration \\
+\hline
+{\em Alternate} & Alternate function you will use \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_gaf52cf03a031c506fa46518a1e42c8ce2}\label{group___t_m___g_p_i_o___functions_gaf52cf03a031c506fa46518a1e42c8ce2}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Lock@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Lock}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Lock@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Lock}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Lock()}{TM\_GPIO\_Lock()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Lock (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Locks G\+P\+I\+Ox register for future changes. 
+
+\begin{DoxyNote}{Note}
+You are not able to config G\+P\+IO registers until new M\+CU reset occurs 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+G\+P\+I\+Ox} & G\+P\+I\+Ox P\+O\+RT where you want to lock config registers \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & G\+P\+IO pin(s) where you want to lock config registers \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_ga7828700c54f2449fed2afb0a84c1698d}\label{group___t_m___g_p_i_o___functions_ga7828700c54f2449fed2afb0a84c1698d}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Alternate@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Alternate}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Alternate@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Alternate}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Alternate()}{TM\_GPIO\_SetPinAsAlternate()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Alternate (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Sets pin(s) as alternate function. 
+
+\begin{DoxyNote}{Note}
+For proper alternate function, you should first init pin using \hyperlink{group___t_m___g_p_i_o___functions_gac91349d1bf42b50463ebc2716130eb89}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init\+Alternate()} function. This functions is only used for changing G\+P\+IO mode 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & G\+P\+I\+Ox P\+O\+RT where you want to set pin as alternate \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & Select G\+P\+IO pin(s). You can select more pins with $\vert$ (OR) operator to set them as alternate \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_gaeaa3015995a3d1947d63a63240b38433}\label{group___t_m___g_p_i_o___functions_gaeaa3015995a3d1947d63a63240b38433}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Analog@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Analog}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Analog@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Analog}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Analog()}{TM\_GPIO\_SetPinAsAnalog()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Analog (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Sets pin(s) as analog. 
+
+\begin{DoxyNote}{Note}
+Pins H\+A\+VE to be initialized first using \hyperlink{group___t_m___g_p_i_o___functions_ga7ea61719f45c8d46e56f636d7ffdf0d0}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init()} or \hyperlink{group___t_m___g_p_i_o___functions_gac91349d1bf42b50463ebc2716130eb89}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init\+Alternate()} function 
+
+This is just an option for fast analog mode 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & G\+P\+I\+Ox P\+O\+RT where you want to set pin as analog \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & Select G\+P\+IO pin(s). You can select more pins with $\vert$ (OR) operator to set them as analog \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_ga9c5ca4f894b1f46d413d2bfc692fcf43}\label{group___t_m___g_p_i_o___functions_ga9c5ca4f894b1f46d413d2bfc692fcf43}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Input@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Input}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Input@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Input}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Input()}{TM\_GPIO\_SetPinAsInput()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Input (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Sets pin(s) as input. 
+
+\begin{DoxyNote}{Note}
+Pins H\+A\+VE to be initialized first using \hyperlink{group___t_m___g_p_i_o___functions_ga7ea61719f45c8d46e56f636d7ffdf0d0}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init()} or \hyperlink{group___t_m___g_p_i_o___functions_gac91349d1bf42b50463ebc2716130eb89}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init\+Alternate()} function 
+
+This is just an option for fast input mode 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & G\+P\+I\+Ox P\+O\+RT where you want to set pin as input \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & Select G\+P\+IO pin(s). You can select more pins with $\vert$ (OR) operator to set them as input \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_gabfa399cb17386714bd9c395a81b43035}\label{group___t_m___g_p_i_o___functions_gabfa399cb17386714bd9c395a81b43035}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Output@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Output}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Output@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Output}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Output()}{TM\_GPIO\_SetPinAsOutput()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pin\+As\+Output (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Sets pin(s) as output. 
+
+\begin{DoxyNote}{Note}
+Pins H\+A\+VE to be initialized first using \hyperlink{group___t_m___g_p_i_o___functions_ga7ea61719f45c8d46e56f636d7ffdf0d0}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init()} or \hyperlink{group___t_m___g_p_i_o___functions_gac91349d1bf42b50463ebc2716130eb89}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init\+Alternate()} function 
+
+This is just an option for fast output mode 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & G\+P\+I\+Ox P\+O\+RT where you want to set pin as output \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & Select G\+P\+IO pin(s). You can select more pins with $\vert$ (OR) operator to set them as output \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___t_m___g_p_i_o___functions_ga2c9473d78b1c2f5031d914a38bab036a}\label{group___t_m___g_p_i_o___functions_ga2c9473d78b1c2f5031d914a38bab036a}} 
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pull\+Resistor@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pull\+Resistor}}
+\index{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pull\+Resistor@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pull\+Resistor}!T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions@{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pull\+Resistor()}{TM\_GPIO\_SetPullResistor()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Pull\+Resistor (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{\hyperlink{group___t_m___g_p_i_o___typedefs_ga50ddb0da56d8a388dee368c55e968602}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+t}}]{G\+P\+I\+O\+\_\+\+Pu\+Pd }\end{DoxyParamCaption})}
+
+
+
+Sets pull resistor settings to G\+P\+IO pin(s) 
+
+\begin{DoxyNote}{Note}
+Pins H\+A\+VE to be initialized first using \hyperlink{group___t_m___g_p_i_o___functions_ga7ea61719f45c8d46e56f636d7ffdf0d0}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init()} or \hyperlink{group___t_m___g_p_i_o___functions_gac91349d1bf42b50463ebc2716130eb89}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Init\+Alternate()} function 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+G\+P\+I\+Ox} & G\+P\+I\+Ox P\+O\+RT where you want to select pull resistor \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & Select G\+P\+IO pin(s). You can select more pins with $\vert$ (OR) operator to set them as output \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pu\+Pd} & Pull resistor option. This parameter can be a value of \hyperlink{group___t_m___g_p_i_o___typedefs_ga50ddb0da56d8a388dee368c55e968602}{T\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+t} enumeration \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

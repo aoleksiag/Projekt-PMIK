@@ -1,0 +1,79 @@
+\hypertarget{rtc_8c}{}\section{Application/\+User/\+Rtc/src/rtc.c File Reference}
+\label{rtc_8c}\index{Application/\+User/\+Rtc/src/rtc.\+c@{Application/\+User/\+Rtc/src/rtc.\+c}}
+{\ttfamily \#include \char`\"{}rtc.\+h\char`\"{}}\newline
+Include dependency graph for rtc.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{rtc_8c_a81416d3d66f360b5c99e4d7648749394}{save\+\_\+time} (\hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d} $\ast$\hyperlink{main_8c_ae1fd753c7ac0d6e839e1aa5ab4b04dd3}{log\+\_\+circ\+\_\+buff})
+\begin{DoxyCompactList}\small\item\em Save date and time in \hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d}. \end{DoxyCompactList}\item 
+void \hyperlink{rtc_8c_a3c756abab1bfcfd1a3aefc9a05e0fb51}{set\+\_\+time} (char $\ast$\hyperlink{global__variable_8h_ab8d1fd4179ebae69097d5e48772ec5c8}{buffer})
+\begin{DoxyCompactList}\small\item\em Set time in R\+TC module. \end{DoxyCompactList}\item 
+void \hyperlink{rtc_8c_a325d311d81ecdca14439e975af0b3d7e}{set\+\_\+date} (char $\ast$\hyperlink{global__variable_8h_ab8d1fd4179ebae69097d5e48772ec5c8}{buffer})
+\begin{DoxyCompactList}\small\item\em Set data in R\+TC module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{rtc_8c_a81416d3d66f360b5c99e4d7648749394}\label{rtc_8c_a81416d3d66f360b5c99e4d7648749394}} 
+\index{rtc.\+c@{rtc.\+c}!save\+\_\+time@{save\+\_\+time}}
+\index{save\+\_\+time@{save\+\_\+time}!rtc.\+c@{rtc.\+c}}
+\subsubsection{\texorpdfstring{save\+\_\+time()}{save\_time()}}
+{\footnotesize\ttfamily void save\+\_\+time (\begin{DoxyParamCaption}\item[{\hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d} $\ast$}]{log\+\_\+circ\+\_\+buff }\end{DoxyParamCaption})}
+
+
+
+Save date and time in \hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log\+\_\+circ\+\_\+buff} & pointer to \hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d} with contains place to store data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{rtc_8c_a325d311d81ecdca14439e975af0b3d7e}\label{rtc_8c_a325d311d81ecdca14439e975af0b3d7e}} 
+\index{rtc.\+c@{rtc.\+c}!set\+\_\+date@{set\+\_\+date}}
+\index{set\+\_\+date@{set\+\_\+date}!rtc.\+c@{rtc.\+c}}
+\subsubsection{\texorpdfstring{set\+\_\+date()}{set\_date()}}
+{\footnotesize\ttfamily void set\+\_\+date (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Set data in R\+TC module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & pointer to place where data is store \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{rtc_8c_a3c756abab1bfcfd1a3aefc9a05e0fb51}\label{rtc_8c_a3c756abab1bfcfd1a3aefc9a05e0fb51}} 
+\index{rtc.\+c@{rtc.\+c}!set\+\_\+time@{set\+\_\+time}}
+\index{set\+\_\+time@{set\+\_\+time}!rtc.\+c@{rtc.\+c}}
+\subsubsection{\texorpdfstring{set\+\_\+time()}{set\_time()}}
+{\footnotesize\ttfamily void set\+\_\+time (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Set time in R\+TC module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & pointer to place where time is store \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

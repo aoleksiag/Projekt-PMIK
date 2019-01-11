@@ -4,7 +4,7 @@
 #define LOG_BUFF_SIZE 12
 #define LOG_BUFF_LENGTH 5
 #define BUF_SIZE 7
-#define TEST
+//#define TEST
 #define NUMBER_OF_BAD_CODE 2
 
 

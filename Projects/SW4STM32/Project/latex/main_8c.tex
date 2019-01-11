@@ -1,0 +1,369 @@
+\hypertarget{main_8c}{}\section{C\+:/\+Users/\+Adrian/\+Desktop/\+Projekt P\+M\+I\+K/\+Projects/\+Src/main.c File Reference}
+\label{main_8c}\index{C\+:/\+Users/\+Adrian/\+Desktop/\+Projekt P\+M\+I\+K/\+Projects/\+Src/main.\+c@{C\+:/\+Users/\+Adrian/\+Desktop/\+Projekt P\+M\+I\+K/\+Projects/\+Src/main.\+c}}
+
+
+\+: Main program body  
+
+
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tm\+\_\+stm32\+\_\+delay.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tm\+\_\+stm32\+\_\+hd44780.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}global\+\_\+variable.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Key\+Pad\+\_\+4x4.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}circular\+\_\+buffer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}timeout.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}uart.\+h\char`\"{}}\newline
+Include dependency graph for main.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8c_a70af21c671abfcc773614a9a4f63d920}{System\+Clock\+\_\+\+Config} (void)
+\begin{DoxyCompactList}\small\item\em System Clock Configuration. \end{DoxyCompactList}\item 
+static void \hyperlink{main_8c_ae89fdd15729ad41a66911190fcbab23a}{M\+X\+\_\+\+G\+P\+I\+O\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em G\+P\+IO Initialization Function. \end{DoxyCompactList}\item 
+static void \hyperlink{main_8c_af5e0e0fbbf2e1ec351699c09950583fe}{M\+X\+\_\+\+T\+I\+M6\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em T\+I\+M6 Initialization Function. \end{DoxyCompactList}\item 
+static void \hyperlink{main_8c_a62f4b77e20bccafe98a183771749c20c}{M\+X\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+U\+A\+R\+T\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em U\+S\+A\+R\+T1 Initialization Function. \end{DoxyCompactList}\item 
+static void \hyperlink{main_8c_a4e2df6a9f6c5b3c4bc9514a99d07ddd0}{M\+X\+\_\+\+T\+I\+M11\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em T\+I\+M11 Initialization Function. \end{DoxyCompactList}\item 
+static void \hyperlink{main_8c_a54909c9e8ca1af96208ae7a8cf1e9468}{M\+X\+\_\+\+R\+T\+C\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em R\+TC Initialization Function. \end{DoxyCompactList}\item 
+static void \hyperlink{main_8c_a0a27714aa6a2c91e546e7df583111cab}{M\+X\+\_\+\+T\+I\+M9\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em T\+I\+M9 Initialization Function. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_ae494a9643f29b87d6d81e5264e60e57b}{H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Rx\+Cplt\+Callback} (U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$huart)
+\item 
+void \hyperlink{main_8c_af87686c2613c165c03bf02dd0e18bc53}{Proj\+\_\+\+Init} (void)
+\item 
+int \hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\begin{DoxyCompactList}\small\item\em The application entry point. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a8a3b0ad512a6e6c6157440b68d395eac}{H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+Period\+Elapsed\+Callback} (T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$htim)
+\item 
+void \hyperlink{main_8c_aae72b3fd9d47f4b4a08ba27fb631ab41}{lock\+\_\+close} (void)
+\item 
+void \hyperlink{main_8c_a5909ba9796e1df46a09c85afad0f15b5}{lock\+\_\+open} (void)
+\item 
+void \hyperlink{main_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+R\+T\+C\+\_\+\+Handle\+Type\+Def \hyperlink{main_8c_aa0c7fca836406ade332e1e3f1039d8ab}{hrtc}
+\item 
+T\+I\+M\+\_\+\+Handle\+Type\+Def \hyperlink{main_8c_a1564492831a79fa18466467c3420c3c3}{htim6}
+\item 
+T\+I\+M\+\_\+\+Handle\+Type\+Def \hyperlink{main_8c_a31f6f787777409af5ed0d131b52b7988}{htim9}
+\item 
+T\+I\+M\+\_\+\+Handle\+Type\+Def \hyperlink{main_8c_a2f22f985c4f33318fdcd4cc996623bf4}{htim11}
+\item 
+U\+A\+R\+T\+\_\+\+Handle\+Type\+Def \hyperlink{main_8c_a2cf715bef37f7e8ef385a30974a5f0d5}{huart1}
+\item 
+\hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def} \hyperlink{main_8c_af52032e05132a86e13bfca7c1d845f27}{key\+Pad\+\_\+struct}
+\item 
+volatile char \hyperlink{main_8c_abe779b14af0d8f823ece7142ce26dff1}{uart\+\_\+rx\+Buff} \mbox{[}\hyperlink{define_8h_a1f25fe45d891de244a8135ae02fc9265}{U\+A\+R\+T\+\_\+\+R\+X\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE}\mbox{]}
+\item 
+volatile \hyperlink{structcirc__buffer__t}{circ\+\_\+buffer\+\_\+t} \hyperlink{main_8c_a3546501861e6f7ce4c13165b0b249041}{uart\+\_\+rx\+\_\+circ\+Buff} = \{ \hyperlink{main_8c_abe779b14af0d8f823ece7142ce26dff1}{uart\+\_\+rx\+Buff}, 0, 0 \}
+\item 
+volatile \hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d} \hyperlink{main_8c_ae1fd753c7ac0d6e839e1aa5ab4b04dd3}{log\+\_\+circ\+\_\+buff} = \{ N\+U\+LL, 0, 0\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\+: Main program body 
+
+This notice applies to any and all portions of this file that are not between comment pairs U\+S\+ER C\+O\+DE B\+E\+G\+IN and U\+S\+ER C\+O\+DE E\+ND. Other portions of this file, whether inserted by the user or by software development tools are owned by their respective copyright owners.
+
+C\+O\+P\+Y\+R\+I\+G\+H\+T(c) 2018 S\+T\+Microelectronics
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of S\+T\+Microelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+T\+H\+IS S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED BY T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS A\+ND C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS \char`\"{}\+A\+S I\+S\char`\"{} A\+ND A\+NY E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES, I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, T\+HE I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY A\+ND F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+RE D\+I\+S\+C\+L\+A\+I\+M\+ED. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+ER OR C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY D\+I\+R\+E\+CT, I\+N\+D\+I\+R\+E\+CT, I\+N\+C\+I\+D\+E\+N\+T\+AL, S\+P\+E\+C\+I\+AL, E\+X\+E\+M\+P\+L\+A\+RY, OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES (I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, P\+R\+O\+C\+U\+R\+E\+M\+E\+NT OF S\+U\+B\+S\+T\+I\+T\+U\+TE G\+O\+O\+DS OR S\+E\+R\+V\+I\+C\+ES; L\+O\+SS OF U\+SE, D\+A\+TA, OR P\+R\+O\+F\+I\+TS; OR B\+U\+S\+I\+N\+E\+SS I\+N\+T\+E\+R\+R\+U\+P\+T\+I\+ON) H\+O\+W\+E\+V\+ER C\+A\+U\+S\+ED A\+ND ON A\+NY T\+H\+E\+O\+RY OF L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN C\+O\+N\+T\+R\+A\+CT, S\+T\+R\+I\+CT L\+I\+A\+B\+I\+L\+I\+TY, OR T\+O\+RT (I\+N\+C\+L\+U\+D\+I\+NG N\+E\+G\+L\+I\+G\+E\+N\+CE OR O\+T\+H\+E\+R\+W\+I\+SE) A\+R\+I\+S\+I\+NG IN A\+NY W\+AY O\+UT OF T\+HE U\+SE OF T\+H\+IS S\+O\+F\+T\+W\+A\+RE, E\+V\+EN IF A\+D\+V\+I\+S\+ED OF T\+HE P\+O\+S\+S\+I\+B\+I\+L\+I\+TY OF S\+U\+CH D\+A\+M\+A\+GE. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a1730ffe1e560465665eb47d9264826f9}\label{main_8c_a1730ffe1e560465665eb47d9264826f9}} 
+\index{main.\+c@{main.\+c}!Error\+\_\+\+Handler@{Error\+\_\+\+Handler}}
+\index{Error\+\_\+\+Handler@{Error\+\_\+\+Handler}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{Error\+\_\+\+Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a8a3b0ad512a6e6c6157440b68d395eac}\label{main_8c_a8a3b0ad512a6e6c6157440b68d395eac}} 
+\index{main.\+c@{main.\+c}!H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+Period\+Elapsed\+Callback@{H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+Period\+Elapsed\+Callback}}
+\index{H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+Period\+Elapsed\+Callback@{H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+Period\+Elapsed\+Callback}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+Period\+Elapsed\+Callback()}{HAL\_TIM\_PeriodElapsedCallback()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+Period\+Elapsed\+Callback (\begin{DoxyParamCaption}\item[{T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$}]{htim }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{main_8c_ae494a9643f29b87d6d81e5264e60e57b}\label{main_8c_ae494a9643f29b87d6d81e5264e60e57b}} 
+\index{main.\+c@{main.\+c}!H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Rx\+Cplt\+Callback@{H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Rx\+Cplt\+Callback}}
+\index{H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Rx\+Cplt\+Callback@{H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Rx\+Cplt\+Callback}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Rx\+Cplt\+Callback()}{HAL\_UART\_RxCpltCallback()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Rx\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$}]{huart }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{main_8c_aae72b3fd9d47f4b4a08ba27fb631ab41}\label{main_8c_aae72b3fd9d47f4b4a08ba27fb631ab41}} 
+\index{main.\+c@{main.\+c}!lock\+\_\+close@{lock\+\_\+close}}
+\index{lock\+\_\+close@{lock\+\_\+close}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{lock\+\_\+close()}{lock\_close()}}
+{\footnotesize\ttfamily void lock\+\_\+close (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a5909ba9796e1df46a09c85afad0f15b5}\label{main_8c_a5909ba9796e1df46a09c85afad0f15b5}} 
+\index{main.\+c@{main.\+c}!lock\+\_\+open@{lock\+\_\+open}}
+\index{lock\+\_\+open@{lock\+\_\+open}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{lock\+\_\+open()}{lock\_open()}}
+{\footnotesize\ttfamily void lock\+\_\+open (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The application entry point. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{main_8c_ae89fdd15729ad41a66911190fcbab23a}\label{main_8c_ae89fdd15729ad41a66911190fcbab23a}} 
+\index{main.\+c@{main.\+c}!M\+X\+\_\+\+G\+P\+I\+O\+\_\+\+Init@{M\+X\+\_\+\+G\+P\+I\+O\+\_\+\+Init}}
+\index{M\+X\+\_\+\+G\+P\+I\+O\+\_\+\+Init@{M\+X\+\_\+\+G\+P\+I\+O\+\_\+\+Init}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{M\+X\+\_\+\+G\+P\+I\+O\+\_\+\+Init()}{MX\_GPIO\_Init()}}
+{\footnotesize\ttfamily static void M\+X\+\_\+\+G\+P\+I\+O\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+G\+P\+IO Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a54909c9e8ca1af96208ae7a8cf1e9468}\label{main_8c_a54909c9e8ca1af96208ae7a8cf1e9468}} 
+\index{main.\+c@{main.\+c}!M\+X\+\_\+\+R\+T\+C\+\_\+\+Init@{M\+X\+\_\+\+R\+T\+C\+\_\+\+Init}}
+\index{M\+X\+\_\+\+R\+T\+C\+\_\+\+Init@{M\+X\+\_\+\+R\+T\+C\+\_\+\+Init}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{M\+X\+\_\+\+R\+T\+C\+\_\+\+Init()}{MX\_RTC\_Init()}}
+{\footnotesize\ttfamily static void M\+X\+\_\+\+R\+T\+C\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+R\+TC Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Initialize R\+TC Only
+
+Initialize R\+TC and set the Time and DateHere is the call graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{main_8c_a4e2df6a9f6c5b3c4bc9514a99d07ddd0}\label{main_8c_a4e2df6a9f6c5b3c4bc9514a99d07ddd0}} 
+\index{main.\+c@{main.\+c}!M\+X\+\_\+\+T\+I\+M11\+\_\+\+Init@{M\+X\+\_\+\+T\+I\+M11\+\_\+\+Init}}
+\index{M\+X\+\_\+\+T\+I\+M11\+\_\+\+Init@{M\+X\+\_\+\+T\+I\+M11\+\_\+\+Init}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{M\+X\+\_\+\+T\+I\+M11\+\_\+\+Init()}{MX\_TIM11\_Init()}}
+{\footnotesize\ttfamily static void M\+X\+\_\+\+T\+I\+M11\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+T\+I\+M11 Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{main_8c_af5e0e0fbbf2e1ec351699c09950583fe}\label{main_8c_af5e0e0fbbf2e1ec351699c09950583fe}} 
+\index{main.\+c@{main.\+c}!M\+X\+\_\+\+T\+I\+M6\+\_\+\+Init@{M\+X\+\_\+\+T\+I\+M6\+\_\+\+Init}}
+\index{M\+X\+\_\+\+T\+I\+M6\+\_\+\+Init@{M\+X\+\_\+\+T\+I\+M6\+\_\+\+Init}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{M\+X\+\_\+\+T\+I\+M6\+\_\+\+Init()}{MX\_TIM6\_Init()}}
+{\footnotesize\ttfamily static void M\+X\+\_\+\+T\+I\+M6\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+T\+I\+M6 Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{main_8c_a0a27714aa6a2c91e546e7df583111cab}\label{main_8c_a0a27714aa6a2c91e546e7df583111cab}} 
+\index{main.\+c@{main.\+c}!M\+X\+\_\+\+T\+I\+M9\+\_\+\+Init@{M\+X\+\_\+\+T\+I\+M9\+\_\+\+Init}}
+\index{M\+X\+\_\+\+T\+I\+M9\+\_\+\+Init@{M\+X\+\_\+\+T\+I\+M9\+\_\+\+Init}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{M\+X\+\_\+\+T\+I\+M9\+\_\+\+Init()}{MX\_TIM9\_Init()}}
+{\footnotesize\ttfamily static void M\+X\+\_\+\+T\+I\+M9\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+T\+I\+M9 Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{main_8c_a62f4b77e20bccafe98a183771749c20c}\label{main_8c_a62f4b77e20bccafe98a183771749c20c}} 
+\index{main.\+c@{main.\+c}!M\+X\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+U\+A\+R\+T\+\_\+\+Init@{M\+X\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+U\+A\+R\+T\+\_\+\+Init}}
+\index{M\+X\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+U\+A\+R\+T\+\_\+\+Init@{M\+X\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+U\+A\+R\+T\+\_\+\+Init}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{M\+X\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+U\+A\+R\+T\+\_\+\+Init()}{MX\_USART1\_UART\_Init()}}
+{\footnotesize\ttfamily static void M\+X\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+U\+A\+R\+T\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+U\+S\+A\+R\+T1 Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{main_8c_af87686c2613c165c03bf02dd0e18bc53}\label{main_8c_af87686c2613c165c03bf02dd0e18bc53}} 
+\index{main.\+c@{main.\+c}!Proj\+\_\+\+Init@{Proj\+\_\+\+Init}}
+\index{Proj\+\_\+\+Init@{Proj\+\_\+\+Init}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{Proj\+\_\+\+Init()}{Proj\_Init()}}
+{\footnotesize\ttfamily void Proj\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{main_8c_a70af21c671abfcc773614a9a4f63d920}\label{main_8c_a70af21c671abfcc773614a9a4f63d920}} 
+\index{main.\+c@{main.\+c}!System\+Clock\+\_\+\+Config@{System\+Clock\+\_\+\+Config}}
+\index{System\+Clock\+\_\+\+Config@{System\+Clock\+\_\+\+Config}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{System\+Clock\+\_\+\+Config()}{SystemClock\_Config()}}
+{\footnotesize\ttfamily void System\+Clock\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+System Clock Configuration. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Configure the main internal regulator output voltage
+
+Initializes the C\+PU, A\+HB and A\+PB busses clocks
+
+Initializes the C\+PU, A\+HB and A\+PB busses clocksHere is the call graph for this function\+:
+% FIG 11
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_aa0c7fca836406ade332e1e3f1039d8ab}\label{main_8c_aa0c7fca836406ade332e1e3f1039d8ab}} 
+\index{main.\+c@{main.\+c}!hrtc@{hrtc}}
+\index{hrtc@{hrtc}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{hrtc}{hrtc}}
+{\footnotesize\ttfamily R\+T\+C\+\_\+\+Handle\+Type\+Def hrtc}
+
+\mbox{\Hypertarget{main_8c_a2f22f985c4f33318fdcd4cc996623bf4}\label{main_8c_a2f22f985c4f33318fdcd4cc996623bf4}} 
+\index{main.\+c@{main.\+c}!htim11@{htim11}}
+\index{htim11@{htim11}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{htim11}{htim11}}
+{\footnotesize\ttfamily T\+I\+M\+\_\+\+Handle\+Type\+Def htim11}
+
+\mbox{\Hypertarget{main_8c_a1564492831a79fa18466467c3420c3c3}\label{main_8c_a1564492831a79fa18466467c3420c3c3}} 
+\index{main.\+c@{main.\+c}!htim6@{htim6}}
+\index{htim6@{htim6}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{htim6}{htim6}}
+{\footnotesize\ttfamily T\+I\+M\+\_\+\+Handle\+Type\+Def htim6}
+
+\mbox{\Hypertarget{main_8c_a31f6f787777409af5ed0d131b52b7988}\label{main_8c_a31f6f787777409af5ed0d131b52b7988}} 
+\index{main.\+c@{main.\+c}!htim9@{htim9}}
+\index{htim9@{htim9}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{htim9}{htim9}}
+{\footnotesize\ttfamily T\+I\+M\+\_\+\+Handle\+Type\+Def htim9}
+
+\mbox{\Hypertarget{main_8c_a2cf715bef37f7e8ef385a30974a5f0d5}\label{main_8c_a2cf715bef37f7e8ef385a30974a5f0d5}} 
+\index{main.\+c@{main.\+c}!huart1@{huart1}}
+\index{huart1@{huart1}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{huart1}{huart1}}
+{\footnotesize\ttfamily U\+A\+R\+T\+\_\+\+Handle\+Type\+Def huart1}
+
+\mbox{\Hypertarget{main_8c_af52032e05132a86e13bfca7c1d845f27}\label{main_8c_af52032e05132a86e13bfca7c1d845f27}} 
+\index{main.\+c@{main.\+c}!key\+Pad\+\_\+struct@{key\+Pad\+\_\+struct}}
+\index{key\+Pad\+\_\+struct@{key\+Pad\+\_\+struct}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{key\+Pad\+\_\+struct}{keyPad\_struct}}
+{\footnotesize\ttfamily \hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def} key\+Pad\+\_\+struct}
+
+\mbox{\Hypertarget{main_8c_ae1fd753c7ac0d6e839e1aa5ab4b04dd3}\label{main_8c_ae1fd753c7ac0d6e839e1aa5ab4b04dd3}} 
+\index{main.\+c@{main.\+c}!log\+\_\+circ\+\_\+buff@{log\+\_\+circ\+\_\+buff}}
+\index{log\+\_\+circ\+\_\+buff@{log\+\_\+circ\+\_\+buff}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{log\+\_\+circ\+\_\+buff}{log\_circ\_buff}}
+{\footnotesize\ttfamily volatile \hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d} log\+\_\+circ\+\_\+buff = \{ N\+U\+LL, 0, 0\}}
+
+\mbox{\Hypertarget{main_8c_a3546501861e6f7ce4c13165b0b249041}\label{main_8c_a3546501861e6f7ce4c13165b0b249041}} 
+\index{main.\+c@{main.\+c}!uart\+\_\+rx\+\_\+circ\+Buff@{uart\+\_\+rx\+\_\+circ\+Buff}}
+\index{uart\+\_\+rx\+\_\+circ\+Buff@{uart\+\_\+rx\+\_\+circ\+Buff}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{uart\+\_\+rx\+\_\+circ\+Buff}{uart\_rx\_circBuff}}
+{\footnotesize\ttfamily volatile \hyperlink{structcirc__buffer__t}{circ\+\_\+buffer\+\_\+t} uart\+\_\+rx\+\_\+circ\+Buff = \{ \hyperlink{main_8c_abe779b14af0d8f823ece7142ce26dff1}{uart\+\_\+rx\+Buff}, 0, 0 \}}
+
+\mbox{\Hypertarget{main_8c_abe779b14af0d8f823ece7142ce26dff1}\label{main_8c_abe779b14af0d8f823ece7142ce26dff1}} 
+\index{main.\+c@{main.\+c}!uart\+\_\+rx\+Buff@{uart\+\_\+rx\+Buff}}
+\index{uart\+\_\+rx\+Buff@{uart\+\_\+rx\+Buff}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{uart\+\_\+rx\+Buff}{uart\_rxBuff}}
+{\footnotesize\ttfamily volatile char uart\+\_\+rx\+Buff\mbox{[}\hyperlink{define_8h_a1f25fe45d891de244a8135ae02fc9265}{U\+A\+R\+T\+\_\+\+R\+X\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE}\mbox{]}}
+

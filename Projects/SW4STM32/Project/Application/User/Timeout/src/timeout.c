@@ -5,7 +5,6 @@
  *      Author: Adrian
  */
 #include "timeout.h"
-//#include "struct.h"
 /**
   * @brief Start timer and configure apropirate register to timeout opreration
   * @param htim pointer to a TIM_HandleTypeDef structure that contains
@@ -14,7 +13,7 @@
   */
 void timeout_start(TIM_HandleTypeDef *htim){
     htim->Instance->SR &=0;
-    HAL_TIM_Base_Start_IT(htim);   //nie chcemy wywo³ywac timeoutow gdy mamy dane ok
+    HAL_TIM_Base_Start_IT(htim);
 }
 /**
   * @brief Stop timer and configure apropirate register
@@ -49,18 +48,19 @@ void timeout_keypad(TIM_HandleTypeDef *htim){
     timeout_char_flag=false;
     buffer_clear(&buffer,6);
     buffer_clear(&buffer2,16);
+    buffer_clear(&buffer_do_lcd,6);
     buffer_count=0;
 
 }
 
 /**
   * @brief Timeout operation witch take care about uart buffer
-  * 			   and send message by uart
+  *             and send message by uart
   * @param htim pointer to a TIM_HandleTypeDef structure that contains
   *                the configuration information for TIM module.
-  *			huart pointer to UART_HandleTypeDef structure contains
-  *					the configuration information for Uart module.
-  *			to do
+  *	@param huart pointer to UART_HandleTypeDef structure contains
+  *	                the configuration information for Uart module.
+  *	@param q pointer to circ_buffer_t structure
   * @retval None
   */
 void timeout_uart(TIM_HandleTypeDef *htim,UART_HandleTypeDef *huart,circ_buffer_t *q){

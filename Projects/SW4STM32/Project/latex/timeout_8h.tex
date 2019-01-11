@@ -1,0 +1,104 @@
+\hypertarget{timeout_8h}{}\section{Application/\+User/\+Timeout/inc/timeout.h File Reference}
+\label{timeout_8h}\index{Application/\+User/\+Timeout/inc/timeout.\+h@{Application/\+User/\+Timeout/inc/timeout.\+h}}
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}global\+\_\+variable.\+h\char`\"{}}\newline
+Include dependency graph for timeout.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{timeout_8h_aae822db4421521370650c0abb8bfdcd2}{timeout\+\_\+start} (T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$htim)
+\begin{DoxyCompactList}\small\item\em Start timer and configure apropirate register to timeout opreration. \end{DoxyCompactList}\item 
+void \hyperlink{timeout_8h_a3538fcacacf2f080aeef19d2817915a2}{timeout\+\_\+stop} (T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$htim)
+\begin{DoxyCompactList}\small\item\em Stop timer and configure apropirate register. \end{DoxyCompactList}\item 
+void \hyperlink{timeout_8h_ae26365065c9574f542e6676b81b86806}{timeout\+\_\+reset} (T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$htim)
+\begin{DoxyCompactList}\small\item\em reset timer (ctn register is set to 0) \end{DoxyCompactList}\item 
+void \hyperlink{timeout_8h_ab7b8dc57e59cade28f6c906ab0b4e5af}{timeout\+\_\+keypad} (T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$htim)
+\begin{DoxyCompactList}\small\item\em Timeout operation witch take care about keypad buffer and lcd buffer when timeout occur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{timeout_8h_ab7b8dc57e59cade28f6c906ab0b4e5af}\label{timeout_8h_ab7b8dc57e59cade28f6c906ab0b4e5af}} 
+\index{timeout.\+h@{timeout.\+h}!timeout\+\_\+keypad@{timeout\+\_\+keypad}}
+\index{timeout\+\_\+keypad@{timeout\+\_\+keypad}!timeout.\+h@{timeout.\+h}}
+\subsubsection{\texorpdfstring{timeout\+\_\+keypad()}{timeout\_keypad()}}
+{\footnotesize\ttfamily void timeout\+\_\+keypad (\begin{DoxyParamCaption}\item[{T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$}]{htim }\end{DoxyParamCaption})}
+
+
+
+Timeout operation witch take care about keypad buffer and lcd buffer when timeout occur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em htim} & pointer to a T\+I\+M\+\_\+\+Handle\+Type\+Def structure that contains the configuration information for T\+IM module. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{timeout_8h_ae26365065c9574f542e6676b81b86806}\label{timeout_8h_ae26365065c9574f542e6676b81b86806}} 
+\index{timeout.\+h@{timeout.\+h}!timeout\+\_\+reset@{timeout\+\_\+reset}}
+\index{timeout\+\_\+reset@{timeout\+\_\+reset}!timeout.\+h@{timeout.\+h}}
+\subsubsection{\texorpdfstring{timeout\+\_\+reset()}{timeout\_reset()}}
+{\footnotesize\ttfamily void timeout\+\_\+reset (\begin{DoxyParamCaption}\item[{T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$}]{htim }\end{DoxyParamCaption})}
+
+
+
+reset timer (ctn register is set to 0) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em htim} & pointer to a T\+I\+M\+\_\+\+Handle\+Type\+Def structure that contains the configuration information for T\+IM module. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{timeout_8h_aae822db4421521370650c0abb8bfdcd2}\label{timeout_8h_aae822db4421521370650c0abb8bfdcd2}} 
+\index{timeout.\+h@{timeout.\+h}!timeout\+\_\+start@{timeout\+\_\+start}}
+\index{timeout\+\_\+start@{timeout\+\_\+start}!timeout.\+h@{timeout.\+h}}
+\subsubsection{\texorpdfstring{timeout\+\_\+start()}{timeout\_start()}}
+{\footnotesize\ttfamily void timeout\+\_\+start (\begin{DoxyParamCaption}\item[{T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$}]{htim }\end{DoxyParamCaption})}
+
+
+
+Start timer and configure apropirate register to timeout opreration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em htim} & pointer to a T\+I\+M\+\_\+\+Handle\+Type\+Def structure that contains the configuration information for T\+IM module. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{timeout_8h_a3538fcacacf2f080aeef19d2817915a2}\label{timeout_8h_a3538fcacacf2f080aeef19d2817915a2}} 
+\index{timeout.\+h@{timeout.\+h}!timeout\+\_\+stop@{timeout\+\_\+stop}}
+\index{timeout\+\_\+stop@{timeout\+\_\+stop}!timeout.\+h@{timeout.\+h}}
+\subsubsection{\texorpdfstring{timeout\+\_\+stop()}{timeout\_stop()}}
+{\footnotesize\ttfamily void timeout\+\_\+stop (\begin{DoxyParamCaption}\item[{T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$}]{htim }\end{DoxyParamCaption})}
+
+
+
+Stop timer and configure apropirate register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em htim} & pointer to a T\+I\+M\+\_\+\+Handle\+Type\+Def structure that contains the configuration information for T\+IM module. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

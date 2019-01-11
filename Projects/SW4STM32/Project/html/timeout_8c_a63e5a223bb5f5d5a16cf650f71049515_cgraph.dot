@@ -1,0 +1,11 @@
+digraph "timeout_uart"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node5 [label="timeout_uart",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="circ_buffer_clear",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$circular__buffer_8c.html#a5b404ab87c63d621304270ce477069c8",tooltip="Clear circular buffer. "];
+  Node5 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="uart_send_string",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$uart_8c.html#ac165c56328ee5c1e15e57cc925962de9",tooltip="Send string via uart protocol. "];
+}

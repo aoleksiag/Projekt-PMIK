@@ -1,0 +1,121 @@
+\hypertarget{_key_pad__4x4_8h}{}\section{Application/\+User/\+Key\+Pad\+\_\+4x4/inc/\+Key\+Pad\+\_\+4x4.h File Reference}
+\label{_key_pad__4x4_8h}\index{Application/\+User/\+Key\+Pad\+\_\+4x4/inc/\+Key\+Pad\+\_\+4x4.\+h@{Application/\+User/\+Key\+Pad\+\_\+4x4/inc/\+Key\+Pad\+\_\+4x4.\+h}}
+{\ttfamily \#include \char`\"{}global\+\_\+variable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\newline
+Include dependency graph for Key\+Pad\+\_\+4x4.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_key_pad__4x4_8h_aac942a10ebab5bbc3df7e6a5d3dac8d8}{Keypad4x4\+\_\+\+Init} (\hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def} $\ast$Keypad\+Wiring\+Struct)
+\item 
+void \hyperlink{_key_pad__4x4_8h_aaec8bb627a84f20257e155a5c62d6365}{Keypad4x4\+\_\+\+Change\+Colomn} (uint8\+\_\+t col\+Num\+\_\+0\+\_\+to\+\_\+3, \hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def} $\ast$Keypad\+Struct)
+\begin{DoxyCompactList}\small\item\em Set active appropriate column on external keypad. \end{DoxyCompactList}\item 
+void \hyperlink{_key_pad__4x4_8h_a1cd1795849837cdb6eab0531b0fe9996}{Keypad4x4\+\_\+\+Read\+Keypad} (bool keys\mbox{[}16\mbox{]}, \hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def} $\ast$Keypad\+Struct)
+\begin{DoxyCompactList}\small\item\em Read active keypad button. \end{DoxyCompactList}\item 
+void \hyperlink{_key_pad__4x4_8h_ab61c53c156f7de52d60558afe0b11216}{Key\+Pad\+\_\+4x4\+\_\+\+Init} (\hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def} $\ast$Keypad\+Struct)
+\begin{DoxyCompactList}\small\item\em Keypad initialization. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{_key_pad__4x4_8h_a3df556ff06c042ed56d225250acb88bf}{Keypad4x4\+\_\+\+Get\+Char} (uint8\+\_\+t keypad\+Sw)
+\begin{DoxyCompactList}\small\item\em Function return kaypad character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_key_pad__4x4_8h_aaec8bb627a84f20257e155a5c62d6365}\label{_key_pad__4x4_8h_aaec8bb627a84f20257e155a5c62d6365}} 
+\index{Key\+Pad\+\_\+4x4.\+h@{Key\+Pad\+\_\+4x4.\+h}!Keypad4x4\+\_\+\+Change\+Colomn@{Keypad4x4\+\_\+\+Change\+Colomn}}
+\index{Keypad4x4\+\_\+\+Change\+Colomn@{Keypad4x4\+\_\+\+Change\+Colomn}!Key\+Pad\+\_\+4x4.\+h@{Key\+Pad\+\_\+4x4.\+h}}
+\subsubsection{\texorpdfstring{Keypad4x4\+\_\+\+Change\+Colomn()}{Keypad4x4\_ChangeColomn()}}
+{\footnotesize\ttfamily void Keypad4x4\+\_\+\+Change\+Colomn (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{col\+Num\+\_\+0\+\_\+to\+\_\+3,  }\item[{\hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def} $\ast$}]{Keypad\+Struct }\end{DoxyParamCaption})}
+
+
+
+Set active appropriate column on external keypad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col\+Num\+\_\+0\+\_\+to\+\_\+3} & column number \\
+\hline
+{\em Keypad\+Struct} & pointer to Keypad structure witch contains pins and ports to external keypad \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_key_pad__4x4_8h_a3df556ff06c042ed56d225250acb88bf}\label{_key_pad__4x4_8h_a3df556ff06c042ed56d225250acb88bf}} 
+\index{Key\+Pad\+\_\+4x4.\+h@{Key\+Pad\+\_\+4x4.\+h}!Keypad4x4\+\_\+\+Get\+Char@{Keypad4x4\+\_\+\+Get\+Char}}
+\index{Keypad4x4\+\_\+\+Get\+Char@{Keypad4x4\+\_\+\+Get\+Char}!Key\+Pad\+\_\+4x4.\+h@{Key\+Pad\+\_\+4x4.\+h}}
+\subsubsection{\texorpdfstring{Keypad4x4\+\_\+\+Get\+Char()}{Keypad4x4\_GetChar()}}
+{\footnotesize\ttfamily char$\ast$ Keypad4x4\+\_\+\+Get\+Char (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{keypad\+Sw }\end{DoxyParamCaption})}
+
+
+
+Function return kaypad character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em keypad\+Sw} & button number \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em keypad} & character \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_key_pad__4x4_8h_aac942a10ebab5bbc3df7e6a5d3dac8d8}\label{_key_pad__4x4_8h_aac942a10ebab5bbc3df7e6a5d3dac8d8}} 
+\index{Key\+Pad\+\_\+4x4.\+h@{Key\+Pad\+\_\+4x4.\+h}!Keypad4x4\+\_\+\+Init@{Keypad4x4\+\_\+\+Init}}
+\index{Keypad4x4\+\_\+\+Init@{Keypad4x4\+\_\+\+Init}!Key\+Pad\+\_\+4x4.\+h@{Key\+Pad\+\_\+4x4.\+h}}
+\subsubsection{\texorpdfstring{Keypad4x4\+\_\+\+Init()}{Keypad4x4\_Init()}}
+{\footnotesize\ttfamily void Keypad4x4\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def} $\ast$}]{Keypad\+Wiring\+Struct }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_key_pad__4x4_8h_a1cd1795849837cdb6eab0531b0fe9996}\label{_key_pad__4x4_8h_a1cd1795849837cdb6eab0531b0fe9996}} 
+\index{Key\+Pad\+\_\+4x4.\+h@{Key\+Pad\+\_\+4x4.\+h}!Keypad4x4\+\_\+\+Read\+Keypad@{Keypad4x4\+\_\+\+Read\+Keypad}}
+\index{Keypad4x4\+\_\+\+Read\+Keypad@{Keypad4x4\+\_\+\+Read\+Keypad}!Key\+Pad\+\_\+4x4.\+h@{Key\+Pad\+\_\+4x4.\+h}}
+\subsubsection{\texorpdfstring{Keypad4x4\+\_\+\+Read\+Keypad()}{Keypad4x4\_ReadKeypad()}}
+{\footnotesize\ttfamily void Keypad4x4\+\_\+\+Read\+Keypad (\begin{DoxyParamCaption}\item[{bool}]{keys\mbox{[}16\mbox{]},  }\item[{\hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def} $\ast$}]{Keypad\+Struct }\end{DoxyParamCaption})}
+
+
+
+Read active keypad button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em keys} & array of button on keypad \\
+\hline
+{\em Keypad\+Struct} & pointer to Keypad structure witch contains pins and ports to external keypad \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{_key_pad__4x4_8h_ab61c53c156f7de52d60558afe0b11216}\label{_key_pad__4x4_8h_ab61c53c156f7de52d60558afe0b11216}} 
+\index{Key\+Pad\+\_\+4x4.\+h@{Key\+Pad\+\_\+4x4.\+h}!Key\+Pad\+\_\+4x4\+\_\+\+Init@{Key\+Pad\+\_\+4x4\+\_\+\+Init}}
+\index{Key\+Pad\+\_\+4x4\+\_\+\+Init@{Key\+Pad\+\_\+4x4\+\_\+\+Init}!Key\+Pad\+\_\+4x4.\+h@{Key\+Pad\+\_\+4x4.\+h}}
+\subsubsection{\texorpdfstring{Key\+Pad\+\_\+4x4\+\_\+\+Init()}{KeyPad\_4x4\_Init()}}
+{\footnotesize\ttfamily void Key\+Pad\+\_\+4x4\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def} $\ast$}]{key\+Pad\+\_\+struct }\end{DoxyParamCaption})}
+
+
+
+Keypad initialization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+Pad\+\_\+struct} & pointer to Keypad structure witch contains pins and ports to external keypad \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}

@@ -1,9 +1,15 @@
+/**
+* @file circular_buffer.h
+* @brief this header file will contain all required function
+* definitions to circular_buffer.c
+*
+* @author Adrian Oleksiak
+*
+* @date 08/01/2019
+*/
+
 #include "global_variable.h"
 #include "stm32f4xx_hal.h"
-
-
-
-
 
 
 

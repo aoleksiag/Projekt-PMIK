@@ -1,0 +1,342 @@
+\hypertarget{group___t_m___h_d44780___functions}{}\section{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}
+\label{group___t_m___h_d44780___functions}\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}}
+
+
+Library Functions.  
+
+
+Collaboration diagram for T\+M\+\_\+\+H\+D44780\+\_\+\+Functions\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga95ddcfeff8a1e3979f453e3e87164a37}{T\+M\+\_\+\+H\+D44780\+\_\+\+Init} (uint8\+\_\+t cols, uint8\+\_\+t rows)
+\begin{DoxyCompactList}\small\item\em Initializes H\+D44780 L\+CD. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga2f61b153a32e30c63a67888cf8e0ee86}{T\+M\+\_\+\+H\+D44780\+\_\+\+Display\+On} (void)
+\begin{DoxyCompactList}\small\item\em Turn display on. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga72f1b22b97fd06cc7e64fc743b16b492}{T\+M\+\_\+\+H\+D44780\+\_\+\+Display\+Off} (void)
+\begin{DoxyCompactList}\small\item\em Turn display off. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga0a7a99ba13104c13646bbb40e5ee3bd9}{T\+M\+\_\+\+H\+D44780\+\_\+\+Clear} (void)
+\begin{DoxyCompactList}\small\item\em Clears entire L\+CD. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga67a3b90f620284520a052c20fab4ee3e}{T\+M\+\_\+\+H\+D44780\+\_\+\+Puts} (uint8\+\_\+t x, uint8\+\_\+t y, char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Puts string on lcd. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga90b3c2e024edc54e3a00b074a5e12b35}{T\+M\+\_\+\+H\+D44780\+\_\+\+Blink\+On} (void)
+\begin{DoxyCompactList}\small\item\em Enables cursor blink. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga4e4bd5908824745d2d7b00f20616bdb0}{T\+M\+\_\+\+H\+D44780\+\_\+\+Blink\+Off} (void)
+\begin{DoxyCompactList}\small\item\em Disables cursor blink. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_gaee93c2b0c5485e82b5bdb299851da4c3}{T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+On} (void)
+\begin{DoxyCompactList}\small\item\em Shows cursor. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_gab469e6dacbf2526bbdac70114edd11ba}{T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+Off} (void)
+\begin{DoxyCompactList}\small\item\em Hides cursor. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_gabd360dcaabda6114a4d63ab3d63fde48}{T\+M\+\_\+\+H\+D44780\+\_\+\+Scroll\+Left} (void)
+\begin{DoxyCompactList}\small\item\em Scrolls display to the left. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga9ac0912d00ab55d31f36bfef953dd0bf}{T\+M\+\_\+\+H\+D44780\+\_\+\+Scroll\+Right} (void)
+\begin{DoxyCompactList}\small\item\em Scrolls display to the right. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga32d98afae3fae1d278778dec7aac9130}{T\+M\+\_\+\+H\+D44780\+\_\+\+Create\+Char} (uint8\+\_\+t location, uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Creates custom character. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_m___h_d44780___functions_ga7bebbde61659ffbd254d5153ddf44ea4}{T\+M\+\_\+\+H\+D44780\+\_\+\+Put\+Custom} (uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t location)
+\begin{DoxyCompactList}\small\item\em Puts custom created character on L\+CD. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Library Functions. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___t_m___h_d44780___functions_ga4e4bd5908824745d2d7b00f20616bdb0}\label{group___t_m___h_d44780___functions_ga4e4bd5908824745d2d7b00f20616bdb0}} 
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}!T\+M\+\_\+\+H\+D44780\+\_\+\+Blink\+Off@{T\+M\+\_\+\+H\+D44780\+\_\+\+Blink\+Off}}
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Blink\+Off@{T\+M\+\_\+\+H\+D44780\+\_\+\+Blink\+Off}!T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+\+Blink\+Off()}{TM\_HD44780\_BlinkOff()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+H\+D44780\+\_\+\+Blink\+Off (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Disables cursor blink. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{group___t_m___h_d44780___functions_ga90b3c2e024edc54e3a00b074a5e12b35}\label{group___t_m___h_d44780___functions_ga90b3c2e024edc54e3a00b074a5e12b35}} 
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}!T\+M\+\_\+\+H\+D44780\+\_\+\+Blink\+On@{T\+M\+\_\+\+H\+D44780\+\_\+\+Blink\+On}}
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Blink\+On@{T\+M\+\_\+\+H\+D44780\+\_\+\+Blink\+On}!T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+\+Blink\+On()}{TM\_HD44780\_BlinkOn()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+H\+D44780\+\_\+\+Blink\+On (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Enables cursor blink. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{group___t_m___h_d44780___functions_ga0a7a99ba13104c13646bbb40e5ee3bd9}\label{group___t_m___h_d44780___functions_ga0a7a99ba13104c13646bbb40e5ee3bd9}} 
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}!T\+M\+\_\+\+H\+D44780\+\_\+\+Clear@{T\+M\+\_\+\+H\+D44780\+\_\+\+Clear}}
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Clear@{T\+M\+\_\+\+H\+D44780\+\_\+\+Clear}!T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+\+Clear()}{TM\_HD44780\_Clear()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+H\+D44780\+\_\+\+Clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Clears entire L\+CD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{group___t_m___h_d44780___functions_ga32d98afae3fae1d278778dec7aac9130}\label{group___t_m___h_d44780___functions_ga32d98afae3fae1d278778dec7aac9130}} 
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}!T\+M\+\_\+\+H\+D44780\+\_\+\+Create\+Char@{T\+M\+\_\+\+H\+D44780\+\_\+\+Create\+Char}}
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Create\+Char@{T\+M\+\_\+\+H\+D44780\+\_\+\+Create\+Char}!T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+\+Create\+Char()}{TM\_HD44780\_CreateChar()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+H\+D44780\+\_\+\+Create\+Char (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{location,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Creates custom character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & Location where to save character on L\+CD. L\+CD supports up to 8 custom characters, so locations are 0 -\/ 7 \\
+\hline
+{\em $\ast$data} & Pointer to 8-\/bytes of data for one character \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{group___t_m___h_d44780___functions_gab469e6dacbf2526bbdac70114edd11ba}\label{group___t_m___h_d44780___functions_gab469e6dacbf2526bbdac70114edd11ba}} 
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}!T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+Off@{T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+Off}}
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+Off@{T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+Off}!T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+Off()}{TM\_HD44780\_CursorOff()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+Off (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Hides cursor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{group___t_m___h_d44780___functions_gaee93c2b0c5485e82b5bdb299851da4c3}\label{group___t_m___h_d44780___functions_gaee93c2b0c5485e82b5bdb299851da4c3}} 
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}!T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+On@{T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+On}}
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+On@{T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+On}!T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+On()}{TM\_HD44780\_CursorOn()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+On (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Shows cursor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{group___t_m___h_d44780___functions_ga72f1b22b97fd06cc7e64fc743b16b492}\label{group___t_m___h_d44780___functions_ga72f1b22b97fd06cc7e64fc743b16b492}} 
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}!T\+M\+\_\+\+H\+D44780\+\_\+\+Display\+Off@{T\+M\+\_\+\+H\+D44780\+\_\+\+Display\+Off}}
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Display\+Off@{T\+M\+\_\+\+H\+D44780\+\_\+\+Display\+Off}!T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+\+Display\+Off()}{TM\_HD44780\_DisplayOff()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+H\+D44780\+\_\+\+Display\+Off (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Turn display off. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{group___t_m___h_d44780___functions_ga2f61b153a32e30c63a67888cf8e0ee86}\label{group___t_m___h_d44780___functions_ga2f61b153a32e30c63a67888cf8e0ee86}} 
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}!T\+M\+\_\+\+H\+D44780\+\_\+\+Display\+On@{T\+M\+\_\+\+H\+D44780\+\_\+\+Display\+On}}
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Display\+On@{T\+M\+\_\+\+H\+D44780\+\_\+\+Display\+On}!T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+\+Display\+On()}{TM\_HD44780\_DisplayOn()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+H\+D44780\+\_\+\+Display\+On (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Turn display on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{group___t_m___h_d44780___functions_ga95ddcfeff8a1e3979f453e3e87164a37}\label{group___t_m___h_d44780___functions_ga95ddcfeff8a1e3979f453e3e87164a37}} 
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}!T\+M\+\_\+\+H\+D44780\+\_\+\+Init@{T\+M\+\_\+\+H\+D44780\+\_\+\+Init}}
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Init@{T\+M\+\_\+\+H\+D44780\+\_\+\+Init}!T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+\+Init()}{TM\_HD44780\_Init()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+H\+D44780\+\_\+\+Init (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cols,  }\item[{uint8\+\_\+t}]{rows }\end{DoxyParamCaption})}
+
+
+
+Initializes H\+D44780 L\+CD. 
+
+cols\+: Width of lcd 
+\begin{DoxyParams}{Parameters}
+{\em rows} & Height of lcd \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{group___t_m___h_d44780___functions_ga7bebbde61659ffbd254d5153ddf44ea4}\label{group___t_m___h_d44780___functions_ga7bebbde61659ffbd254d5153ddf44ea4}} 
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}!T\+M\+\_\+\+H\+D44780\+\_\+\+Put\+Custom@{T\+M\+\_\+\+H\+D44780\+\_\+\+Put\+Custom}}
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Put\+Custom@{T\+M\+\_\+\+H\+D44780\+\_\+\+Put\+Custom}!T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+\+Put\+Custom()}{TM\_HD44780\_PutCustom()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+H\+D44780\+\_\+\+Put\+Custom (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{y,  }\item[{uint8\+\_\+t}]{location }\end{DoxyParamCaption})}
+
+
+
+Puts custom created character on L\+CD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X location where character will be shown \\
+\hline
+{\em y} & Y location where character will be shown \\
+\hline
+{\em location} & Location on L\+CD where character is stored, 0 -\/ 7 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{group___t_m___h_d44780___functions_ga67a3b90f620284520a052c20fab4ee3e}\label{group___t_m___h_d44780___functions_ga67a3b90f620284520a052c20fab4ee3e}} 
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}!T\+M\+\_\+\+H\+D44780\+\_\+\+Puts@{T\+M\+\_\+\+H\+D44780\+\_\+\+Puts}}
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Puts@{T\+M\+\_\+\+H\+D44780\+\_\+\+Puts}!T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+\+Puts()}{TM\_HD44780\_Puts()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+H\+D44780\+\_\+\+Puts (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{y,  }\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Puts string on lcd. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X location where string will start \\
+\hline
+{\em y;} & Y location where string will start \\
+\hline
+{\em $\ast$str} & pointer to string to display \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{group___t_m___h_d44780___functions_gabd360dcaabda6114a4d63ab3d63fde48}\label{group___t_m___h_d44780___functions_gabd360dcaabda6114a4d63ab3d63fde48}} 
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}!T\+M\+\_\+\+H\+D44780\+\_\+\+Scroll\+Left@{T\+M\+\_\+\+H\+D44780\+\_\+\+Scroll\+Left}}
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Scroll\+Left@{T\+M\+\_\+\+H\+D44780\+\_\+\+Scroll\+Left}!T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+\+Scroll\+Left()}{TM\_HD44780\_ScrollLeft()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+H\+D44780\+\_\+\+Scroll\+Left (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Scrolls display to the left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 12
+\mbox{\Hypertarget{group___t_m___h_d44780___functions_ga9ac0912d00ab55d31f36bfef953dd0bf}\label{group___t_m___h_d44780___functions_ga9ac0912d00ab55d31f36bfef953dd0bf}} 
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}!T\+M\+\_\+\+H\+D44780\+\_\+\+Scroll\+Right@{T\+M\+\_\+\+H\+D44780\+\_\+\+Scroll\+Right}}
+\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Scroll\+Right@{T\+M\+\_\+\+H\+D44780\+\_\+\+Scroll\+Right}!T\+M\+\_\+\+H\+D44780\+\_\+\+Functions@{T\+M\+\_\+\+H\+D44780\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+\+Scroll\+Right()}{TM\_HD44780\_ScrollRight()}}
+{\footnotesize\ttfamily void T\+M\+\_\+\+H\+D44780\+\_\+\+Scroll\+Right (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Scrolls display to the right. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 13
