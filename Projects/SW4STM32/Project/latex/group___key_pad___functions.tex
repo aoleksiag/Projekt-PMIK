@@ -1,0 +1,306 @@
+\hypertarget{group___key_pad___functions}{}\section{Key\+Pad\+\_\+\+Functions}
+\label{group___key_pad___functions}\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+
+
+Library Functions.  
+
+
+Collaboration diagram for Key\+Pad\+\_\+\+Functions\+:
+% FIG 0
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___key_pad___functions_gaac942a10ebab5bbc3df7e6a5d3dac8d8}{Keypad4x4\+\_\+\+Init} (\hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def} $\ast$Keypad\+Wiring\+Struct)
+\item 
+void \hyperlink{group___key_pad___functions_gaaec8bb627a84f20257e155a5c62d6365}{Keypad4x4\+\_\+\+Change\+Colomn} (uint8\+\_\+t col\+Num\+\_\+0\+\_\+to\+\_\+3, \hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def} $\ast$Keypad\+Struct)
+\begin{DoxyCompactList}\small\item\em Set active appropriate column on external keypad. \end{DoxyCompactList}\item 
+void \hyperlink{group___key_pad___functions_ga1cd1795849837cdb6eab0531b0fe9996}{Keypad4x4\+\_\+\+Read\+Keypad} (bool keys\mbox{[}16\mbox{]}, \hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def} $\ast$Keypad\+Struct)
+\begin{DoxyCompactList}\small\item\em Read active keypad button. \end{DoxyCompactList}\item 
+void \hyperlink{group___key_pad___functions_gab61c53c156f7de52d60558afe0b11216}{Key\+Pad\+\_\+4x4\+\_\+\+Init} (\hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def} $\ast$Keypad\+Struct)
+\begin{DoxyCompactList}\small\item\em Keypad initialization. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{group___key_pad___functions_ga3df556ff06c042ed56d225250acb88bf}{Keypad4x4\+\_\+\+Get\+Char} (uint8\+\_\+t keypad\+Sw)
+\begin{DoxyCompactList}\small\item\em Function return kaypad character. \end{DoxyCompactList}\item 
+void \hyperlink{group___key_pad___functions_ga3a9e33c6b18f4e6bcdb841ac76286a87}{key\+Check} (void)
+\begin{DoxyCompactList}\small\item\em Function check pressed button. \end{DoxyCompactList}\item 
+void \hyperlink{group___key_pad___functions_ga0d78ad3fd18fa45e674df471b530c3a2}{keypad\+\_\+serv} (T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$htim, \hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d} $\ast$\hyperlink{main_8c_ae1fd753c7ac0d6e839e1aa5ab4b04dd3}{log\+\_\+circ\+\_\+buff})
+\begin{DoxyCompactList}\small\item\em Function handling keypad service. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$ \hyperlink{group___key_pad___functions_ga47955289b19390cde1cbc4c77f042369}{Keypad\+\_\+\+Wires\+Type\+Def\+::\+I\+N0\+\_\+\+Port}
+\item 
+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$ \hyperlink{group___key_pad___functions_gacaa68d159d45a332a4932cd1b169d2ea}{Keypad\+\_\+\+Wires\+Type\+Def\+::\+I\+N1\+\_\+\+Port}
+\item 
+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$ \hyperlink{group___key_pad___functions_ga29bcacbed0e3a0434a118a920050c682}{Keypad\+\_\+\+Wires\+Type\+Def\+::\+I\+N2\+\_\+\+Port}
+\item 
+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$ \hyperlink{group___key_pad___functions_ga1c91503556cf87dd73d1372c64271ebc}{Keypad\+\_\+\+Wires\+Type\+Def\+::\+I\+N3\+\_\+\+Port}
+\item 
+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$ \hyperlink{group___key_pad___functions_ga10de1d8c79b463b7fa695d5df589c427}{Keypad\+\_\+\+Wires\+Type\+Def\+::\+O\+U\+T0\+\_\+\+Port}
+\item 
+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$ \hyperlink{group___key_pad___functions_ga5e0930dd209c2c8f460b318a19e1396f}{Keypad\+\_\+\+Wires\+Type\+Def\+::\+O\+U\+T1\+\_\+\+Port}
+\item 
+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$ \hyperlink{group___key_pad___functions_gaa0c12d07fe7f540e10d5d31b268e9946}{Keypad\+\_\+\+Wires\+Type\+Def\+::\+O\+U\+T2\+\_\+\+Port}
+\item 
+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$ \hyperlink{group___key_pad___functions_ga5032c6a39064da097f66706a20bed691}{Keypad\+\_\+\+Wires\+Type\+Def\+::\+O\+U\+T3\+\_\+\+Port}
+\item 
+uint16\+\_\+t \hyperlink{group___key_pad___functions_ga1982da4b510d015cde3d54a120d32461}{Keypad\+\_\+\+Wires\+Type\+Def\+::\+I\+N0pin}
+\item 
+uint16\+\_\+t \hyperlink{group___key_pad___functions_gad3d88b65475a470373eff3b7960853b8}{Keypad\+\_\+\+Wires\+Type\+Def\+::\+I\+N1pin}
+\item 
+uint16\+\_\+t \hyperlink{group___key_pad___functions_ga5091f76517c45ce696eac83b97dc9e44}{Keypad\+\_\+\+Wires\+Type\+Def\+::\+I\+N2pin}
+\item 
+uint16\+\_\+t \hyperlink{group___key_pad___functions_ga3a5097701246b81b3156baf4a6e3fb5e}{Keypad\+\_\+\+Wires\+Type\+Def\+::\+I\+N3pin}
+\item 
+uint16\+\_\+t \hyperlink{group___key_pad___functions_gad84304a16a91fb587c994c959c30a39b}{Keypad\+\_\+\+Wires\+Type\+Def\+::\+O\+U\+T0pin}
+\item 
+uint16\+\_\+t \hyperlink{group___key_pad___functions_ga49549ddf83137d8740537712453723ae}{Keypad\+\_\+\+Wires\+Type\+Def\+::\+O\+U\+T1pin}
+\item 
+uint16\+\_\+t \hyperlink{group___key_pad___functions_ga376bc841372e03e107799eadf13cde51}{Keypad\+\_\+\+Wires\+Type\+Def\+::\+O\+U\+T2pin}
+\item 
+uint16\+\_\+t \hyperlink{group___key_pad___functions_gaaaa4c6e2944f027f8c7eb8d8bc0ee90c}{Keypad\+\_\+\+Wires\+Type\+Def\+::\+O\+U\+T3pin}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Library Functions. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___key_pad___functions_ga3a9e33c6b18f4e6bcdb841ac76286a87}\label{group___key_pad___functions_ga3a9e33c6b18f4e6bcdb841ac76286a87}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!key\+Check@{key\+Check}}
+\index{key\+Check@{key\+Check}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{key\+Check()}{keyCheck()}}
+{\footnotesize\ttfamily void key\+Check (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function check pressed button. 
+
+If sw\+\_\+flag contains field which is the same as field in sw, we will know that button is pressing right now 
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{group___key_pad___functions_gaaec8bb627a84f20257e155a5c62d6365}\label{group___key_pad___functions_gaaec8bb627a84f20257e155a5c62d6365}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!Keypad4x4\+\_\+\+Change\+Colomn@{Keypad4x4\+\_\+\+Change\+Colomn}}
+\index{Keypad4x4\+\_\+\+Change\+Colomn@{Keypad4x4\+\_\+\+Change\+Colomn}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{Keypad4x4\+\_\+\+Change\+Colomn()}{Keypad4x4\_ChangeColomn()}}
+{\footnotesize\ttfamily void Keypad4x4\+\_\+\+Change\+Colomn (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{col\+Num\+\_\+0\+\_\+to\+\_\+3,  }\item[{\hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def} $\ast$}]{Keypad\+Struct }\end{DoxyParamCaption})}
+
+
+
+Set active appropriate column on external keypad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col\+Num\+\_\+0\+\_\+to\+\_\+3} & column number \\
+\hline
+{\em Keypad\+Struct} & pointer to Keypad structure witch contains pins and ports to external keypad \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___key_pad___functions_ga3df556ff06c042ed56d225250acb88bf}\label{group___key_pad___functions_ga3df556ff06c042ed56d225250acb88bf}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!Keypad4x4\+\_\+\+Get\+Char@{Keypad4x4\+\_\+\+Get\+Char}}
+\index{Keypad4x4\+\_\+\+Get\+Char@{Keypad4x4\+\_\+\+Get\+Char}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{Keypad4x4\+\_\+\+Get\+Char()}{Keypad4x4\_GetChar()}}
+{\footnotesize\ttfamily char$\ast$ Keypad4x4\+\_\+\+Get\+Char (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{keypad\+Sw }\end{DoxyParamCaption})}
+
+
+
+Function return kaypad character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em keypad\+Sw} & button number \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em keypad} & character \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___key_pad___functions_gaac942a10ebab5bbc3df7e6a5d3dac8d8}\label{group___key_pad___functions_gaac942a10ebab5bbc3df7e6a5d3dac8d8}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!Keypad4x4\+\_\+\+Init@{Keypad4x4\+\_\+\+Init}}
+\index{Keypad4x4\+\_\+\+Init@{Keypad4x4\+\_\+\+Init}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{Keypad4x4\+\_\+\+Init()}{Keypad4x4\_Init()}}
+{\footnotesize\ttfamily void Keypad4x4\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def} $\ast$}]{Keypad\+Wiring\+Struct }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___key_pad___functions_ga1cd1795849837cdb6eab0531b0fe9996}\label{group___key_pad___functions_ga1cd1795849837cdb6eab0531b0fe9996}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!Keypad4x4\+\_\+\+Read\+Keypad@{Keypad4x4\+\_\+\+Read\+Keypad}}
+\index{Keypad4x4\+\_\+\+Read\+Keypad@{Keypad4x4\+\_\+\+Read\+Keypad}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{Keypad4x4\+\_\+\+Read\+Keypad()}{Keypad4x4\_ReadKeypad()}}
+{\footnotesize\ttfamily void Keypad4x4\+\_\+\+Read\+Keypad (\begin{DoxyParamCaption}\item[{bool}]{keys\mbox{[}16\mbox{]},  }\item[{\hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def} $\ast$}]{Keypad\+Struct }\end{DoxyParamCaption})}
+
+
+
+Read active keypad button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em keys} & array of button on keypad \\
+\hline
+{\em Keypad\+Struct} & pointer to Keypad structure witch contains pins and ports to external keypad \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{group___key_pad___functions_gab61c53c156f7de52d60558afe0b11216}\label{group___key_pad___functions_gab61c53c156f7de52d60558afe0b11216}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!Key\+Pad\+\_\+4x4\+\_\+\+Init@{Key\+Pad\+\_\+4x4\+\_\+\+Init}}
+\index{Key\+Pad\+\_\+4x4\+\_\+\+Init@{Key\+Pad\+\_\+4x4\+\_\+\+Init}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{Key\+Pad\+\_\+4x4\+\_\+\+Init()}{KeyPad\_4x4\_Init()}}
+{\footnotesize\ttfamily void Key\+Pad\+\_\+4x4\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\hyperlink{struct_keypad___wires_type_def}{Keypad\+\_\+\+Wires\+Type\+Def} $\ast$}]{key\+Pad\+\_\+struct }\end{DoxyParamCaption})}
+
+
+
+Keypad initialization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+Pad\+\_\+struct} & pointer to Keypad structure witch contains pins and ports to external keypad \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___key_pad___functions_ga0d78ad3fd18fa45e674df471b530c3a2}\label{group___key_pad___functions_ga0d78ad3fd18fa45e674df471b530c3a2}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!keypad\+\_\+serv@{keypad\+\_\+serv}}
+\index{keypad\+\_\+serv@{keypad\+\_\+serv}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{keypad\+\_\+serv()}{keypad\_serv()}}
+{\footnotesize\ttfamily void keypad\+\_\+serv (\begin{DoxyParamCaption}\item[{T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$}]{htim,  }\item[{\hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d} $\ast$}]{log\+\_\+circ\+\_\+buff }\end{DoxyParamCaption})}
+
+
+
+Function handling keypad service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em htim} & pointer to a T\+I\+M\+\_\+\+Handle\+Type\+Def structure that contains the configuration information for T\+IM module. \\
+\hline
+{\em log\+\_\+circ\+\_\+buff} & pointer to circular buffer structure, it include logs which contains date of lock is open \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 3
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{group___key_pad___functions_ga47955289b19390cde1cbc4c77f042369}\label{group___key_pad___functions_ga47955289b19390cde1cbc4c77f042369}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!I\+N0\+\_\+\+Port@{I\+N0\+\_\+\+Port}}
+\index{I\+N0\+\_\+\+Port@{I\+N0\+\_\+\+Port}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{I\+N0\+\_\+\+Port}{IN0\_Port}}
+{\footnotesize\ttfamily G\+P\+I\+O\+\_\+\+Type\+Def$\ast$ Keypad\+\_\+\+Wires\+Type\+Def\+::\+I\+N0\+\_\+\+Port}
+
+\mbox{\Hypertarget{group___key_pad___functions_ga1982da4b510d015cde3d54a120d32461}\label{group___key_pad___functions_ga1982da4b510d015cde3d54a120d32461}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!I\+N0pin@{I\+N0pin}}
+\index{I\+N0pin@{I\+N0pin}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{I\+N0pin}{IN0pin}}
+{\footnotesize\ttfamily uint16\+\_\+t Keypad\+\_\+\+Wires\+Type\+Def\+::\+I\+N0pin}
+
+\mbox{\Hypertarget{group___key_pad___functions_gacaa68d159d45a332a4932cd1b169d2ea}\label{group___key_pad___functions_gacaa68d159d45a332a4932cd1b169d2ea}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!I\+N1\+\_\+\+Port@{I\+N1\+\_\+\+Port}}
+\index{I\+N1\+\_\+\+Port@{I\+N1\+\_\+\+Port}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{I\+N1\+\_\+\+Port}{IN1\_Port}}
+{\footnotesize\ttfamily G\+P\+I\+O\+\_\+\+Type\+Def$\ast$ Keypad\+\_\+\+Wires\+Type\+Def\+::\+I\+N1\+\_\+\+Port}
+
+\mbox{\Hypertarget{group___key_pad___functions_gad3d88b65475a470373eff3b7960853b8}\label{group___key_pad___functions_gad3d88b65475a470373eff3b7960853b8}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!I\+N1pin@{I\+N1pin}}
+\index{I\+N1pin@{I\+N1pin}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{I\+N1pin}{IN1pin}}
+{\footnotesize\ttfamily uint16\+\_\+t Keypad\+\_\+\+Wires\+Type\+Def\+::\+I\+N1pin}
+
+\mbox{\Hypertarget{group___key_pad___functions_ga29bcacbed0e3a0434a118a920050c682}\label{group___key_pad___functions_ga29bcacbed0e3a0434a118a920050c682}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!I\+N2\+\_\+\+Port@{I\+N2\+\_\+\+Port}}
+\index{I\+N2\+\_\+\+Port@{I\+N2\+\_\+\+Port}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{I\+N2\+\_\+\+Port}{IN2\_Port}}
+{\footnotesize\ttfamily G\+P\+I\+O\+\_\+\+Type\+Def$\ast$ Keypad\+\_\+\+Wires\+Type\+Def\+::\+I\+N2\+\_\+\+Port}
+
+\mbox{\Hypertarget{group___key_pad___functions_ga5091f76517c45ce696eac83b97dc9e44}\label{group___key_pad___functions_ga5091f76517c45ce696eac83b97dc9e44}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!I\+N2pin@{I\+N2pin}}
+\index{I\+N2pin@{I\+N2pin}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{I\+N2pin}{IN2pin}}
+{\footnotesize\ttfamily uint16\+\_\+t Keypad\+\_\+\+Wires\+Type\+Def\+::\+I\+N2pin}
+
+\mbox{\Hypertarget{group___key_pad___functions_ga1c91503556cf87dd73d1372c64271ebc}\label{group___key_pad___functions_ga1c91503556cf87dd73d1372c64271ebc}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!I\+N3\+\_\+\+Port@{I\+N3\+\_\+\+Port}}
+\index{I\+N3\+\_\+\+Port@{I\+N3\+\_\+\+Port}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{I\+N3\+\_\+\+Port}{IN3\_Port}}
+{\footnotesize\ttfamily G\+P\+I\+O\+\_\+\+Type\+Def$\ast$ Keypad\+\_\+\+Wires\+Type\+Def\+::\+I\+N3\+\_\+\+Port}
+
+\mbox{\Hypertarget{group___key_pad___functions_ga3a5097701246b81b3156baf4a6e3fb5e}\label{group___key_pad___functions_ga3a5097701246b81b3156baf4a6e3fb5e}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!I\+N3pin@{I\+N3pin}}
+\index{I\+N3pin@{I\+N3pin}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{I\+N3pin}{IN3pin}}
+{\footnotesize\ttfamily uint16\+\_\+t Keypad\+\_\+\+Wires\+Type\+Def\+::\+I\+N3pin}
+
+\mbox{\Hypertarget{group___key_pad___functions_ga10de1d8c79b463b7fa695d5df589c427}\label{group___key_pad___functions_ga10de1d8c79b463b7fa695d5df589c427}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!O\+U\+T0\+\_\+\+Port@{O\+U\+T0\+\_\+\+Port}}
+\index{O\+U\+T0\+\_\+\+Port@{O\+U\+T0\+\_\+\+Port}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{O\+U\+T0\+\_\+\+Port}{OUT0\_Port}}
+{\footnotesize\ttfamily G\+P\+I\+O\+\_\+\+Type\+Def$\ast$ Keypad\+\_\+\+Wires\+Type\+Def\+::\+O\+U\+T0\+\_\+\+Port}
+
+\mbox{\Hypertarget{group___key_pad___functions_gad84304a16a91fb587c994c959c30a39b}\label{group___key_pad___functions_gad84304a16a91fb587c994c959c30a39b}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!O\+U\+T0pin@{O\+U\+T0pin}}
+\index{O\+U\+T0pin@{O\+U\+T0pin}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{O\+U\+T0pin}{OUT0pin}}
+{\footnotesize\ttfamily uint16\+\_\+t Keypad\+\_\+\+Wires\+Type\+Def\+::\+O\+U\+T0pin}
+
+\mbox{\Hypertarget{group___key_pad___functions_ga5e0930dd209c2c8f460b318a19e1396f}\label{group___key_pad___functions_ga5e0930dd209c2c8f460b318a19e1396f}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!O\+U\+T1\+\_\+\+Port@{O\+U\+T1\+\_\+\+Port}}
+\index{O\+U\+T1\+\_\+\+Port@{O\+U\+T1\+\_\+\+Port}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{O\+U\+T1\+\_\+\+Port}{OUT1\_Port}}
+{\footnotesize\ttfamily G\+P\+I\+O\+\_\+\+Type\+Def$\ast$ Keypad\+\_\+\+Wires\+Type\+Def\+::\+O\+U\+T1\+\_\+\+Port}
+
+\mbox{\Hypertarget{group___key_pad___functions_ga49549ddf83137d8740537712453723ae}\label{group___key_pad___functions_ga49549ddf83137d8740537712453723ae}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!O\+U\+T1pin@{O\+U\+T1pin}}
+\index{O\+U\+T1pin@{O\+U\+T1pin}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{O\+U\+T1pin}{OUT1pin}}
+{\footnotesize\ttfamily uint16\+\_\+t Keypad\+\_\+\+Wires\+Type\+Def\+::\+O\+U\+T1pin}
+
+\mbox{\Hypertarget{group___key_pad___functions_gaa0c12d07fe7f540e10d5d31b268e9946}\label{group___key_pad___functions_gaa0c12d07fe7f540e10d5d31b268e9946}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!O\+U\+T2\+\_\+\+Port@{O\+U\+T2\+\_\+\+Port}}
+\index{O\+U\+T2\+\_\+\+Port@{O\+U\+T2\+\_\+\+Port}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{O\+U\+T2\+\_\+\+Port}{OUT2\_Port}}
+{\footnotesize\ttfamily G\+P\+I\+O\+\_\+\+Type\+Def$\ast$ Keypad\+\_\+\+Wires\+Type\+Def\+::\+O\+U\+T2\+\_\+\+Port}
+
+\mbox{\Hypertarget{group___key_pad___functions_ga376bc841372e03e107799eadf13cde51}\label{group___key_pad___functions_ga376bc841372e03e107799eadf13cde51}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!O\+U\+T2pin@{O\+U\+T2pin}}
+\index{O\+U\+T2pin@{O\+U\+T2pin}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{O\+U\+T2pin}{OUT2pin}}
+{\footnotesize\ttfamily uint16\+\_\+t Keypad\+\_\+\+Wires\+Type\+Def\+::\+O\+U\+T2pin}
+
+\mbox{\Hypertarget{group___key_pad___functions_ga5032c6a39064da097f66706a20bed691}\label{group___key_pad___functions_ga5032c6a39064da097f66706a20bed691}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!O\+U\+T3\+\_\+\+Port@{O\+U\+T3\+\_\+\+Port}}
+\index{O\+U\+T3\+\_\+\+Port@{O\+U\+T3\+\_\+\+Port}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{O\+U\+T3\+\_\+\+Port}{OUT3\_Port}}
+{\footnotesize\ttfamily G\+P\+I\+O\+\_\+\+Type\+Def$\ast$ Keypad\+\_\+\+Wires\+Type\+Def\+::\+O\+U\+T3\+\_\+\+Port}
+
+\mbox{\Hypertarget{group___key_pad___functions_gaaaa4c6e2944f027f8c7eb8d8bc0ee90c}\label{group___key_pad___functions_gaaaa4c6e2944f027f8c7eb8d8bc0ee90c}} 
+\index{Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}!O\+U\+T3pin@{O\+U\+T3pin}}
+\index{O\+U\+T3pin@{O\+U\+T3pin}!Key\+Pad\+\_\+\+Functions@{Key\+Pad\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{O\+U\+T3pin}{OUT3pin}}
+{\footnotesize\ttfamily uint16\+\_\+t Keypad\+\_\+\+Wires\+Type\+Def\+::\+O\+U\+T3pin}
+

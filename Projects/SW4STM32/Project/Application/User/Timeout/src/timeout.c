@@ -5,6 +5,19 @@
  *      Author: Adrian
  */
 #include "timeout.h"
+
+/**
+ * @defgroup Timeout
+ * @brief
+ * @{
+ *
+ */
+ /**
+ * @defgroup Timeout_Functions
+ * @brief    Timeout Functions
+ * @{
+ */
+
 /**
   * @brief Start timer and configure apropirate register to timeout opreration
   * @param htim pointer to a TIM_HandleTypeDef structure that contains

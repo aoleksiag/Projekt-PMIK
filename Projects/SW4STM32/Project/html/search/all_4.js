@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['data_5frecived_5ftemp',['Data_recived_temp',['../global__variable_8h.html#a8764ed2de0d8640f8b468ee8b5a9d39b',1,'global_variable.h']]],
+  ['data_5frecived_5ftemp',['Data_recived_temp',['../group___global.html#ga8764ed2de0d8640f8b468ee8b5a9d39b',1,'global_variable.h']]],
   ['define_2eh',['define.h',['../define_8h.html',1,'']]],
   ['defines_2eh',['defines.h',['../defines_8h.html',1,'']]],
   ['delay',['Delay',['../group___t_m___d_e_l_a_y___functions.html#gae88c9bdf0f377e67efc2c200dc04ab89',1,'tm_stm32_delay.h']]],

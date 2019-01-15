@@ -2,6 +2,17 @@
 #include "KeyPad_4x4.h"
 #include "main.h"
 
+/**
+ * @defgroup KeyPad
+ * @brief
+ * @{
+ *
+ */
+ /**
+ * @defgroup KeyPad_Functions
+ * @brief    KeyPad Functions
+ * @{
+ */
 
 
 static char *Keypad_keys[16] =
@@ -171,6 +182,7 @@ void keypad_serv(TIM_HandleTypeDef *htim,circ_buffer_2d *log_circ_buff){
                 if(Key_char == '*'){
                     strcpy(buffer2,"lock close");
                     lock_close();
+                    timeout_start(htim);
                 }
         }else{
             timeout_reset(htim);

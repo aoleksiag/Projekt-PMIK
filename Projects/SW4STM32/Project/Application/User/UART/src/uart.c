@@ -1,4 +1,16 @@
 #include "uart.h"
+/**
+ * @defgroup UART
+ * @brief
+ * @{
+ *
+ */
+ /**
+ * @defgroup UART_Functions
+ * @brief    UART Functions
+ * @{
+ */
+
 
 /**
   * @brief Send string via uart protocol
@@ -117,14 +129,23 @@ void uart_serv(UART_HandleTypeDef *huart,circ_buffer_2d *uart_rx_circBuff){
         }
         else{
         if(buffer_check(&buffer)){
-            if(lock){
+            if(lock_open_flag == 0){
                 uart_send_string(huart,"appropriate_code_lock_open\r\n");
                 lock_open();
-                lock=0;
+                ///
+                buffer_clear(&buffer2,16);
+                buffer_clear(&buffer_do_lcd,6);
+                buffer_clear(&buffer,6);
+                //
             }else{
                 uart_send_string(huart,"appropriate_code_lock_close\r\n");
                 lock_close();
-                lock=1;
+
+                //
+                buffer_clear(&buffer,buffer_length);
+                buffer_clear(&buffer_do_lcd,buffer_length);
+                buffer_count=0;
+                                //
             }
         }
         else{

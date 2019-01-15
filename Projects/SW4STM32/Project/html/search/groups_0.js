@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['cmsis',['CMSIS',['../group___c_m_s_i_s.html',1,'']]]
+  ['buffer',['Buffer',['../group__buffer.html',1,'']]],
+  ['buffer_5ffunctions',['Buffer_Functions',['../group___buffer___functions.html',1,'']]]
 ];

@@ -9,11 +9,11 @@ digraph "HAL_UART_RxCpltCallback"
   Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
   Node14 [label="timeout_start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$timeout_8c.html#aae822db4421521370650c0abb8bfdcd2",tooltip="Start timer and configure apropirate register to timeout opreration. "];
   Node13 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
-  Node15 [label="circ_buffer_put_char",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$circular__buffer_8c.html#a334ce70427261ea1df018dde9889a679",tooltip="Put character in circular buffer. "];
+  Node15 [label="circ_buffer_put_char",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___buffer___functions.html#ga334ce70427261ea1df018dde9889a679",tooltip="Put character in circular buffer. "];
   Node13 -> Node16 [color="midnightblue",fontsize="10",style="solid"];
   Node16 [label="timeout_stop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$timeout_8c.html#a3538fcacacf2f080aeef19d2817915a2",tooltip="Stop timer and configure apropirate register. "];
   Node13 -> Node17 [color="midnightblue",fontsize="10",style="solid"];
   Node17 [label="timeout_reset",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$timeout_8c.html#ae26365065c9574f542e6676b81b86806",tooltip="reset timer (ctn register is set to 0) "];
   Node13 -> Node18 [color="midnightblue",fontsize="10",style="solid"];
-  Node18 [label="circ_buffer_clear",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$circular__buffer_8c.html#a5b404ab87c63d621304270ce477069c8",tooltip="Clear circular buffer. "];
+  Node18 [label="circ_buffer_clear",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___buffer___functions.html#ga5b404ab87c63d621304270ce477069c8",tooltip="Clear circular buffer. "];
 }

@@ -3,37 +3,58 @@
   ******************************************************************************
   * @file           : main.c
   * @brief          : Main program body
+  * @author         : Adrian Oleksiak
+  * @mainpage        Quick description
   ******************************************************************************
-  ** This notice applies to any and all portions of this file
-  * that are not between comment pairs USER CODE BEGIN and
-  * USER CODE END. Other portions of this file, whether 
-  * inserted by the user or by software development tools
-  * are owned by their respective copyright owners.
   *
-  * COPYRIGHT(c) 2018 STMicroelectronics
+  * Project deal with electronic lock. Lock can be open by two way. First approach use 4x4 keypad,
+  * user can enter six-digit key and confirm it by press # character on keyboard. In case of enter
+  * less than six number, system will ignore it after two second. Character C on keypad removes all
+  * digits in code. When lock  can be close by * button. Second approach use bluetooth module,
+  * user send special formed frame to communicate with microcontroller. six digit will be treat as code
+  * frame with d on first place change data in rtc clock ("d01:12"}, frame with t change time ("t12:10).
+  * System stores log in circular buffer, if bluetooth send $ char log will be return. Bluetooth user can
+  * change password.
   *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
+ * \par Default pinout LCD
+ *
+\verbatim
+LCD   GPIO              DESCRIPTION
+RS    PB2               Register select, can be overwritten in your project's defines.h file
+E     PB7               Enable pin, can be overwritten in your project's defines.h file
+D4    PC12              Data 4, can be overwritten in your project's defines.h file
+D5    PC13              Data 5, can be overwritten in your project's defines.h file
+D6    PB12              Data 6, can be overwritten in your project's defines.h file
+D7    PB13              Data 7, can be overwritten in your project's defines.h file
+
+\endverbatim
   *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * \par Default pinout Keypad
+ *
+\verbatim
+KeyPad   GPIO             DESCRIPTION
+P0       PB3              Input PIN
+P1       PA10             Input PIN
+P2       PB13             Input PIN
+P3       PC4              Input PIN
+P4       PA8              Output PIN
+P5       PB10             Output PIN
+P6       PB4              Output PIN
+P7       PC4              Output PIN
+
+\endverbatim
+
   *
+ * \par Default pinout UART
+ *
+\verbatim
+UART      GPIO          DESCRIPTION
+UART_tx   PA10           tx pin
+UART_rx   PB7            rx pin
+
+\endverbatim
+  *
+
   ******************************************************************************
   */
 /* USER CODE END Header */
@@ -43,11 +64,11 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <string.h>
 //#include "define.h"
 #include "tm_stm32_delay.h"
 #include "tm_stm32_hd44780.h"
 #include "global_variable.h"
-#include <string.h>
 #include "KeyPad_4x4.h"
 #include "circular_buffer.h"
 #include "timeout.h"
@@ -92,12 +113,6 @@ volatile circ_buffer_t uart_rx_circBuff = { uart_rxBuff, 0, 0 };
 
 volatile circ_buffer_2d log_circ_buff = { NULL, 0, 0};
 
-/*uart_rx_circBuff = { uart_rxBuff, 0, 0 };
-log_circ_buff = { NULL, 0, 0};*/
-
-
-
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -119,6 +134,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 //void keypad_serv(void);
 //void uart_serv(void);
 void Proj_Init(void);
+void lock_close(void);
+void lock_open(void);
 /* USER CODE END 0 */
 
 /**
@@ -497,11 +514,11 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-    if(htim->Instance == TIM6){
+    if(htim->Instance == TIM6){                        // TIM6 -> keyboard timer
         Keypad4x4_ReadKeypad(&sw,&keyPad_struct);
         keyCheck();
     }
-    if(htim->Instance == TIM11){
+    if(htim->Instance == TIM11){                       // TIM11 -> timeout timer
         if(timeout_char_flag){
             timeout_keypad(&htim11);
         }
@@ -509,7 +526,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
             timeout_uart(&htim11,&huart1,&uart_rx_circBuff);
         }
     }
-    if(htim->Instance == TIM9){             // TIM9 s³u¿y do obs³ugi wysy³ania danych przez uart
+    if(htim->Instance == TIM9){             // TIM9 -> uart send srting timer
         if(uart_send_log_flag == true){
             if (uart_new_line_flag == 1) {
                 uart_send_string(&huart1,"\n");
@@ -532,7 +549,11 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
     HAL_UART_Receive_IT(&huart1, &Data_recived_temp, 1);
 }
 
-
+/**
+  * @brief Project Initialization Function
+  * @param None
+  * @retval None
+  */
 
 void Proj_Init(void){
     KeyPad_4x4_Init(&keyPad_struct);

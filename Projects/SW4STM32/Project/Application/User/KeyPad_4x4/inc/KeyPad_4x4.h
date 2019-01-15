@@ -1,7 +1,7 @@
 #include "global_variable.h"
 #include "stm32f4xx_hal.h"
-//#include "define.h"
-//***** Constant variables and typedefs *****//
+
+
 typedef struct
 {
     GPIO_TypeDef* IN0_Port;
@@ -37,5 +37,6 @@ void KeyPad_4x4_Init(Keypad_WiresTypeDef *KeypadStruct);
 
 char* Keypad4x4_GetChar(uint8_t keypadSw);
 
+void keyCheck(void);
 
-
+void keypad_serv(TIM_HandleTypeDef *htim,circ_buffer_2d *log_circ_buff);

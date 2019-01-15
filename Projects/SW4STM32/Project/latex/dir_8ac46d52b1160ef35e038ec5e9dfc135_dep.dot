@@ -11,5 +11,5 @@ digraph "Application/User/UART" {
     dir_83be6798ad6ec7eb2f516c2ffe1dc9bf [shape=box label="src" color="black" fillcolor="white" style="filled" URL="dir_83be6798ad6ec7eb2f516c2ffe1dc9bf.html"];
   }
   }
-  dir_83be6798ad6ec7eb2f516c2ffe1dc9bf->dir_68225958d346da43bd6836bd63337ffe [headlabel="1", labeldistance=1.5 headhref="dir_000020_000019.html"];
+  dir_83be6798ad6ec7eb2f516c2ffe1dc9bf->dir_68225958d346da43bd6836bd63337ffe [headlabel="1", labeldistance=1.5 headhref="dir_000021_000020.html"];
 }

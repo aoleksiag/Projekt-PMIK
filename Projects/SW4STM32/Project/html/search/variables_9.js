@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['lock',['lock',['../global__variable_8h.html#a26e9c310f0ff6151d48550c2b6b2b185',1,'global_variable.h']]],
-  ['lock_5fopen_5fflag',['lock_open_flag',['../global__variable_8h.html#aa05a48df84fa387b8aaf3f77e78bf287',1,'global_variable.h']]],
-  ['log_5fbuff',['log_buff',['../structcirc__buffer__2d.html#a57d57a0a528f51cf12c93e44f2f2764f',1,'circ_buffer_2d']]],
-  ['log_5fcirc_5fbuff',['log_circ_buff',['../main_8c.html#ae1fd753c7ac0d6e839e1aa5ab4b04dd3',1,'main.c']]]
+  ['number_5fchar',['number_char',['../group___global.html#ga20247c8b828f46621bd87077b7f2d664',1,'global_variable.h']]],
+  ['number_5fof_5fbad_5fcode',['number_of_bad_code',['../group___global.html#ga294af653745c7e3579e14a90037b8385',1,'global_variable.h']]]
 ];

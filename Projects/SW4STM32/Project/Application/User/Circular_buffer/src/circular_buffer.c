@@ -1,6 +1,16 @@
 #include "circular_buffer.h"
 
-
+/**
+ * @defgroup buffer
+ * @brief
+ * @{
+ *
+ */
+ /**
+ * @defgroup Buffer_Functions
+ * @brief    Library Functions
+ * @{
+ */
 
 /**
   * @brief Put character in circular buffer

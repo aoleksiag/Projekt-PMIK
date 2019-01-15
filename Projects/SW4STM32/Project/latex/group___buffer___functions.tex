@@ -1,0 +1,210 @@
+\hypertarget{group___buffer___functions}{}\section{Buffer\+\_\+\+Functions}
+\label{group___buffer___functions}\index{Buffer\+\_\+\+Functions@{Buffer\+\_\+\+Functions}}
+
+
+Library Functions.  
+
+
+Collaboration diagram for Buffer\+\_\+\+Functions\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{group___buffer___functions_ga334ce70427261ea1df018dde9889a679}{circ\+\_\+buffer\+\_\+put\+\_\+char} (\hyperlink{structcirc__buffer__t}{circ\+\_\+buffer\+\_\+t} $\ast$q, char data)
+\begin{DoxyCompactList}\small\item\em Put character in circular buffer. \end{DoxyCompactList}\item 
+bool \hyperlink{group___buffer___functions_ga34a47ceaa3cf27b3da4120450ec0d9d8}{circ\+\_\+buffer\+\_\+put\+\_\+string} (\hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d} $\ast$q, char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Put string in circular buffer. \end{DoxyCompactList}\item 
+bool \hyperlink{group___buffer___functions_ga28f5578f75c7960a29b69026b32b6c49}{circ\+\_\+buffer\+\_\+get\+\_\+char} (\hyperlink{structcirc__buffer__t}{circ\+\_\+buffer\+\_\+t} $\ast$q, char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Get string from circular buffer. \end{DoxyCompactList}\item 
+bool \hyperlink{group___buffer___functions_gad2d60d48e2479f41e8d4e6eedba774a1}{circ\+\_\+buffer\+\_\+get\+\_\+string} (\hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d} $\ast$q, char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Get string from circular buffer. \end{DoxyCompactList}\item 
+void \hyperlink{group___buffer___functions_ga5b404ab87c63d621304270ce477069c8}{circ\+\_\+buffer\+\_\+clear} (\hyperlink{structcirc__buffer__t}{circ\+\_\+buffer\+\_\+t} $\ast$q)
+\begin{DoxyCompactList}\small\item\em Clear circular buffer. \end{DoxyCompactList}\item 
+void \hyperlink{group___buffer___functions_ga3395befe3c015c7e1e959339a62abf40}{buffer\+\_\+update} (char $\ast$\hyperlink{global__variable_8h_ab8d1fd4179ebae69097d5e48772ec5c8}{buffer}, u\+\_\+int8\+\_\+t $\ast$count, char Key)
+\begin{DoxyCompactList}\small\item\em Change content of buffer. \end{DoxyCompactList}\item 
+void \hyperlink{group___buffer___functions_gafa520601202c789599d7c892bc62bc79}{buffer\+\_\+clear} (char $\ast$\hyperlink{global__variable_8h_ab8d1fd4179ebae69097d5e48772ec5c8}{buffer}, u\+\_\+int8\+\_\+t buffer\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Clear buffer. \end{DoxyCompactList}\item 
+bool \hyperlink{group___buffer___functions_ga85b96695370782cfe63add97e6deaaf9}{buffer\+\_\+check} (char $\ast$\hyperlink{global__variable_8h_ab8d1fd4179ebae69097d5e48772ec5c8}{buffer})
+\begin{DoxyCompactList}\small\item\em Check if buffer is the same as code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Library Functions. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___buffer___functions_ga85b96695370782cfe63add97e6deaaf9}\label{group___buffer___functions_ga85b96695370782cfe63add97e6deaaf9}} 
+\index{Buffer\+\_\+\+Functions@{Buffer\+\_\+\+Functions}!buffer\+\_\+check@{buffer\+\_\+check}}
+\index{buffer\+\_\+check@{buffer\+\_\+check}!Buffer\+\_\+\+Functions@{Buffer\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{buffer\+\_\+check()}{buffer\_check()}}
+{\footnotesize\ttfamily bool buffer\+\_\+check (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Check if buffer is the same as code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & pointer to a buffer variable \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em boolean} & variable which is true when buffer is the same as code \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___buffer___functions_gafa520601202c789599d7c892bc62bc79}\label{group___buffer___functions_gafa520601202c789599d7c892bc62bc79}} 
+\index{Buffer\+\_\+\+Functions@{Buffer\+\_\+\+Functions}!buffer\+\_\+clear@{buffer\+\_\+clear}}
+\index{buffer\+\_\+clear@{buffer\+\_\+clear}!Buffer\+\_\+\+Functions@{Buffer\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{buffer\+\_\+clear()}{buffer\_clear()}}
+{\footnotesize\ttfamily void buffer\+\_\+clear (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{u\+\_\+int8\+\_\+t}]{buffer\+\_\+len }\end{DoxyParamCaption})}
+
+
+
+Clear buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & pointer to a buffer variable \\
+\hline
+{\em buffer\+\_\+len} & length of buffer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___buffer___functions_ga3395befe3c015c7e1e959339a62abf40}\label{group___buffer___functions_ga3395befe3c015c7e1e959339a62abf40}} 
+\index{Buffer\+\_\+\+Functions@{Buffer\+\_\+\+Functions}!buffer\+\_\+update@{buffer\+\_\+update}}
+\index{buffer\+\_\+update@{buffer\+\_\+update}!Buffer\+\_\+\+Functions@{Buffer\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{buffer\+\_\+update()}{buffer\_update()}}
+{\footnotesize\ttfamily void buffer\+\_\+update (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{u\+\_\+int8\+\_\+t $\ast$}]{count,  }\item[{char}]{Key }\end{DoxyParamCaption})}
+
+
+
+Change content of buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & pointer to a buffer variable \\
+\hline
+{\em count} & shows which elements will be change \\
+\hline
+{\em Key} & character which will be save in buffer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___buffer___functions_ga5b404ab87c63d621304270ce477069c8}\label{group___buffer___functions_ga5b404ab87c63d621304270ce477069c8}} 
+\index{Buffer\+\_\+\+Functions@{Buffer\+\_\+\+Functions}!circ\+\_\+buffer\+\_\+clear@{circ\+\_\+buffer\+\_\+clear}}
+\index{circ\+\_\+buffer\+\_\+clear@{circ\+\_\+buffer\+\_\+clear}!Buffer\+\_\+\+Functions@{Buffer\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{circ\+\_\+buffer\+\_\+clear()}{circ\_buffer\_clear()}}
+{\footnotesize\ttfamily void circ\+\_\+buffer\+\_\+clear (\begin{DoxyParamCaption}\item[{\hyperlink{structcirc__buffer__t}{circ\+\_\+buffer\+\_\+t} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+Clear circular buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & pointer to a \hyperlink{structcirc__buffer__t}{circ\+\_\+buffer\+\_\+t} that contains buffer structure \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___buffer___functions_ga28f5578f75c7960a29b69026b32b6c49}\label{group___buffer___functions_ga28f5578f75c7960a29b69026b32b6c49}} 
+\index{Buffer\+\_\+\+Functions@{Buffer\+\_\+\+Functions}!circ\+\_\+buffer\+\_\+get\+\_\+char@{circ\+\_\+buffer\+\_\+get\+\_\+char}}
+\index{circ\+\_\+buffer\+\_\+get\+\_\+char@{circ\+\_\+buffer\+\_\+get\+\_\+char}!Buffer\+\_\+\+Functions@{Buffer\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{circ\+\_\+buffer\+\_\+get\+\_\+char()}{circ\_buffer\_get\_char()}}
+{\footnotesize\ttfamily bool circ\+\_\+buffer\+\_\+get\+\_\+char (\begin{DoxyParamCaption}\item[{\hyperlink{structcirc__buffer__t}{circ\+\_\+buffer\+\_\+t} $\ast$}]{q,  }\item[{char $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Get string from circular buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & pointer to a \hyperlink{structcirc__buffer__t}{circ\+\_\+buffer\+\_\+t} that contains buffer structure \\
+\hline
+{\em data} & character get from structure. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em boolean} & variable which signals when buffer is empty \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___buffer___functions_gad2d60d48e2479f41e8d4e6eedba774a1}\label{group___buffer___functions_gad2d60d48e2479f41e8d4e6eedba774a1}} 
+\index{Buffer\+\_\+\+Functions@{Buffer\+\_\+\+Functions}!circ\+\_\+buffer\+\_\+get\+\_\+string@{circ\+\_\+buffer\+\_\+get\+\_\+string}}
+\index{circ\+\_\+buffer\+\_\+get\+\_\+string@{circ\+\_\+buffer\+\_\+get\+\_\+string}!Buffer\+\_\+\+Functions@{Buffer\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{circ\+\_\+buffer\+\_\+get\+\_\+string()}{circ\_buffer\_get\_string()}}
+{\footnotesize\ttfamily bool circ\+\_\+buffer\+\_\+get\+\_\+string (\begin{DoxyParamCaption}\item[{\hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d} $\ast$}]{q,  }\item[{char $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Get string from circular buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & pointer to a \hyperlink{structcirc__buffer__t}{circ\+\_\+buffer\+\_\+t} that contains buffer structure \\
+\hline
+{\em data} & string get from structure. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em boolean} & variable which signals when buffer is empty \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___buffer___functions_ga334ce70427261ea1df018dde9889a679}\label{group___buffer___functions_ga334ce70427261ea1df018dde9889a679}} 
+\index{Buffer\+\_\+\+Functions@{Buffer\+\_\+\+Functions}!circ\+\_\+buffer\+\_\+put\+\_\+char@{circ\+\_\+buffer\+\_\+put\+\_\+char}}
+\index{circ\+\_\+buffer\+\_\+put\+\_\+char@{circ\+\_\+buffer\+\_\+put\+\_\+char}!Buffer\+\_\+\+Functions@{Buffer\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{circ\+\_\+buffer\+\_\+put\+\_\+char()}{circ\_buffer\_put\_char()}}
+{\footnotesize\ttfamily bool circ\+\_\+buffer\+\_\+put\+\_\+char (\begin{DoxyParamCaption}\item[{\hyperlink{structcirc__buffer__t}{circ\+\_\+buffer\+\_\+t} $\ast$}]{q,  }\item[{char}]{data }\end{DoxyParamCaption})}
+
+
+
+Put character in circular buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & pointer to a \hyperlink{structcirc__buffer__t}{circ\+\_\+buffer\+\_\+t} that contains buffer structure \\
+\hline
+{\em data} & character to put. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em boolean} & variable which signals when buffer is full \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___buffer___functions_ga34a47ceaa3cf27b3da4120450ec0d9d8}\label{group___buffer___functions_ga34a47ceaa3cf27b3da4120450ec0d9d8}} 
+\index{Buffer\+\_\+\+Functions@{Buffer\+\_\+\+Functions}!circ\+\_\+buffer\+\_\+put\+\_\+string@{circ\+\_\+buffer\+\_\+put\+\_\+string}}
+\index{circ\+\_\+buffer\+\_\+put\+\_\+string@{circ\+\_\+buffer\+\_\+put\+\_\+string}!Buffer\+\_\+\+Functions@{Buffer\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{circ\+\_\+buffer\+\_\+put\+\_\+string()}{circ\_buffer\_put\_string()}}
+{\footnotesize\ttfamily bool circ\+\_\+buffer\+\_\+put\+\_\+string (\begin{DoxyParamCaption}\item[{\hyperlink{structcirc__buffer__2d}{circ\+\_\+buffer\+\_\+2d} $\ast$}]{q,  }\item[{char $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Put string in circular buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & pointer to a \hyperlink{structcirc__buffer__t}{circ\+\_\+buffer\+\_\+t} that contains buffer structure \\
+\hline
+{\em data} & string to put. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em boolean} & variable which signals when buffer is full \\
+\hline
+\end{DoxyRetVals}

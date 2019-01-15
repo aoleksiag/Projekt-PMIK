@@ -3,7 +3,7 @@
 {\ttfamily \#include \char`\"{}tm\+\_\+stm32\+\_\+hd44780.\+h\char`\"{}}\newline
 Include dependency graph for tm\+\_\+stm32\+\_\+hd44780.\+c\+:
 % FIG 0
-\subsection*{Data Structures}
+\subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{struct_h_d44780___options__t}{H\+D44780\+\_\+\+Options\+\_\+t}
@@ -76,16 +76,6 @@ struct \hyperlink{struct_h_d44780___options__t}{H\+D44780\+\_\+\+Options\+\_\+t}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-static void \hyperlink{tm__stm32__hd44780_8c_a02040cb191d323d430a4e4bbe7c3e01a}{T\+M\+\_\+\+H\+D44780\+\_\+\+Init\+Pins} (void)
-\item 
-static void \hyperlink{tm__stm32__hd44780_8c_a30113cce4f8555e95bc37e01867595bc}{T\+M\+\_\+\+H\+D44780\+\_\+\+Cmd} (uint8\+\_\+t cmd)
-\item 
-static void \hyperlink{tm__stm32__hd44780_8c_a746bc8ebfeae9d56bc4250bb5f7a7d01}{T\+M\+\_\+\+H\+D44780\+\_\+\+Cmd4bit} (uint8\+\_\+t cmd)
-\item 
-static void \hyperlink{tm__stm32__hd44780_8c_a441c3f2a02ba6c6f29ace36b1bd8bf2b}{T\+M\+\_\+\+H\+D44780\+\_\+\+Data} (uint8\+\_\+t data)
-\item 
-static void \hyperlink{tm__stm32__hd44780_8c_abcaf0ff9d0849704ada40f5bae48d8d6}{T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+Set} (uint8\+\_\+t col, uint8\+\_\+t row)
-\item 
 void \hyperlink{group___t_m___h_d44780___functions_ga95ddcfeff8a1e3979f453e3e87164a37}{T\+M\+\_\+\+H\+D44780\+\_\+\+Init} (uint8\+\_\+t cols, uint8\+\_\+t rows)
 \begin{DoxyCompactList}\small\item\em Initializes H\+D44780 L\+CD. \end{DoxyCompactList}\item 
 void \hyperlink{group___t_m___h_d44780___functions_ga0a7a99ba13104c13646bbb40e5ee3bd9}{T\+M\+\_\+\+H\+D44780\+\_\+\+Clear} (void)
@@ -112,11 +102,6 @@ void \hyperlink{group___t_m___h_d44780___functions_ga32d98afae3fae1d278778dec7aa
 \begin{DoxyCompactList}\small\item\em Creates custom character. \end{DoxyCompactList}\item 
 void \hyperlink{group___t_m___h_d44780___functions_ga7bebbde61659ffbd254d5153ddf44ea4}{T\+M\+\_\+\+H\+D44780\+\_\+\+Put\+Custom} (uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t location)
 \begin{DoxyCompactList}\small\item\em Puts custom created character on L\+CD. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-static \hyperlink{struct_h_d44780___options__t}{H\+D44780\+\_\+\+Options\+\_\+t} \hyperlink{tm__stm32__hd44780_8c_afd89864932ed632c6ce720dc9eb5f24f}{H\+D44780\+\_\+\+Opts}
-\end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
@@ -305,54 +290,4 @@ static \hyperlink{struct_h_d44780___options__t}{H\+D44780\+\_\+\+Options\+\_\+t}
 \index{H\+D44780\+\_\+\+S\+E\+T\+D\+D\+R\+A\+M\+A\+D\+DR@{H\+D44780\+\_\+\+S\+E\+T\+D\+D\+R\+A\+M\+A\+D\+DR}!tm\+\_\+stm32\+\_\+hd44780.\+c@{tm\+\_\+stm32\+\_\+hd44780.\+c}}
 \subsubsection{\texorpdfstring{H\+D44780\+\_\+\+S\+E\+T\+D\+D\+R\+A\+M\+A\+D\+DR}{HD44780\_SETDDRAMADDR}}
 {\footnotesize\ttfamily \#define H\+D44780\+\_\+\+S\+E\+T\+D\+D\+R\+A\+M\+A\+D\+DR~0x80}
-
-
-
-\subsection{Function Documentation}
-\mbox{\Hypertarget{tm__stm32__hd44780_8c_a30113cce4f8555e95bc37e01867595bc}\label{tm__stm32__hd44780_8c_a30113cce4f8555e95bc37e01867595bc}} 
-\index{tm\+\_\+stm32\+\_\+hd44780.\+c@{tm\+\_\+stm32\+\_\+hd44780.\+c}!T\+M\+\_\+\+H\+D44780\+\_\+\+Cmd@{T\+M\+\_\+\+H\+D44780\+\_\+\+Cmd}}
-\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Cmd@{T\+M\+\_\+\+H\+D44780\+\_\+\+Cmd}!tm\+\_\+stm32\+\_\+hd44780.\+c@{tm\+\_\+stm32\+\_\+hd44780.\+c}}
-\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+\+Cmd()}{TM\_HD44780\_Cmd()}}
-{\footnotesize\ttfamily static void T\+M\+\_\+\+H\+D44780\+\_\+\+Cmd (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-Here is the call graph for this function\+:
-% FIG 1
-\mbox{\Hypertarget{tm__stm32__hd44780_8c_a746bc8ebfeae9d56bc4250bb5f7a7d01}\label{tm__stm32__hd44780_8c_a746bc8ebfeae9d56bc4250bb5f7a7d01}} 
-\index{tm\+\_\+stm32\+\_\+hd44780.\+c@{tm\+\_\+stm32\+\_\+hd44780.\+c}!T\+M\+\_\+\+H\+D44780\+\_\+\+Cmd4bit@{T\+M\+\_\+\+H\+D44780\+\_\+\+Cmd4bit}}
-\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Cmd4bit@{T\+M\+\_\+\+H\+D44780\+\_\+\+Cmd4bit}!tm\+\_\+stm32\+\_\+hd44780.\+c@{tm\+\_\+stm32\+\_\+hd44780.\+c}}
-\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+\+Cmd4bit()}{TM\_HD44780\_Cmd4bit()}}
-{\footnotesize\ttfamily static void T\+M\+\_\+\+H\+D44780\+\_\+\+Cmd4bit (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{tm__stm32__hd44780_8c_abcaf0ff9d0849704ada40f5bae48d8d6}\label{tm__stm32__hd44780_8c_abcaf0ff9d0849704ada40f5bae48d8d6}} 
-\index{tm\+\_\+stm32\+\_\+hd44780.\+c@{tm\+\_\+stm32\+\_\+hd44780.\+c}!T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+Set@{T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+Set}}
-\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+Set@{T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+Set}!tm\+\_\+stm32\+\_\+hd44780.\+c@{tm\+\_\+stm32\+\_\+hd44780.\+c}}
-\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+Set()}{TM\_HD44780\_CursorSet()}}
-{\footnotesize\ttfamily static void T\+M\+\_\+\+H\+D44780\+\_\+\+Cursor\+Set (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{col,  }\item[{uint8\+\_\+t}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-Here is the call graph for this function\+:
-% FIG 2
-\mbox{\Hypertarget{tm__stm32__hd44780_8c_a441c3f2a02ba6c6f29ace36b1bd8bf2b}\label{tm__stm32__hd44780_8c_a441c3f2a02ba6c6f29ace36b1bd8bf2b}} 
-\index{tm\+\_\+stm32\+\_\+hd44780.\+c@{tm\+\_\+stm32\+\_\+hd44780.\+c}!T\+M\+\_\+\+H\+D44780\+\_\+\+Data@{T\+M\+\_\+\+H\+D44780\+\_\+\+Data}}
-\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Data@{T\+M\+\_\+\+H\+D44780\+\_\+\+Data}!tm\+\_\+stm32\+\_\+hd44780.\+c@{tm\+\_\+stm32\+\_\+hd44780.\+c}}
-\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+\+Data()}{TM\_HD44780\_Data()}}
-{\footnotesize\ttfamily static void T\+M\+\_\+\+H\+D44780\+\_\+\+Data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-Here is the call graph for this function\+:
-% FIG 3
-\mbox{\Hypertarget{tm__stm32__hd44780_8c_a02040cb191d323d430a4e4bbe7c3e01a}\label{tm__stm32__hd44780_8c_a02040cb191d323d430a4e4bbe7c3e01a}} 
-\index{tm\+\_\+stm32\+\_\+hd44780.\+c@{tm\+\_\+stm32\+\_\+hd44780.\+c}!T\+M\+\_\+\+H\+D44780\+\_\+\+Init\+Pins@{T\+M\+\_\+\+H\+D44780\+\_\+\+Init\+Pins}}
-\index{T\+M\+\_\+\+H\+D44780\+\_\+\+Init\+Pins@{T\+M\+\_\+\+H\+D44780\+\_\+\+Init\+Pins}!tm\+\_\+stm32\+\_\+hd44780.\+c@{tm\+\_\+stm32\+\_\+hd44780.\+c}}
-\subsubsection{\texorpdfstring{T\+M\+\_\+\+H\+D44780\+\_\+\+Init\+Pins()}{TM\_HD44780\_InitPins()}}
-{\footnotesize\ttfamily static void T\+M\+\_\+\+H\+D44780\+\_\+\+Init\+Pins (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-Here is the call graph for this function\+:
-% FIG 4
-
-
-\subsection{Variable Documentation}
-\mbox{\Hypertarget{tm__stm32__hd44780_8c_afd89864932ed632c6ce720dc9eb5f24f}\label{tm__stm32__hd44780_8c_afd89864932ed632c6ce720dc9eb5f24f}} 
-\index{tm\+\_\+stm32\+\_\+hd44780.\+c@{tm\+\_\+stm32\+\_\+hd44780.\+c}!H\+D44780\+\_\+\+Opts@{H\+D44780\+\_\+\+Opts}}
-\index{H\+D44780\+\_\+\+Opts@{H\+D44780\+\_\+\+Opts}!tm\+\_\+stm32\+\_\+hd44780.\+c@{tm\+\_\+stm32\+\_\+hd44780.\+c}}
-\subsubsection{\texorpdfstring{H\+D44780\+\_\+\+Opts}{HD44780\_Opts}}
-{\footnotesize\ttfamily \hyperlink{struct_h_d44780___options__t}{H\+D44780\+\_\+\+Options\+\_\+t} H\+D44780\+\_\+\+Opts\hspace{0.3cm}{\ttfamily [static]}}
 

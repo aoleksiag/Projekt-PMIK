@@ -17,6 +17,5 @@ var searchData=
   ['gpio_5fpin_5f7',['GPIO_PIN_7',['../group___t_m___g_p_i_o___macros.html#ga482cb86c2f036e630661a41e8986bcfe',1,'GPIO_PIN_7():&#160;tm_stm32_gpio.h'],['../group___t_m___g_p_i_o___macros.html#ga7346b6ce5507bd28a7a79e7dcc816c08',1,'GPIO_Pin_7():&#160;tm_stm32_gpio.h']]],
   ['gpio_5fpin_5f8',['GPIO_PIN_8',['../group___t_m___g_p_i_o___macros.html#gaf5eb6a42a4428e236bd4fd08ade71e7a',1,'GPIO_PIN_8():&#160;tm_stm32_gpio.h'],['../group___t_m___g_p_i_o___macros.html#gac891f0984dc64af3567577fbf13ab304',1,'GPIO_Pin_8():&#160;tm_stm32_gpio.h']]],
   ['gpio_5fpin_5f9',['GPIO_PIN_9',['../group___t_m___g_p_i_o___macros.html#ga4c503cb4a0dc0d18261080051d9c2daf',1,'GPIO_PIN_9():&#160;tm_stm32_gpio.h'],['../group___t_m___g_p_i_o___macros.html#gaad1891082d5d6bcac06c2729a9fdd2f0',1,'GPIO_Pin_9():&#160;tm_stm32_gpio.h']]],
-  ['gpio_5fpin_5fall',['GPIO_PIN_ALL',['../group___t_m___g_p_i_o___macros.html#gada8dca690b8e25529328ecf92e8fd1a5',1,'GPIO_PIN_ALL():&#160;tm_stm32_gpio.h'],['../group___t_m___g_p_i_o___macros.html#gaba3e915ddca17a1211edc07b7fd97e8b',1,'GPIO_Pin_All():&#160;tm_stm32_gpio.h']]],
-  ['gpio_5fusedpins',['GPIO_UsedPins',['../tm__stm32__gpio_8c.html#a049a40275ce191255d7b401da6edf882',1,'tm_stm32_gpio.c']]]
+  ['gpio_5fpin_5fall',['GPIO_PIN_ALL',['../group___t_m___g_p_i_o___macros.html#gada8dca690b8e25529328ecf92e8fd1a5',1,'GPIO_PIN_ALL():&#160;tm_stm32_gpio.h'],['../group___t_m___g_p_i_o___macros.html#gaba3e915ddca17a1211edc07b7fd97e8b',1,'GPIO_Pin_All():&#160;tm_stm32_gpio.h']]]
 ];

@@ -10,6 +10,7 @@ digraph "Application/User" {
     dir_1d69277eeee4eb7dfb785520f365ccc6 [shape=box label="Circular_buffer" color="red" fillcolor="white" style="filled" URL="dir_1d69277eeee4eb7dfb785520f365ccc6.html"];
     dir_98d5ac9bf70aacdbdcd1c1874b4eea84 [shape=box label="KeyPad_4x4" color="red" fillcolor="white" style="filled" URL="dir_98d5ac9bf70aacdbdcd1c1874b4eea84.html"];
     dir_4ca6522bd660af7a458beb47462a129d [shape=box label="Lcd_driver" color="red" fillcolor="white" style="filled" URL="dir_4ca6522bd660af7a458beb47462a129d.html"];
+    dir_8432685c0534c316aeb240aa9d2e6136 [shape=box label="Lock" color="black" fillcolor="white" style="filled" URL="dir_8432685c0534c316aeb240aa9d2e6136.html"];
     dir_faeb32de39bdb2a1131ebee278bcff11 [shape=box label="Rtc" color="red" fillcolor="white" style="filled" URL="dir_faeb32de39bdb2a1131ebee278bcff11.html"];
     dir_635859043a8165682a1c165323ddc172 [shape=box label="Timeout" color="red" fillcolor="white" style="filled" URL="dir_635859043a8165682a1c165323ddc172.html"];
     dir_8ac46d52b1160ef35e038ec5e9dfc135 [shape=box label="UART" color="red" fillcolor="white" style="filled" URL="dir_8ac46d52b1160ef35e038ec5e9dfc135.html"];

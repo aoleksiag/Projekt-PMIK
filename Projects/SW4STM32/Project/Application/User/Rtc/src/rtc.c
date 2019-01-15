@@ -1,4 +1,16 @@
 #include "rtc.h"
+/**
+ * @defgroup RTC
+ * @brief
+ * @{
+ *
+ */
+ /**
+ * @defgroup RTC_Functions
+ * @brief    RTC Functions
+ * @{
+ */
+
 
 /**
   * @brief Save date and time in circ_buffer_2d
