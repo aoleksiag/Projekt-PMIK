@@ -102,10 +102,10 @@ void uart_serv(UART_HandleTypeDef *huart,circ_buffer_2d *uart_rx_circBuff){
            uart_empty_flag=true;
            set_date(&buffer_temp);
        }
-    else if(uart_send_log == true){
+/*    else if(uart_send_log == true){
         uart_send_log_flag=true;
         uart_send_log=false;
-    }
+    }*/
     else{
 
         for (u_int8_t i=0; i<buffer_length+1; i++){

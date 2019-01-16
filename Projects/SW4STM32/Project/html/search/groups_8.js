@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['variables',['Variables',['../group___global.html',1,'']]]
+  ['variables',['variables',['../group__global.html',1,'']]],
+  ['variables',['Variables',['../group__variables.html',1,'']]]
 ];

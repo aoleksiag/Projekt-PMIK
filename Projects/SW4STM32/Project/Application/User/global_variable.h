@@ -7,7 +7,13 @@
 #endif /* APPLICATION_USER_CIRCULAR_BUFFER_INC_COS_H_ */
 
 /**
- * @defgroup Global Variables
+ * @defgroup  variables
+ * @brief
+ * @{
+ *
+ */
+/**
+ * @defgroup gl variables
 
  * @{
  */
@@ -38,16 +44,15 @@ bool timeout_char_flag;
 bool uart_data_flag;             /**< someone send uart frame */
 bool number_char;                /**< someone press number on keypad */
 bool uart_empty_flag;
-bool uart_send_log;
+bool uart_send_log;             /**< send log by uart */
 bool uart_new_line_flag;
-bool uart_send_log_flag;
 bool uart_set_time_flag;
 bool uart_set_date_flag;
 bool uart_set_change_pass_flag;
 bool uart_set_pass;
 bool uart_new_pass;
 bool lock_open_flag;            /**< lock status */
-//bool lock;
+
 char uart_log_str[LOG_BUFF_SIZE];
 
 volatile u_int8_t uart_string_tosend_count;

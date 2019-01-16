@@ -527,7 +527,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
         }
     }
     if(htim->Instance == TIM9){             // TIM9 -> uart send srting timer
-        if(uart_send_log_flag == true){
+        if(uart_send_log == true){
             if (uart_new_line_flag == 1) {
                 uart_send_string(&huart1,"\n");
                 uart_new_line_flag = false;
@@ -535,7 +535,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
             else{
                 uart_new_line_flag=true;
                 if(circ_buffer_get_string(&log_circ_buff,uart_log_str)){
-                    uart_send_log_flag = false;
+                    uart_send_log = false;
                 }else{
                     uart_send_string(&huart1,uart_log_str);
                 }
@@ -565,10 +565,9 @@ void Proj_Init(void){
     HAL_UART_Receive_IT(&huart1, &Data_recived_temp, 1);
     buffer_count=0;
     uart_empty_flag=true;
-    uart_send_log_flag=false;
     number_of_bad_code=0;
     lock_open_flag=false;
-    lock=true;
+
 }
 void lock_close(void){
     lock_open_flag=false;
